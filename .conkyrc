@@ -1,0 +1,110 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont Liberation Sans Mono:size=9
+xftalpha 1
+update_interval 2.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 280
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 656667
+default_shade_color 000000
+default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 50
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+##############################################
+#  Output
+##############################################
+TEXT
+${alignc 0}Joel's Laptop
+${alignc 35}${font Arial Black:size=26}${time %I:%M}${font}
+
+S Y S T E M    I N F O
+${hr}
+Host:$alignr$nodename
+Kernel:${alignr}${kernel}
+Uptime:$alignr$uptime
+Swap usage:$alignr$swap/$swapmax
+Disk usage:$alignr${fs_used /}/${fs_size /}
+
+Battery: ${battery_percent}% ${battery_bar}
+RAM: $memperc% ${alignr}${membar 8,130}
+CPU: ${cpu cpu0}% ${alignr}${cpubar 8,130 cpu0}
+CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,80}
+CPU2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,80}
+CPU3: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,80}
+CPU4: ${cpu cpu4}% ${alignr}${cpubar cpu4 8,80}
+CPU5: ${cpu cpu5}% ${alignr}${cpubar cpu5 8,80}
+CPU6: ${cpu cpu6}% ${alignr}${cpubar cpu6 8,80}
+CPU7: ${cpu cpu7}% ${alignr}${cpubar cpu7 8,80}
+CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,80}
+CPU Temp: ${alignr}${hwmon temp 1}C
+##
+${if_existing /proc/net/route wlan0}
+W I F I
+${hr}
+ESSID: $alignr ${wireless_essid wlan0}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+Upload: $alignr ${downspeed wlan0}/s
+Download: $alignr ${upspeed wlan0}/s
+${endif}${if_existing /proc/net/route eth0}
+E T H E R N E T
+${hr}
+Upload: $alignr ${downspeed eth0}/s
+Download: $alignr ${upspeed eth0}/s
+${endif}${if_existing /proc/net/route wlan0}${else}${if_existing /proc/net/route eth0}${else}
+Network Unavailable
+${endif}${endif}
+##
+T O P   C P U   T A S K S
+${hr}
+${top name 1}${alignr}${top cpu 1}%
+${top name 2}${alignr}${top cpu 2}%
+${top name 3}${alignr}${top cpu 3}%
+${top name 4}${alignr}${top cpu 4}%
+
+S H O R T C U T    K E Y S
+${hr}
+Alt+F2$alignr Run Dialog
+Alt+F3$alignr Alt Menu
+Super+Space$alignr Main Menu
+Super+t$alignr Terminal
+Super+f$alignr File Manager
+Super+e$alignr Editor
+Super+m$alignr Media Player
+Super+w$alignr Web Browser
+Super+h$alignr Task Manager
+Super+l$alignr Lock Screen
+Super+v$alignr Volume Control
+Super+q$alignr Logout
+PrntScr$alignr Screenshot
