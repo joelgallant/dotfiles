@@ -67,6 +67,11 @@
 					</command>
 				</action>
 			</item>
+			<item label="Planner">
+				<action name="Execute">
+					<command>planner</command>
+				</action>
+			</item>
 			<item label="Task Manager (htop)">
 				<action name="Execute">
 					<command>terminator --command=&quot;htop&quot;</command>
@@ -209,11 +214,6 @@
 					<command>iceweasel</command>
 				</action>
 			</item>
-			<item label="Skype">
-				<action name="Execute">
-					<command>skype</command>
-				</action>
-			</item>
 			<item label="gFTP Client">
 				<action name="Execute">
 					<command>
@@ -224,6 +224,11 @@
 			<item label="Transmission BitTorrent Client">
 				<action name="Execute">
 					<command>transmission-gtk</command>
+				</action>
+			</item>
+			<item label="Pidgin">
+				<action name="Execute">
+					<command>pidgin</command>
 				</action>
 			</item>
 			<item label="XChat IRC Client">
