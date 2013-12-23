@@ -23,6 +23,9 @@ total_run_times 0
 own_window no
 double_buffer yes
 maximum_width 280
+own_window yes
+own_window_type desktop
+own_window_transparent yes
 draw_shades no
 draw_outline no
 draw_borders no
