@@ -14,7 +14,7 @@
 ##############################################
 # Settings
 ##############################################
-background yes
+background no
 use_xft yes
 xftfont Liberation Sans Mono:size=9
 xftalpha 1
@@ -26,7 +26,6 @@ own_window_type desktop
 #own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-minimum_size 200 200
 maximum_width 280
 draw_shades no
 draw_outline no
@@ -55,7 +54,6 @@ Host:$alignr$nodename
 Kernel:${alignr}${kernel}
 Uptime:$alignr$uptime
 Swap usage:$alignr$swap/$swapmax
-Disk usage:$alignr${fs_used /}/${fs_size /}
 
 Battery: ${battery_percent}% ${battery_bar}
 RAM: $memperc% ${alignr}${membar 8,130}
@@ -70,19 +68,19 @@ CPU7: ${cpu cpu7}% ${alignr}${cpubar cpu7 8,80}
 CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,80}
 CPU Temp: ${alignr}${hwmon temp 1}C
 ##
-${if_existing /proc/net/route wlan0}
+${if_existing /proc/net/route wlp2s0}
 W I F I
 ${hr}
-ESSID: $alignr ${wireless_essid wlan0}
-Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
-Upload: $alignr ${downspeed wlan0}/s
-Download: $alignr ${upspeed wlan0}/s
-${endif}${if_existing /proc/net/route eth0}
+ESSID: $alignr ${wireless_essid wlp2s0}
+Connection quality: $alignr ${wireless_link_qual_perc wlp2s0}%
+Upload: $alignr ${upspeed wlp2s0}/s
+Download: $alignr ${downspeed wlp2s0}/s
+${endif}${if_existing /proc/net/route enp4s0}
 E T H E R N E T
 ${hr}
-Upload: $alignr ${downspeed eth0}/s
-Download: $alignr ${upspeed eth0}/s
-${endif}${if_existing /proc/net/route wlan0}${else}${if_existing /proc/net/route eth0}${else}
+Upload: $alignr ${upspeed enp4s0}/s
+Download: $alignr ${downspeed enp4s0}/s
+${endif}${if_existing /proc/net/route wlp2s0}${else}${if_existing /proc/net/route enp4s0}${else}
 Network Unavailable
 ${endif}${endif}
 ##
@@ -105,6 +103,5 @@ Super+m$alignr Media Player
 Super+w$alignr Web Browser
 Super+h$alignr Task Manager
 Super+l$alignr Lock Screen
-Super+v$alignr Volume Control
 Super+q$alignr Logout
 PrntScr$alignr Screenshot
