@@ -261,6 +261,15 @@ cases. -->
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <keybind key="S-W-q">
+      <action name="Execute">
+        <command>oblogout</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Logout</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>thunar</command>

@@ -327,35 +327,12 @@
 				</command>
 			</action>
 		</item>
-		<menu id="Exit" label="Exit">
-			<item label="Logout">
-				<action name="Execute">
-					<command>
-						openbox --exit
-					</command>
-				</action>
-			</item>
-			<item label="Halt">
-				<action name="Execute">
-					<command>
-						systemctl suspend
-					</command>
-				</action>
-			</item>
-			<item label="Reboot">
-				<action name="Execute">
-					<command>
-						systemctl reboot
-					</command>
-				</action>
-			</item>
-			<item label="Poweroff">
-				<action name="Execute">
-					<command>
-						systemctl poweroff
-					</command>
-				</action>
-			</item>
-		</menu>
+        <item label="Exit">
+			<action name="Execute">
+				<command>
+                    oblogout
+				</command>
+			</action>
+        </item>
 	</menu>
 </openbox_menu>
