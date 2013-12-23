@@ -261,7 +261,7 @@ cases. -->
         <desktop>yes</desktop>
       </action>
     </keybind>
-    <keybind key="S-W-q">
+    <keybind key="S-A-q">
       <action name="Execute">
         <command>oblogout</command>
         <startupnotify>
