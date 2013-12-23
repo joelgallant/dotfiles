@@ -328,6 +328,13 @@
 			</action>
 		</item>
 		<menu id="Exit" label="Exit">
+			<item label="Logout">
+				<action name="Execute">
+					<command>
+						openbox --exit
+					</command>
+				</action>
+			</item>
 			<item label="Halt">
 				<action name="Execute">
 					<command>
