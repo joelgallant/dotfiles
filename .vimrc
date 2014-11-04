@@ -5,7 +5,8 @@
 " vim-fugitive   https://github.com/tpope/vim-fugitive
 " vim-endwise    https://github.com/tpope/vim-endwise
 " autoclose      http://www.vim.org/scripts/script.php?script_id=1849
-" vim-markdown   https://github.com/tpope/vim-markdown
+" vim-jade       https://github.com/digitaltoad/vim-jade
+" vim-stylus     https://github.com/wavded/vim-stylus
 " vim-autoformat https://github.com/Chiel92/vim-autoformat
 " vim-airline    https://github.com/bling/vim-airline
 " ctrlp.vim      https://github.com/kien/ctrlp.vim
@@ -56,6 +57,7 @@
     set foldlevelstart=99
     nnoremap <silent> <Return> @=(foldlevel('.')?'za':"\<Return\>")<esc>
     set foldtext=""
+    autocmd BufNewFile,BufRead *.json setf javascript
 
     " Set 7 lines to the cursor
     set so=7
@@ -92,19 +94,16 @@
     " Be smart when using tabs
     set smarttab
 
-    " 1 tab == 4 spaces
-    set shiftwidth=4
-    set tabstop=4
+    " 1 tab == 2 spaces
+    set shiftwidth=2
+    set tabstop=2
 
     " Smart indent
     set si
-    " C style indent
-    set cindent
     " Wrap lines
     set wrap
-    
-    " Autoformat uses Java (I'm a java dev, so...)
-    let g:formatprg_args_java = "--style=java"
+
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Spell Check
     " Spell check toggle ,ss
