@@ -4,4 +4,6 @@ ln -s ~/dotfiles/terminator/config ~/.config/terminator/config
 ln -s ~/dotfiles/transmission/settings.json ~/.config/transmission/settings.json
 ln -s ~/dotfiles/user-dirs.dirs ~/.config/user-dirs.dirs
 ln -s ~/dotfiles/monitors.xml ~/.config/monitors.xml
-ln -s ~/dotfiles/vim/ ~/.vim
+git submodule update --init --recursive ~/dotfiles/vim/bundle/
+ln -s ~/dotfiles/vim ~/.vim
+rm ~/dotfiles/vim/vim # No idea why I need this!
