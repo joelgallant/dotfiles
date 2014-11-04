@@ -1,15 +1,15 @@
 " Pathogen (https://github.com/tpope/vim-pathogen) plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-sensible   https://github.com/tpope/vim-sensible
-" vim-surround   https://github.com/tpope/vim-surround
-" vim-fugitive   https://github.com/tpope/vim-fugitive
-" vim-endwise    https://github.com/tpope/vim-endwise
+" vim-sensible   git@github.com:tpope/vim-sensible.git
+" vim-surround   git@github.com:tpope/vim-surround.git
+" vim-fugitive   git@github.com:tpope/vim-fugitive.git
+" vim-endwise    git@github.com:tpope/vim-endwise.git
 " autoclose      http://www.vim.org/scripts/script.php?script_id=1849
-" vim-jade       https://github.com/digitaltoad/vim-jade
-" vim-stylus     https://github.com/wavded/vim-stylus
-" vim-autoformat https://github.com/Chiel92/vim-autoformat
-" vim-airline    https://github.com/bling/vim-airline
-" ctrlp.vim      https://github.com/kien/ctrlp.vim
+" vim-jade       git@github.com:digitaltoad/vim-jade.git
+" vim-stylus     git@github.com:wavded/vim-stylus.git
+" vim-autoformat git@github.com:Chiel92/vim-autoformat.git
+" vim-airline    git@github.com:bling/vim-airline.git
+" ctrlp.vim      git@github.com:kien/ctrlp.vim.git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Plugins
