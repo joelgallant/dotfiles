@@ -8,12 +8,12 @@
       <width>1280</width>
       <height>1024</height>
       <rate>60.019741058349609</rate>
-      <x>0</x>
+      <x>1440</x>
       <y>0</y>
       <rotation>normal</rotation>
       <reflect_x>no</reflect_x>
       <reflect_y>no</reflect_y>
-      <primary>yes</primary>
+      <primary>no</primary>
       <presentation>no</presentation>
     </output>
     <output name="VGA1">
@@ -23,12 +23,12 @@
       <width>1440</width>
       <height>900</height>
       <rate>59.901458740234375</rate>
-      <x>1280</x>
-      <y>124</y>
+      <x>0</x>
+      <y>202</y>
       <rotation>normal</rotation>
       <reflect_x>no</reflect_x>
       <reflect_y>no</reflect_y>
-      <primary>no</primary>
+      <primary>yes</primary>
       <presentation>no</presentation>
     </output>
   </configuration>
