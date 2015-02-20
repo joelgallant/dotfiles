@@ -1,0 +1,9 @@
+(sleep 3 && /usr/bin/nm-applet --sm-disable) &
+
+compton -cCGb &
+tint2 &
+feh --bg-center /usr/share/wallpapers/the-archer-1920x1080.png &
+volumeicon &
+/usr/bin/xscreensaver -no-splash &
+conky &
+setxkbmap us &
