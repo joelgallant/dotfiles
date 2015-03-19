@@ -1,3 +1,7 @@
+# Install:
+# vim, playstationmediaserver, terminator, transmission, openbox
+
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/PMS/PMS.conf ~/.config/PMS/PMS.conf
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/config
