@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Run Program">
+			<action name="Execute">
+				<command>
+					dmenu_run
+				</command>
+			</action>
+		</item>
+		<separator/>
+		<item label="Terminal">
+			<action name="Execute">
+				<command>
+					terminator
+				</command>
+			</action>
+		</item>
+		<item label="Web Browser">
+			<action name="Execute">
+				<command>
+					chromium
+				</command>
+			</action>
+		</item>
+		<item label="File Manager">
+			<action name="Execute">
+				<command>
+					thunar
+				</command>
+			</action>
+		</item>
+		<item label="Text Editor">
+			<action name="Execute">
+				<command>
+					geany
+				</command>
+			</action>
+		</item>
+		<item label="Media Player">
+			<action name="Execute">
+				<command>
+					vlc
+				</command>
+			</action>
+		</item>
+		<separator/>
+		<menu id="accessories" label="Accessories">
+			<item label="Archive Manager">
+				<action name="Execute">
+					<command>
+						file-roller
+					</command>
+				</action>
+			</item>
+			<item label="Geany Text Editor">
+				<action name="Execute">
+					<command>
+						geany
+					</command>
+				</action>
+			</item>
+			<item label="Task Manager (htop)">
+				<action name="Execute">
+					<command>terminator --command=&quot;htop&quot;</command>
+				</action>
+			</item>
+			<item label="Terminator Terminal">
+				<action name="Execute">
+					<command>
+						terminator
+					</command>
+				</action>
+			</item>
+			<item label="Thunar File Manager">
+				<action name="Execute">
+					<command>
+						thunar
+					</command>
+				</action>
+			</item>
+			<item label="Thunar File Manager (root)">
+				<action name="Execute">
+					<command>
+						gksu thunar
+					</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="graphics" label="Graphics">
+			<item label="Image Viewer">
+				<action name="Execute">
+					<command>
+						gpicview
+					</command>
+				</action>
+			</item>
+      <item label="Screenshot">
+        <action name="Execute">
+          <command>
+            scrot -s '/home/joel/Pictures/%Y-%m-%d-%H:%m-screenshot.png'
+          </command>
+        </action>
+      </item>
+		</menu>
+		<menu id="multimedia" label="Multimedia">
+			<item label="VLC Media Player">
+				<action name="Execute">
+					<command>
+						vlc
+					</command>
+				</action>
+			</item>
+			<item label="Clementine">
+				<action name="Execute">
+					<command>
+						clementine
+					</command>
+				</action>
+			</item>
+			<item label="Volume Control">
+				<action name="Execute">
+					<command>
+						pavucontrol
+					</command>
+				</action>
+			</item>
+			<item label="Xfburn">
+				<action name="Execute">
+					<command>
+						xfburn
+					</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="network" label="Network">
+			<item label="Chromium">
+				<action name="Execute">
+					<command>chromium</command>
+				</action>
+			</item>
+			<item label="Transmission BitTorrent Client">
+				<action name="Execute">
+					<command>transmission-gtk</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="office" label="Office">
+			<item label="Calculator">
+				<action name="Execute">
+					<command>
+						galculator
+					</command>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="settings" label="Settings">
+			<menu id="conkyconfig" label="Conky">
+				<item label="Edit .conkyrc">
+					<action name="Execute">
+						<command>
+							geany ~/.conkyrc
+						</command>
+					</action>
+				</item>
+			</menu>
+			<menu id="obConfig" label="Openbox">
+				<item label="Edit menu.xml">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/menu.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit rc.xml">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/rc.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit autostart">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/autostart
+						</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="GUI Config Tool">
+					<action name="Execute">
+						<command>
+							obconf
+						</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Reconfigure">
+					<action name="Reconfigure"/>
+				</item>
+				<item label="Restart">
+					<action name="Restart"/>
+				</item>
+			</menu>
+			<menu id="tint2config" label="tint2">
+				<item label="Edit config file">
+					<action name="Execute">
+						<command>
+							geany ~/.config/tint2/tint2rc
+						</command>
+					</action>
+				</item>
+				<item label="Configure">
+					<action name="Execute">
+						<command>
+							tint2conf
+						</command>
+					</action>
+				</item>
+				<item label="Restart tint2">
+					<action name="Execute">
+						<command>
+							tint2restart
+						</command>
+					</action>
+				</item>
+			</menu>
+			<item label="Display Settings">
+                <action name="Execute">
+                    <command>
+                        arandr
+                    </command>
+                </action>
+            </item>
+			<item label="User Interface Settings">
+				<action name="Execute">
+					<command>
+						lxappearance
+					</command>
+				</action>
+			</item>
+			<item label="Screensaver">
+				<action name="Execute">
+					<command>
+						xscreensaver-demo
+					</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="system" label="System">
+			<item label="GParted">
+				<action name="Execute">
+					<command>
+						gksu gparted
+					</command>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="Lock Screen">
+			<action name="Execute">
+				<command>
+					xscreensaver-command --lock
+				</command>
+			</action>
+		</item>
+        <item label="Exit">
+			<action name="Execute">
+				<command>
+                    oblogout
+				</command>
+			</action>
+        </item>
+	</menu>
+</openbox_menu>

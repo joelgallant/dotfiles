@@ -33,9 +33,9 @@ draw_graph_borders no
 default_color 656667
 default_shade_color 000000
 default_outline_color 828282
-alignment top_right
-gap_x 12
-gap_y 50
+alignment top_left
+gap_x 30
+gap_y 30
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -54,7 +54,6 @@ Kernel:${alignr}${kernel}
 Uptime:$alignr$uptime
 Swap usage:$alignr$swap/$swapmax
 
-Battery: ${battery_percent}% ${battery_bar}
 RAM: $memperc% ${alignr}${membar 8,130}
 CPU: ${cpu cpu0}% ${alignr}${cpubar 8,130 cpu0}
 CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,80}
@@ -69,8 +68,8 @@ CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,80}
 ##
 E T H E R N E T
 ${hr}
-Upload: $alignr ${upspeed enp4s0}/s
-Download: $alignr ${downspeed enp4s0}/s
+Upload: $alignr ${upspeed enp0s29u1u6}/s
+Download: $alignr ${downspeed enp0s29u1u6}/s
 
 ##
 T O P   C P U   T A S K S
