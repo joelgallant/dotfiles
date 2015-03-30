@@ -118,6 +118,13 @@
 					</command>
 				</action>
 			</item>
+			<item label="Clementine">
+				<action name="Execute">
+					<command>
+						clementine
+					</command>
+				</action>
+			</item>
 			<item label="Volume Control">
 				<action name="Execute">
 					<command>
