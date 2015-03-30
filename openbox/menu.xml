@@ -44,6 +44,13 @@
 				</command>
 			</action>
 		</item>
+		<item label="Steam">
+			<action name="Execute">
+				<command>
+					steam
+				</command>
+			</action>
+		</item>
 		<separator/>
 		<menu id="accessories" label="Accessories">
 			<item label="Archive Manager">
