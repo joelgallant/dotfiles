@@ -109,7 +109,7 @@ by other applications, or saved in your session
 
 use obconf if you want to change these without having to log out
 and back in -->
-    <number>2</number>
+    <number>1</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -231,9 +231,9 @@ cases. -->
     <keybind key="A-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-F3">
+    <keybind key="A-F2">
       <action name="Execute">
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
+        <command>dmenu_run</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>dmenu</name>
@@ -379,7 +379,7 @@ cases. -->
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -s '/home/joel/Pictures/%Y-%m-%d-%H:%m-screenshot.png'</command>
+        <command>scrot -s /home/joel/pictures/%Y-%m-%d-%H:%m-screenshot.png</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Screenshot</name>
@@ -388,17 +388,17 @@ cases. -->
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 1 +10%</command>
+        <command>pactl set-sink-volume 2 +5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 1 -10%</command>
+        <command>pactl set-sink-volume 2 -5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>pactl set-sink-mute 0 toggle</command>
+        <command>pactl set-sink-mute 2 toggle</command>
       </action>
     </keybind>
     <keybind key="XF86ScreenSaver">
