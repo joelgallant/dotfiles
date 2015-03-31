@@ -1,9 +1,12 @@
-(sleep 3 && /usr/bin/nm-applet --sm-disable) &
+(sleep 2 && /usr/bin/nm-applet --sm-disable) &
 
 compton -cCGb &
 tint2 &
 feh --bg-center /usr/share/wallpapers/the-archer-1920x1080.png &
 volumeicon &
+(sleep 2 && pulseaudio --start) &
 /usr/bin/xscreensaver -no-splash &
-conky &
+(sleep 2 && conky) &
+redshift-gtk &
 setxkbmap us &
+/usr/bin/dropbox &
