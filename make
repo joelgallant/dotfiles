@@ -17,3 +17,5 @@ ln -s ~/dotfiles/monitors.xml ~/.config/monitors.xml
 git submodule update --init --recursive ~/dotfiles/vim/bundle/
 ln -s ~/dotfiles/vim ~/.vim
 rm ~/dotfiles/vim/vim # No idea why I need this!
+rm -r ~/.config/openbox
+ln -s ~/dotfiles/openbox ~/.config/openbox
