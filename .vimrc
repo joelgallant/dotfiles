@@ -10,6 +10,7 @@
 " vim-autoformat git@github.com:Chiel92/vim-autoformat.git
 " vim-airline    git@github.com:bling/vim-airline.git
 " ctrlp.vim      git@github.com:kien/ctrlp.vim.git
+" vim-expand-region git@github.com:terryma/vim-expand-region.git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Plugins
@@ -30,7 +31,7 @@
     set number
 
 " Shortcuts
-    let mapleader = "," 
+    let mapleader = "\<Space>" 
     
     " Reloads the saved $MYVIMRC
     map <leader>s :source $MYVIMRC<esc>
@@ -40,6 +41,24 @@
 
     " Paste something
     map <leader>p :setlocal paste !<esc>
+
+    " Open file
+    nnoremap <Leader>o :CtrlP<CR>
+
+    " Save file
+    nnoremap <Leader>w :w<CR>
+
+    " Copy/Paste p/y
+    vmap <Leader>y "+y
+    vmap <Leader>d "+d
+    nmap <Leader>p "+p
+    nmap <Leader>P "+P
+    vmap <Leader>p "+p
+    vmap <Leader>P "+P
+
+    " Visual line mode
+    nmap <Leader><Leader> V
+
 
 " Navigation
     " Switch tabs easily

@@ -8,6 +8,7 @@
     background_image = None
     show_titlebar = False
     font = DejaVu Sans Mono 12
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
