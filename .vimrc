@@ -59,6 +59,8 @@
     " Visual line mode
     nmap <Leader><Leader> V
 
+    vmap v <Plug>(expand_region_expand)
+    vmap <C-v> <Plug>(expand_region_shrink)
 
 " Navigation
     " Switch tabs easily
@@ -96,6 +98,11 @@
 
     " Turn off search with Ctrl-H
     nmap <silent> <C-h> :silent noh<esc>
+    
+    " Super cool search function
+    vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+        \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+    omap s :normal vs<CR>
 
 " Backup and externals
     " Turn backup off, since most stuff is in git anyway
