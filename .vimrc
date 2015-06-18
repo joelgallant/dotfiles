@@ -47,25 +47,15 @@
 
     " Save file
     nnoremap <Leader>w :w<CR>
-
-    " Copy/Paste p/y
-    vmap <Leader>y "+y
-    vmap <Leader>d "+d
-    nmap <Leader>p "+p
-    nmap <Leader>P "+P
-    vmap <Leader>p "+p
-    vmap <Leader>P "+P
-
-    " Visual line mode
-    nmap <Leader><Leader> V
+    nnoremap <Leader>q :q<CR>
 
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
 
 " Navigation
     " Switch tabs easily
-    map <C-J> :bprev<esc>
-    map <C-K> :bnext<esc>
+    map <leader>j :bprev<esc>
+    map <leader>k :bnext<esc>
     map <C-Left> :tabprevious<esc>
     map <C-Right> :tabnext<esc>
     map <C-x> :bd<esc>
@@ -109,6 +99,7 @@
     set nobackup
     set nowb
     set noswapfile
+    set hidden
 
     " Save quickly
     nmap <leader>w :w!<esc>
