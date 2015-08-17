@@ -25,7 +25,7 @@
     let NERDTreeQuitOnOpen=1
 
 " Looks
-    colorscheme darkblue
+    colorscheme pablo
 
     " Show line number
     set number
@@ -111,9 +111,9 @@
     " Be smart when using tabs
     set smarttab
 
-    " 1 tab == 2 spaces
-    set shiftwidth=2
-    set tabstop=2
+    " 1 tab == 4 spaces
+    set shiftwidth=4
+    set tabstop=4
 
     " Smart indent
     set si
