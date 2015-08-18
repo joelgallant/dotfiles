@@ -101,6 +101,9 @@
     set noswapfile
     set hidden
 
+    " History is cheap
+    set history=200
+
     " Save quickly
     nmap <leader>w :w!<esc>
 
@@ -131,3 +134,19 @@
     map <leader>sp [s<esc>
     map <leader>sa zg<esc>
     map <leader>s? z=<esc>
+
+" Abbreviations
+    iab #i #include 
+    iab #d #define 
+    iab s struct 
+    iab t typedef 
+    iab teh the
+    iab erturn return
+    iab retrun return
+    iab seperate separate
+    iab i I
+    iab iv I've
+    iab il I'll
+    iab dont don't
+    iab waht what
+    iab tehn then

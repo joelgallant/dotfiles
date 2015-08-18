@@ -1,15 +1,24 @@
 export EDITOR=vim
 export TERMINAL=terminator
 export BROWSER=chromium
-# Gtk themes 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export PATH=$PATH:/home/joel/.gem/ruby/2.2.0/bin
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
 set -o vi
 eval "$(thefuck --alias fuck)"
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# device specific
 alias syncbb='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
 alias mountwindows='sudo mount /dev/sdb2 /media/windows'
 alias tracerconsole='sudo minicom -l'
