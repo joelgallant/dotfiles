@@ -54,14 +54,27 @@
 
 " Navigation
     " Switch tabs easily
-    map <leader>j :bprev<esc>
-    map <leader>k :bnext<esc>
-    map <C-Left> :tabprevious<esc>
-    map <C-Right> :tabnext<esc>
-    map <C-x> :bd<esc>
- 
-    " Open NERDTree
-    map <C-f> :NERDTreeToggle<esc>
+    map <leader>J :bprev<esc>
+    map <leader>K :bnext<esc>
+    map <tab>h :tabprevious<esc>
+    map <tab>l :tabnext<esc>
+    command! BW :bn|:bd#
+    map <leader>x :BW<esc>
+
+    set splitbelow
+    set splitright
+    nnoremap <C-n>n :split 
+    nnoremap <C-n>m :vsplit 
+    
+    " Switch between split windows
+    noremap <leader>h <C-w>h
+    noremap <leader>j <C-w>j
+    noremap <leader>k <C-w>k
+    noremap <leader>l <C-w>l
+    noremap <leader>+ :resize +5<esc>
+    noremap <leader>- :resize -5<esc>
+    noremap <leader>9 :vertical resize +5<esc>
+    noremap <leader>0 :vertical resize -5<esc>
 
     " Folding based on indents
     set foldmethod=indent
@@ -103,9 +116,6 @@
 
     " History is cheap
     set history=200
-
-    " Save quickly
-    nmap <leader>w :w!<esc>
 
 " Indents and  styling
     " Use spaces instead of tabs
@@ -150,3 +160,6 @@
     iab dont don't
     iab waht what
     iab tehn then
+
+" God damn Ex mode
+nnoremap Q <nop>
