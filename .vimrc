@@ -167,8 +167,6 @@
 " Abbreviations
     iab #i #include 
     iab #d #define 
-    iab s struct 
-    iab t typedef 
     iab teh the
     iab erturn return
     iab retrun return
