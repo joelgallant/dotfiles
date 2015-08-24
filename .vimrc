@@ -8,7 +8,7 @@
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-vinegar'
+    Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'bling/vim-airline'
     Plugin 'terryma/vim-expand-region'
@@ -189,7 +189,7 @@
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Start with directory when empty
-function InsertIfEmpty()
+function! InsertIfEmpty()
     if filereadable(@%) == 0
         " File doesn't exist yet
         Explore
