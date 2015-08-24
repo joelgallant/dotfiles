@@ -16,17 +16,17 @@
     Plugin 'wavded/vim-stylus'
     Plugin 'vim-scripts/AutoClose'
     Plugin 'nelstrom/vim-visual-star-search'
-    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'w0ng/vim-hybrid'
 
     call vundle#end()
     filetype plugin indent on
 
-    let g:airline#extensions#tabline#enabled = 1
-
 " Looks
-    let g:solarized_termcolors=256
-    colorscheme solarized
+    syntax enable
     set background=dark
+    colorscheme hybrid
+
+    let g:airline#extensions#tabline#enabled = 1
 
     " Show line number
     set number
@@ -60,6 +60,11 @@
     " v expands visual selection
     vmap v <Plug>(expand_region_expand)
     vmap <C-v> <Plug>(expand_region_shrink)
+
+    " go gives you newline without insert
+    map go O<esc>j
+
+    map <leader>c "+
 
 " Navigation
     " Switch buffers
@@ -152,7 +157,9 @@
     set formatoptions=1
     set linebreak
     set breakindent
-    set wrap
+    set nowrap
+    highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+    match OverLength /\%81v.*/
 
 " Spell Check
     " Spell check toggle ,ss
@@ -184,8 +191,6 @@
     map K <nop>
     " I've never needed this
     map q: <nop>
-    " go gives you newline without insert
-    map go O<esc>j
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown

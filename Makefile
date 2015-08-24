@@ -15,6 +15,7 @@ vimrc: FORCE
 
 vim: vimrc FORCE
 	git submodule update --init --recursive
+	cd vim/bundle/Vundle.vim && git checkout master
 	rm -f ~/.vim
 	ln -s ${dotfiles}/vim ~/.vim
 	vim -c "PluginUpdate"
