@@ -192,7 +192,7 @@
 function! InsertIfEmpty()
     if filereadable(@%) == 0
         " File doesn't exist yet
-        Explore
+        FileBeagle
     endif
 endfunction
 
