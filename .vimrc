@@ -187,3 +187,13 @@
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Start with directory when empty
+function InsertIfEmpty()
+    if filereadable(@%) == 0
+        " File doesn't exist yet
+        Explore
+    endif
+endfunction
+
+au VimEnter * call InsertIfEmpty()
