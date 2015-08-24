@@ -3,6 +3,7 @@ export TERMINAL=terminator
 export BROWSER=chromium
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export PATH=$PATH:/home/joel/.gem/ruby/2.2.0/bin
+export CDPATH=$CDPATH:~:~/dev
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
