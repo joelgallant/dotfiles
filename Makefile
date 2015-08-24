@@ -14,7 +14,6 @@ vimrc: FORCE
 	ln -s ${dotfiles}/.vimrc ~/.vimrc
 
 vim: FORCE
-	git submodule update --init --recursive
 	rm -f ~/.vim
 	ln -s ${dotfiles}/vim ~/.vim
 
