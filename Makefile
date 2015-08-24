@@ -13,9 +13,11 @@ vimrc: FORCE
 	rm -f ~/.vimrc
 	ln -s ${dotfiles}/.vimrc ~/.vimrc
 
-vim: FORCE
+vim: vimrc FORCE
+	git submodule update --init --recursive
 	rm -f ~/.vim
 	ln -s ${dotfiles}/vim ~/.vim
+	vim -c "PluginUpdate"
 
 pms: FORCE
 	mkdir -p ~/.config/PMS
