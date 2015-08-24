@@ -180,6 +180,8 @@
 " Misc
     " God damn Ex mode
     map Q <nop>
+    " F1 is good enough
+    map K <nop>
     " I've never needed this
     map q: <nop>
     " go gives you newline without insert
