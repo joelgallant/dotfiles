@@ -197,7 +197,7 @@
 
 " Start with directory when empty
 function! InsertIfEmpty()
-    if filereadable(@%) == 0
+    if line('$') == 1 && col('$') == 1 && @% == ""
         " File doesn't exist yet
         FileBeagle
     endif
