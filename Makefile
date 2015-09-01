@@ -6,7 +6,7 @@ dotfiles := $(realpath .)
 all: bashrc vimrc vim pms transmission user-dirs openbox terminator
 
 bashrc: FORCE
-	rm -f ~/.bashrc
+	rm -f ~/.bashrc ~/.speedswapper
 	ln -s ${dotfiles}/.bashrc ~/.bashrc
 	ln -s ${dotfiles}/.speedswapper ~/.speedswapper
 
