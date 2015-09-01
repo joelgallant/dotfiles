@@ -93,6 +93,9 @@
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
 
+    noremap <c-f> /\_^\w\+\s\(\w\+\:\:\)*\(<C-r><C-w>\)<CR>
+    noremap <c-d> /\_^\w\+\s\(\w\+\:\:\)*
+
     " Folding based on indents
     set foldmethod=indent
     set foldlevelstart=1
