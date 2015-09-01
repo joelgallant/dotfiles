@@ -4,13 +4,17 @@ export BROWSER=chromium
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export PATH=$PATH:/home/joel/.gem/ruby/2.2.0/bin
 export CDPATH=$CDPATH:~:~/dev
+export HISTCONTROL=ignoreboth:erasedups
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
-xmodmap ~/.speedswapper
+if [ ${CAPS_OFF} != 1 ]; then
+    xmodmap ~/.speedswapper
+    export CAPS_OFF=1
+fi
 
 eval "$(thefuck --alias fuck)"
 alias ls='ls --color=auto'
