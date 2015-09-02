@@ -67,6 +67,7 @@
     map go O<esc>j
 
     map <leader>c "+
+    map <leader>b :BufExplorer<CR>
 
 " Navigation
     " Switch buffers
