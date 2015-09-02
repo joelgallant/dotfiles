@@ -17,6 +17,7 @@
     Plugin 'vim-scripts/AutoClose'
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'w0ng/vim-hybrid'
+    Plugin 'jlanzarotta/bufexplorer'
 
     call vundle#end()
     filetype plugin indent on
@@ -55,6 +56,7 @@
     " Save file
     map <Leader>w :w<CR>
     map <Leader>q :q<CR>
+    map <Leader>Q :qa<CR>
     map <Leader>z :wq<CR>
 
     " v expands visual selection
@@ -93,12 +95,9 @@
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
 
-    noremap <c-f> /\_^\w\+\s\(\w\+\:\:\)*\(<C-r><C-w>\)<CR>
-    noremap <c-d> /\_^\w\+\s\(\w\+\:\:\)*
-
     " Folding based on indents
     set foldmethod=indent
-    set foldlevelstart=1
+    set foldlevelstart=4
 
     " Enter switches fold
     map <silent> <Return> @=(foldlevel('.')?'za':"\<Return\>")<CR>
