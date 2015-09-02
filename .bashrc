@@ -11,12 +11,8 @@ fi
 
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
-if [ ${CAPS_OFF} != 1 ]; then
-    xmodmap ~/.speedswapper
-    export CAPS_OFF=1
-fi
-
 eval "$(thefuck --alias fuck)"
+alias caps2esc='setxkbmap -option caps:escape'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ..='cd ..'
