@@ -16,7 +16,7 @@
     Plugin 'wavded/vim-stylus'
     Plugin 'vim-scripts/AutoClose'
     Plugin 'nelstrom/vim-visual-star-search'
-    Plugin 'w0ng/vim-hybrid'
+    Plugin 'christophermca/meta5'
     Plugin 'jlanzarotta/bufexplorer'
 
     call vundle#end()
@@ -25,7 +25,7 @@
 " Looks
     syntax enable
     set background=dark
-    colorscheme hybrid
+    colorscheme meta5
 
     let g:airline#extensions#tabline#enabled = 1
 
@@ -33,7 +33,6 @@
     set number
     set relativenumber
 
-    set ttyfast
     set list " Show invisible characters
     set listchars=tab:>-,trail:~,extends:>,precedes:<
 
@@ -66,6 +65,7 @@
     " go gives you newline without insert
     map go O<esc>j
 
+    " clipboard buffer access
     map <leader>c "+
     map <leader>b :BufExplorer<CR>
 
