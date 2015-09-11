@@ -65,6 +65,14 @@
     " go gives you newline without insert
     map go O<esc>j
 
+    " H goes to start of line
+    map H ^
+    " L goes to end of line
+    map L $
+
+    " * finds current, don't skip ahead please
+    map * *N
+
     " clipboard buffer access
     map <leader>c "+
     map <leader>b :BufExplorer<CR>
@@ -161,9 +169,9 @@
     set linebreak
     set breakindent
     set nowrap
-    highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-    match OverLength /\%81v.*/
 
+    highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+    match OverLength /\%80v.\+/
 " Spell Check
     " Spell check toggle ,ss
     map <leader>ss :setlocal spell ! spelllang=en_ca<CR>
