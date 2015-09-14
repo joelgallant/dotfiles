@@ -63,7 +63,7 @@
     vmap <C-v> <Plug>(expand_region_shrink)
 
     " go gives you newline without insert
-    map go O<esc>j
+    map go o<esc>k
 
     " H goes to start of line
     map H ^
