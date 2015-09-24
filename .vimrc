@@ -18,6 +18,7 @@
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'christophermca/meta5'
     Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'unblevable/quick-scope'
 
     call vundle#end()
     filetype plugin indent on
@@ -82,7 +83,7 @@
 
     " clipboard buffer access
     map <leader>c "+
-    map <leader>b :BufExplorer<CR>
+    map <leader>e :BufExplorer<CR>
 
 " Navigation
     " Switch buffers
@@ -110,6 +111,8 @@
     map <c-j> :resize -5<CR>
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
+
+    let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
     " Folding based on indents
     set foldmethod=indent
