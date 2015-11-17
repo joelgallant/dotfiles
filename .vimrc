@@ -19,6 +19,7 @@
     Plugin 'christophermca/meta5'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'unblevable/quick-scope'
+    Plugin 'tpope/vim-abolish'
 
     call vundle#end()
     filetype plugin indent on
@@ -107,8 +108,8 @@
     map <leader>j <C-w>j
     map <leader>k <C-w>k
     map <leader>l <C-w>l
-    map <c-k> :resize +5<CR>
-    map <c-j> :resize -5<CR>
+    map <c-k> :resize -5<CR>
+    map <c-j> :resize +5<CR>
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
 
@@ -179,9 +180,7 @@
     set linebreak
     set breakindent
     set nowrap
-
-    highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-    match OverLength /\%80v.\+/
+    set colorcolumn=80
 " Spell Check
     " Spell check toggle ,ss
     map <leader>ss :setlocal spell ! spelllang=en_ca<CR>
