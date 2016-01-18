@@ -2,8 +2,6 @@ export EDITOR=vim
 export TERMINAL=terminator
 export BROWSER=chromium
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export PATH=$PATH:/home/joel/.gem/ruby/2.2.0/bin
-export CDPATH=$CDPATH:~:~/dev
 export HISTCONTROL=ignoreboth:erasedups
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -11,7 +9,7 @@ fi
 
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
-eval "$(thefuck --alias fuck)"
+if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
 alias caps2esc='setxkbmap -option caps:escape'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -21,10 +19,10 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # device specific
-alias syncbb='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
-alias mountwindows='sudo mount /dev/sdb2 /media/windows'
+alias syncBB='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
 alias tracerconsole='sudo minicom -l'
-alias tracertelnet='telnet 10.0.0.3'
+alias tracertelnet='telnet 192.168.0.118'
+alias disableexternalmonitor='xrandr --auto --output HDMI1 --left-of eDP1'
 
 extract () {
    if [ -f $1 ] ; then

@@ -1,12 +1,14 @@
-(sleep 2 && /usr/bin/nm-applet --sm-disable) &
+# adjust to computer's screen outputs
+xrandr --auto --output HDMI1 --left-of eDP1 &
+feh --bg-fill ~/dotfiles/wallpaper.png &&
 
-compton -cCGb &
 tint2 &
-feh --bg-center /usr/share/wallpapers/the-archer-1920x1080.png &
-volumeicon &
-(sleep 2 && pulseaudio --start) &
-/usr/bin/xscreensaver -no-splash &
-(sleep 2 && conky) &
-redshift-gtk &
-setxkbmap us &
-/usr/bin/dropbox &
+conky &
+
+redshift -l 51.0486:-114.0708 &
+xscreensaver -no-splash &
+thunar --daemon &
+chromium --no-startup-window &
+setxkbmap -option caps:escape &&
+numlockx &&
+volti &

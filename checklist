@@ -1,0 +1,26 @@
+echo "exec openbox-session" > .xsession
+su; adduser joel sudo; exit
+mkdir documents downloads pictures dev libs
+
+sudo apt-get install openbox x-window-system python-pip git cmake make vim \
+terminator python2.7-dev python3-dev vlc chromium tint2 network-manager-gnome \
+volti conky redshift xscreensaver dmenu pm-utils thunar xarchiver gpicview \
+pavucontrol galculator transmission scrot libreoffice-calc gparted numlockx \
+lightdm vim-gtk feh nodejs nodejs-legacy npm
+
+sudo pip install thefuck
+sudo npm install plaidchat -g
+
+cd dev && git clone https://github.com/joelg236/dotfiles.git && cd dotfiles && \
+git submodule update --init --recursive && make all && cd ~
+
+cd libs && git clone https://github.com/Itseez/opencv.git && cd opencv && \
+mkdir build && cd build && cmake .. && sudo make install
+
+sudo dpkg --add-architecture i386
+
+echo "Next steps:"
+echo "    install firmware-iwlwifi if needed"
+echo "    github ssh setup https://help.github.com/articles/generating-ssh-keys/"
+echo "    adjust multimonitor support in openbox/autostart"
+echo "    choose best apt sources"

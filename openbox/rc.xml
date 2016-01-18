@@ -40,7 +40,7 @@ following: 'Mouse' - where the mouse is, or
 'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Carbon</name>
+    <name>Nightmare-02</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
 available characters are NDSLIMC, each can occur at most once.
@@ -262,15 +262,6 @@ cases. -->
         <desktop>yes</desktop>
       </action>
     </keybind>
-    <keybind key="S-A-q">
-      <action name="Execute">
-        <command>oblogout</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Logout</name>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>thunar</command>
@@ -308,29 +299,19 @@ cases. -->
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="W-v">
-      <action name="ToggleMaximizeVert"/>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>geany</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="W-l">
       <action name="Execute">
         <command>xscreensaver-command --lock</command>
       </action>
     </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>terminator --command=vim</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>vlc</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>VLC</name>
-        </startupnotify>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -388,22 +369,17 @@ cases. -->
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 2 +5%</command>
+        <command>pactl set-sink-volume 0 -- +5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 2 -5%</command>
+        <command>pactl set-sink-volume 0 -- -5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>pactl set-sink-mute 2 toggle</command>
-      </action>
-    </keybind>
-    <keybind key="XF86ScreenSaver">
-      <action name="Execute">
-        <command>slock</command>
+        <command>pactl set-sink-mute 0 toggle</command>
       </action>
     </keybind>
     <keybind key="XF86Sleep">
