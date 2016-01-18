@@ -47,7 +47,7 @@
         <item label="Slack">
             <action name="Execute">
                 <command>
-                    plaidchat
+                    plaidchat --minimize-to-tray --close-to-tray
                 </command>
             </action>
         </item>
