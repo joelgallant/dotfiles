@@ -16,7 +16,7 @@
 ##############################################
 background no
 use_xft yes
-xftfont Liberation Sans Mono:size=12
+xftfont Liberation Sans Mono:size=9
 xftalpha 1
 update_interval 2.0
 total_run_times 0
