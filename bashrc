@@ -20,7 +20,7 @@ alias .....='cd ../../../..'
 
 # device specific
 alias syncBB='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
-alias tracerconsole='sudo minicom -l'
+alias tracerconsole='sudo minicom -l -D /dev/ttyUSB0'
 alias tracertelnet='telnet 192.168.0.118'
 alias disableexternalmonitor='xrandr --auto --output HDMI1 --left-of eDP1'
 

@@ -16,7 +16,7 @@
 ##############################################
 background no
 use_xft yes
-xftfont Liberation Sans Mono:size=9
+xftfont Liberation Sans Mono:size=12
 xftalpha 1
 update_interval 2.0
 total_run_times 0
@@ -68,8 +68,14 @@ CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,80}
 ##
 E T H E R N E T
 ${hr}
-Upload: $alignr ${upspeed enp0s29u1u6}/s
-Download: $alignr ${downspeed enp0s29u1u6}/s
+Upload: $alignr ${upspeed eth0}/s
+Download: $alignr ${downspeed eth0}/s
+
+##
+W I F I
+${hr}
+Upload: $alignr ${upspeed wlan0}/s
+Download: $alignr ${downspeed wlan0}/s
 
 ##
 T O P   C P U   T A S K S
@@ -82,7 +88,6 @@ ${top name 4}${alignr}${top cpu 4}%
 S H O R T C U T    K E Y S
 ${hr}
 Alt+F2$alignr Run Dialog
-Alt+F3$alignr Alt Menu
 Super+Space$alignr Main Menu
 Super+t$alignr Terminal
 Super+f$alignr File Manager
@@ -91,5 +96,6 @@ Super+m$alignr Media Player
 Super+w$alignr Web Browser
 Super+h$alignr Task Manager
 Super+l$alignr Lock Screen
-Super+q$alignr Logout
+Super+q$alignr Shut Down
+Alt+Q$alignr   Log Off
 PrntScr$alignr Screenshot

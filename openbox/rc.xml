@@ -324,6 +324,15 @@ cases. -->
         <command>vlc</command>
       </action>
     </keybind>
+    <keybind key="W-h">
+      <action name="Execute">
+        <command>terminator --command=top</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Task Manager</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="W-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -343,15 +352,6 @@ cases. -->
     </keybind>
     <keybind key="W-Down">
       <action name="GrowToEdgeSouth"/>
-    </keybind>
-    <keybind key="W-h">
-      <action name="Execute">
-        <command>terminator --command="htop"</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Task Manager</name>
-        </startupnotify>
-      </action>
     </keybind>
     <keybind key="A-W-Up">
       <action name="MoveToEdgeNorth"/>
