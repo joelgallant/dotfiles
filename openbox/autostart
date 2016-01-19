@@ -3,7 +3,7 @@ xrandr --auto --output HDMI1 --left-of eDP1 &
 feh --bg-fill ~/dotfiles/wallpaper.png &&
 
 tint2 &
-conky &
+(sleep 2 && conky) &
 
 redshift -l 51.0486:-114.0708 &
 xscreensaver -no-splash &

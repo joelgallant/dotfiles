@@ -289,6 +289,16 @@ cases. -->
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="A-S-q">
+      <action name="Execute">
+        <command>openbox --exit</command>
+        <prompt>Are you sure you want to logout?</prompt>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Logout</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="W-q">
       <action name="Execute">
         <command>systemctl poweroff</command>

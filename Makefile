@@ -30,8 +30,8 @@ openbox: FORCE
 	ln -s ${dotfiles}/openbox ~/.config/openbox
 
 volti: FORCE
-	rm -rf ~/.config/volti/config
-	ln -s ${dotfiles}/volti/config ~/.config/volti/config
+	rm -rf ~/.config/volti
+	ln -s ${dotfiles}/volti ~/.config/volti
 
 tint2: FORCE
 	rm -rf ~/.config/tint2/tint2rc
@@ -42,18 +42,15 @@ xscreensaver: FORCE
 	ln -s ${dotfiles}/xscreensaver ~/.xscreensaver
 
 terminator: FORCE
-	mkdir -p ~/.config/terminator
-	rm -f ~/.config/terminator/config
-	ln -s ${dotfiles}/terminator/config ~/.config/terminator/config
+	rm -rf ~/.config/terminator
+	ln -s ${dotfiles}/terminator ~/.config/terminator
 
 pms: FORCE
-	mkdir -p ~/.config/PMS
-	rm -f ~/.config/PMS/PMS.conf
-	ln -s ${dotfiles}/PMS/PMS.conf ~/.config/PMS/PMS.conf
+	rm -rf ~/.config/PMS
+	ln -s ${dotfiles}/PMS ~/.config/PMS
 
 transmission: FORCE
-	mkdir -p ~/.config/transmission
-	rm -f ~/.config/transmission/settings.json
-	ln -s ${dotfiles}/transmission/settings.json ~/.config/transmission/settings.json
+	rm -rf ~/.config/transmission
+	ln -s ${dotfiles}/transmission ~/.config/transmission
 
 FORCE:
