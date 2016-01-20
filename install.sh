@@ -9,7 +9,7 @@ sudo apt-get install \
     chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
     libjpeg-dev mupdf
 
-sudo pip install thefuck
+sudo pip install thefuck matplotlib
 sudo npm install plaidchat -g
 
 cd dev && git clone https://github.com/joelg236/dotfiles.git && cd dotfiles && \
