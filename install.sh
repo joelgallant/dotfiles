@@ -3,7 +3,7 @@ mkdir ~/documents ~/downloads ~/pictures ~/dev ~/libs
 
 sudo apt-get install \
     openbox x-window-system lightdm tint2 conky feh redshift xscreensaver \
-    git cmake make vim vim-gtk terminator dmenu gparted numlockx \
+    git cmake make vim vim-gtk terminator dmenu gksu gparted numlockx \
     network-manager-gnome thunar volti pm-utils pavucontrol scrot \
     python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
     chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \

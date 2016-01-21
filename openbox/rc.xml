@@ -40,7 +40,7 @@ following: 'Mouse' - where the mouse is, or
 'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-02</name>
+    <name>Nightmare</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
 available characters are NDSLIMC, each can occur at most once.
