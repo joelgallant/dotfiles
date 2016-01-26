@@ -9,17 +9,18 @@ bashrc: FORCE
 tmux: FORCE
 	rm -f ~/.tmux.conf
 	ln -s ${dotfiles}/tmux.conf ~/.tmux.conf
-	git submodule update --init --recursive tmp
-	cd tmp && git checkout master
-	rm -rf ~/.tmux/plugins/tmp
-	ln -s ${dotfiles}/tmp ~/.tmux/plugins/tmp
+	git submodule update --init --recursive tpm/
+	cd tpm && git checkout master
+	mkdir -p ~/.tmux/plugins
+	rm -rf ~/.tmux/plugins/tpm
+	ln -s ${dotfiles}/tpm ~/.tmux/plugins/tpm
 
 vimrc: FORCE
 	rm -f ~/.vimrc
 	ln -s ${dotfiles}/vimrc ~/.vimrc
 
 vim: vimrc FORCE
-	git submodule update --init --recursive vim/bundle/Vundle.vim
+	git submodule update --init --recursive vim/bundle/Vundle.vim/
 	cd vim/bundle/Vundle.vim && git checkout master
 	rm -f ~/.vim
 	ln -s ${dotfiles}/vim ~/.vim
