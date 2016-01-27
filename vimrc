@@ -97,6 +97,9 @@
     command! BW :bn|:bd#
     map <leader>x :BW<CR>
 
+    set mouse=n
+    nnoremap <LeftMouse> <nop>
+
     " Open split with y or u
     set splitbelow
     set splitright
