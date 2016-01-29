@@ -2,15 +2,18 @@
 [keybindings]
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     background_image = None
     background_darkness = 0.93
     background_type = transparent
     use_system_font = False
     cursor_color = "#b9b9b9"
+    foreground_color = "#00d9f2"
     scroll_on_output = False
     show_titlebar = False
     font = DejaVu Sans Mono 12
+    background_color = "#001b22"
     scrollback_infinite = True
 [layouts]
   [[default]]
