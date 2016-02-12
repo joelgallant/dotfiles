@@ -10,7 +10,7 @@
     Plugin 'tpope/vim-commentary'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
     Plugin 'terryma/vim-expand-region'
     Plugin 'digitaltoad/vim-jade'
     Plugin 'wavded/vim-stylus'

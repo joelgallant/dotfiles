@@ -13,7 +13,7 @@
     scroll_on_output = False
     show_titlebar = False
     font = DejaVu Sans Mono 12
-    background_color = "#001b22"
+    background_color = "#000c0f"
     scrollback_infinite = True
 [layouts]
   [[default]]
