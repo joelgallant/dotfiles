@@ -115,6 +115,11 @@
     map <c-j> :resize +5<CR>
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
+    set term=cons25
+    inoremap <Up> <esc>
+    inoremap <Down> <esc>
+    inoremap <Left> <esc>
+    inoremap <Right> <esc>
 
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
