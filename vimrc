@@ -5,60 +5,51 @@
 
     Plugin 'tpope/vim-sensible'
     Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-endwise'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'jeetsukumaran/vim-filebeagle'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'terryma/vim-expand-region'
-    Plugin 'digitaltoad/vim-jade'
-    Plugin 'wavded/vim-stylus'
     Plugin 'vim-scripts/AutoClose'
-    Plugin 'nelstrom/vim-visual-star-search'
-    Plugin 'christophermca/meta5'
-    Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'terryma/vim-expand-region'
     Plugin 'unblevable/quick-scope'
-    Plugin 'tpope/vim-abolish'
+    Plugin 'nelstrom/vim-visual-star-search'
+    Plugin 'jeetsukumaran/vim-filebeagle'
+    Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'the31k/vim-colors-tayra'
 
     call vundle#end()
     filetype plugin indent on
 
 " Looks
     syntax enable
-    set background=dark
-    colorscheme meta5
+    colorscheme tayra
+    let g:airline_theme = 'wombat'
 
     let g:airline#extensions#tabline#enabled = 1
-
-    " Show line number
+    let g:airline#extensions#tabline#left_sep = ''
+    let g:airline#extensions#tabline#right_sep = ''
+    let g:airline_left_sep=''
+    let g:airline_right_sep=''
     set number
-    set relativenumber
-
     set list " Show invisible characters
     set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 " Shortcuts
     " I really like space as a leader
-    let mapleader = "\<Space>" 
+    let mapleader = "\<Space>"
 
     " Reloads the saved $MYVIMRC
     map <leader>s :source $MYVIMRC<CR>
 
-    " Opens $MYVIMRC for editing
-    map <leader>v :e $MYVIMRC<CR>
+    " e finds open buffers
+    map <leader>e :BufExplorer<CR>
 
     " Paste something
     map <leader>p :setlocal paste !<CR>
-
-    " Open file
-    map <Leader>o :CtrlP<CR>
 
     " Save file
     map <Leader>w :w<CR>
     map <Leader>q :q<CR>
     map <Leader>Q :qa<CR>
-    map <Leader>z :wq<CR>
 
     " v expands visual selection
     vmap v <Plug>(expand_region_expand)
@@ -67,9 +58,8 @@
     " go gives you newline without insert
     map go o<esc>k
 
-    " H goes to start of line
+    " H & L goes to start & end of line
     map H ^
-    " L goes to end of line
     map L $
 
     " K splits line, inverse of J
@@ -84,7 +74,6 @@
 
     " clipboard buffer access
     map <leader>c "+
-    map <leader>e :BufExplorer<CR>
 
 " Navigation
     " Switch buffers
@@ -115,12 +104,13 @@
     map <c-j> :resize +5<CR>
     map <c-h> :vertical resize +5<CR>
     map <c-l> :vertical resize -5<CR>
-    set term=cons25
+    " Stop doing that!
     inoremap <Up> <esc>
     inoremap <Down> <esc>
     inoremap <Left> <esc>
     inoremap <Right> <esc>
 
+    " star search
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
     " Folding based on indents
@@ -131,29 +121,19 @@
     map <silent> <Return> @=(foldlevel('.')?'za':"\<Return\>")<CR>
     set foldtext=""
 
-    " Set 7 lines to the cursor
+    " Center cursor
     set so=50
 
 " Searching
-    " Ignore case when searching
-    set ignorecase
-
-    " When searching try to be smart about cases 
+    " Case only matters when I ask
     set smartcase
 
-    " Highlight search results
+    " Highlight search results incrementally
     set hlsearch
-
-    " Show search as I'm typing
     set incsearch
 
-    " Turn off search with Ctrl-H
+    " Turn off search with g-h
     map gh :silent noh<CR>
-
-    " Super cool search function
-    vmap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-        \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-    omap s :normal vs<CR>
 
 " Backup and externals
     set hidden
@@ -173,22 +153,20 @@
     " Use spaces instead of tabs
     set expandtab
 
-    " Be smart when using tabs
+    " Be smart when using tabs/indents
     set smarttab
+    set smartindent
 
-    " 1 tab == 4 spaces
+    " 1 tab == 4 spaces, the only correct way
     set shiftwidth=4
     set tabstop=4
 
-    " Smart indent
-    set si
-
     " Wrap lines
     set formatoptions=1
-    set linebreak
     set breakindent
     set nowrap
     set colorcolumn=80
+
 " Spell Check
     " Spell check toggle ,ss
     map <leader>ss :setlocal spell ! spelllang=en_ca<CR>
@@ -200,8 +178,8 @@
     map <leader>s? z=<CR>
 
 " Abbreviations
-    iab #i #include 
-    iab #d #define 
+    iab #i #include
+    iab #d #define
     iab teh the
     iab erturn return
     iab retrun return
@@ -217,6 +195,11 @@
     map Q <nop>
     " I've never needed this
     map q: <nop>
+    " Hack for http://vim.wikia.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell
+    inoremap [A <nop>
+    inoremap [B <nop>
+    inoremap [C <nop>
+    inoremap [D <nop>
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown

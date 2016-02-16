@@ -7,7 +7,7 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+export PS1="\[\033[38;5;244m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[38;5;157m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
 alias caps2esc='setxkbmap -option caps:escape'
