@@ -8,7 +8,6 @@
     Plugin 'tpope/vim-endwise'
     Plugin 'vim-scripts/AutoClose'
     Plugin 'terryma/vim-expand-region'
-    Plugin 'unblevable/quick-scope'
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
