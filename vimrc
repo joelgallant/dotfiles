@@ -166,6 +166,7 @@
     set breakindent
     set nowrap
     set colorcolumn=80
+    highlight ColorColumn ctermbg=7
 
 " Spell Check
     " Spell check toggle ,ss
