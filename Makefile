@@ -14,6 +14,7 @@ tmux: FORCE
 	mkdir -p ~/.tmux/plugins
 	rm -rf ~/.tmux/plugins/tpm
 	ln -s ${dotfiles}/tpm ~/.tmux/plugins/tpm
+	/home/joel/.tmux/plugins/tpm/bin/update_plugins all
 
 vimrc: FORCE
 	rm -f ~/.vimrc
@@ -24,7 +25,7 @@ vim: vimrc FORCE
 	cd vim/bundle/Vundle.vim && git checkout master
 	rm -f ~/.vim
 	ln -s ${dotfiles}/vim ~/.vim
-	vim -c "PluginUpdate"
+	vim +PluginInstall +qall
 
 git: FORCE
 	rm -r ~/.gitconfig
