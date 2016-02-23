@@ -7,7 +7,7 @@ sudo apt-get install \
     network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
     python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
     chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
-    libjpeg-dev mupdf
+    libjpeg-dev mupdf xclip
 
 sudo pip install thefuck matplotlib
 sudo npm install plaidchat -g
