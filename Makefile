@@ -14,7 +14,7 @@ tmux: FORCE
 	mkdir -p ~/.tmux/plugins
 	rm -rf ~/.tmux/plugins/tpm
 	ln -s ${dotfiles}/tpm ~/.tmux/plugins/tpm
-	/home/joel/.tmux/plugins/tpm/bin/update_plugins all
+	~/.tmux/plugins/tpm/bin/install_plugins all
 
 vimrc: FORCE
 	rm -f ~/.vimrc
