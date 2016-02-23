@@ -11,6 +11,7 @@
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'the31k/vim-colors-tayra'
@@ -204,13 +205,4 @@
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Start with directory when empty
-function! InsertIfEmpty()
-    if line('$') == 1 && col('$') == 1 && @% == ""
-        " File doesn't exist yet
-        FileBeagle
-    endif
-endfunction
-
-au VimEnter * call InsertIfEmpty()
+    let g:startify_session_delete_buffers = 0
