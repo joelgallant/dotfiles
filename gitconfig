@@ -3,3 +3,5 @@
 	email = joelgallant236@gmail.com
 [push]
 	default = simple
+[alias]
+	changes = diff --submodule --color-words
