@@ -11,6 +11,7 @@
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'tpope/vim-obsession'
     Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
