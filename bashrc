@@ -7,6 +7,7 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+export PROMPT_DIRTRIM=3
 export PS1="\[\033[38;5;244m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[38;5;157m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]] \[$(tput sgr0)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
