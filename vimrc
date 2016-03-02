@@ -12,6 +12,7 @@
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'tpope/vim-obsession'
+    Plugin 'dhruvasagar/vim-prosession'
     Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
@@ -125,6 +126,9 @@
     " Center cursor
     set so=50
 
+    " filebeagle with -, startify with _
+    map _ :Startify<CR>
+
 " Searching
     " Case only matters when I ask
     set ignorecase
@@ -206,4 +210,4 @@
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    let g:startify_session_delete_buffers = 0
+    let g:startify_list_order = [['   Current directory:'], 'dir']
