@@ -22,7 +22,6 @@ alias externalmonitor='~/dotfiles/external_monitor.sh'
 # Path to your oh-my-zsh installation.
 export ZSH=/home/joel/.oh-my-zsh
 ZSH_THEME="Honukai"
-DISABLE_AUTO_TITLE="true"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
