@@ -6,6 +6,10 @@ bashrc: FORCE
 	rm -f ~/.bashrc
 	ln -s ${dotfiles}/bashrc ~/.bashrc
 
+zshrc: FORCE
+	rm -f ~/.zsh
+	ln -s ${dotfiles}/zsh ~/.zsh
+
 tmux: FORCE
 	rm -f ~/.tmux.conf
 	ln -s ${dotfiles}/tmux.conf ~/.tmux.conf
