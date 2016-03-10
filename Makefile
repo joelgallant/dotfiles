@@ -7,8 +7,8 @@ bashrc: FORCE
 	ln -s ${dotfiles}/bashrc ~/.bashrc
 
 zshrc: FORCE
-	rm -f ~/.zsh
-	ln -s ${dotfiles}/zsh ~/.zsh
+	rm -f ~/.zshrc
+	ln -s ${dotfiles}/zshrc ~/.zshrc
 
 tmux: FORCE
 	rm -f ~/.tmux.conf
