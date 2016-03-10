@@ -5,3 +5,7 @@
 	default = simple
 [alias]
 	changes = diff --submodule --color-words
+[pager]
+	diff = true
+[core]
+	pager = less -F -X -R
