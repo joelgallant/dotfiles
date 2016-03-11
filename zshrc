@@ -25,6 +25,6 @@ ZSH_THEME="fishy"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git tmux vi-mode)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
