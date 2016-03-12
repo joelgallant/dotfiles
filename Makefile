@@ -1,6 +1,6 @@
 dotfiles := $(realpath .)
 
-all: bashrc tmux vim git conky user-dirs openbox volti tint2 xscreensaver terminator pms transmission
+all: bashrc zshrc tmux vim git conky user-dirs openbox volti tint2 terminator pms transmission
 
 bashrc: FORCE
 	rm -f ~/.bashrc
@@ -54,10 +54,6 @@ volti: FORCE
 tint2: FORCE
 	rm -rf ~/.config/tint2/tint2rc
 	ln -s ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
-
-xscreensaver: FORCE
-	rm -f ~/.xscreensaver
-	ln -s ${dotfiles}/xscreensaver ~/.xscreensaver
 
 terminator: FORCE
 	rm -rf ~/.config/terminator
