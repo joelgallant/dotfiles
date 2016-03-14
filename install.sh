@@ -7,9 +7,10 @@ sudo apt-get install \
     network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
     python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
     chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
-    libjpeg-dev mupdf xclip zsh
+    libjpeg-dev mupdf xclip zsh curl
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which bash)
 sudo pip install thefuck matplotlib
 sudo npm install plaidchat -g
 
