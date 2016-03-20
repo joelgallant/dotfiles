@@ -39,7 +39,7 @@ openbox: FORCE
 
 volti: FORCE
 	mkdir -p ~/.config/volti
-	ln -fs ${dotfiles}/volti/config ~/.config/volti/config
+	ln -fs ${dotfiles}/volti ~/.config/volti/config
 
 tint2: FORCE
 	ln -fs ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
