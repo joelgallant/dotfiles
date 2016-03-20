@@ -3,68 +3,54 @@ dotfiles := $(realpath .)
 all: bashrc zshrc tmux vim git conky user-dirs openbox volti tint2 terminator pms transmission
 
 bashrc: FORCE
-	rm -f ~/.bashrc
-	ln -s ${dotfiles}/bashrc ~/.bashrc
+	ln -fs ${dotfiles}/bashrc ~/.bashrc
 
 zshrc: FORCE
-	rm -f ~/.zshrc
-	ln -s ${dotfiles}/zshrc ~/.zshrc
+	ln -fs ${dotfiles}/zshrc ~/.zshrc
 
 tmux: FORCE
-	rm -f ~/.tmux.conf
-	ln -s ${dotfiles}/tmux.conf ~/.tmux.conf
+	ln -fs ${dotfiles}/tmux.conf ~/.tmux.conf
 	git submodule update --init --recursive tpm/
 	cd tpm && git checkout master
 	mkdir -p ~/.tmux/plugins
-	rm -rf ~/.tmux/plugins/tpm
-	ln -s ${dotfiles}/tpm ~/.tmux/plugins/tpm
+	ln -fs ${dotfiles}/tpm ~/.tmux/plugins/tpm
 	~/.tmux/plugins/tpm/bin/install_plugins all
 
 vimrc: FORCE
-	rm -f ~/.vimrc
-	ln -s ${dotfiles}/vimrc ~/.vimrc
+	ln -fs ${dotfiles}/vimrc ~/.vimrc
 
 vim: vimrc FORCE
 	git submodule update --init --recursive vim/bundle/Vundle.vim/
-	cd vim/bundle/Vundle.vim && git checkout master
-	rm -f ~/.vim
-	ln -s ${dotfiles}/vim ~/.vim
+	cd vim/bundle/Vundle.vim && git checkout master && git pull
+	ln -fs ${dotfiles}/vim ~/.vim
 	vim +PluginInstall +qall
 
 git: FORCE
-	rm -r ~/.gitconfig
-	ln -s ${dotfiles}/gitconfig ~/.gitconfig
+	ln -fs ${dotfiles}/gitconfig ~/.gitconfig
 
 conky: FORCE
-	rm -f ~/.conkyrc
-	ln -s ${dotfiles}/conkyrc ~/.conkyrc
+	ln -fs ${dotfiles}/conkyrc ~/.conkyrc
 
 user-dirs: FORCE
-	rm -f ~/.config/user-dirs.dirs
-	ln -s ${dotfiles}/user-dirs.dirs ~/.config/user-dirs.dirs
+	ln -fs ${dotfiles}/user-dirs.dirs ~/.config/user-dirs.dirs
 
 openbox: FORCE
-	rm -rf ~/.config/openbox
-	ln -s ${dotfiles}/openbox ~/.config/openbox
+	ln -fs ${dotfiles}/openbox ~/.config/openbox
 
 volti: FORCE
-	rm -rf ~/.config/volti
-	ln -s ${dotfiles}/volti ~/.config/volti
+	mkdir -p ~/.config/volti
+	ln -fs ${dotfiles}/volti/config ~/.config/volti/config
 
 tint2: FORCE
-	rm -rf ~/.config/tint2/tint2rc
-	ln -s ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
+	ln -fs ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
 
 terminator: FORCE
-	rm -rf ~/.config/terminator
-	ln -s ${dotfiles}/terminator ~/.config/terminator
+	ln -fs ${dotfiles}/terminator ~/.config/terminator
 
 pms: FORCE
-	rm -rf ~/.config/PMS
-	ln -s ${dotfiles}/PMS ~/.config/PMS
+	ln -fs ${dotfiles}/PMS ~/.config/PMS
 
 transmission: FORCE
-	rm -rf ~/.config/transmission
-	ln -s ${dotfiles}/transmission ~/.config/transmission
+	ln -fs ${dotfiles}/transmission ~/.config/transmission
 
 FORCE:
