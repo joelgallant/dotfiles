@@ -3,54 +3,54 @@ dotfiles := $(realpath .)
 all: bashrc zshrc tmux vim git conky user-dirs openbox volti tint2 terminator pms transmission
 
 bashrc: FORCE
-	ln -fs ${dotfiles}/bashrc ~/.bashrc
+	ln -fsn ${dotfiles}/bashrc ~/.bashrc
 
 zshrc: FORCE
-	ln -fs ${dotfiles}/zshrc ~/.zshrc
+	ln -fsn ${dotfiles}/zshrc ~/.zshrc
 
 tmux: FORCE
-	ln -fs ${dotfiles}/tmux.conf ~/.tmux.conf
+	ln -fsn ${dotfiles}/tmux.conf ~/.tmux.conf
 	git submodule update --init --recursive tpm/
 	cd tpm && git checkout master
 	mkdir -p ~/.tmux/plugins
-	ln -fs ${dotfiles}/tpm ~/.tmux/plugins/tpm
+	ln -fsn ${dotfiles}/tpm ~/.tmux/plugins/tpm
 	~/.tmux/plugins/tpm/bin/install_plugins all
 
 vimrc: FORCE
-	ln -fs ${dotfiles}/vimrc ~/.vimrc
+	ln -fsn ${dotfiles}/vimrc ~/.vimrc
 
 vim: vimrc FORCE
 	git submodule update --init --recursive vim/bundle/Vundle.vim/
 	cd vim/bundle/Vundle.vim && git checkout master && git pull
-	ln -fs ${dotfiles}/vim ~/.vim
+	ln -fsn ${dotfiles}/vim ~/.vim
 	vim +PluginInstall +qall
 
 git: FORCE
-	ln -fs ${dotfiles}/gitconfig ~/.gitconfig
+	ln -fsn ${dotfiles}/gitconfig ~/.gitconfig
 
 conky: FORCE
-	ln -fs ${dotfiles}/conkyrc ~/.conkyrc
+	ln -fsn ${dotfiles}/conkyrc ~/.conkyrc
 
 user-dirs: FORCE
-	ln -fs ${dotfiles}/user-dirs.dirs ~/.config/user-dirs.dirs
+	ln -fsn ${dotfiles}/user-dirs.dirs ~/.config/user-dirs.dirs
 
 openbox: FORCE
-	ln -fs ${dotfiles}/openbox ~/.config/openbox
+	ln -fsn ${dotfiles}/openbox ~/.config/openbox
 
 volti: FORCE
 	mkdir -p ~/.config/volti
-	ln -fs ${dotfiles}/volti ~/.config/volti/config
+	ln -fsn ${dotfiles}/volti ~/.config/volti/config
 
 tint2: FORCE
-	ln -fs ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
+	ln -fsn ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
 
 terminator: FORCE
-	ln -fs ${dotfiles}/terminator ~/.config/terminator
+	ln -fsn ${dotfiles}/terminator ~/.config/terminator
 
 pms: FORCE
-	ln -fs ${dotfiles}/PMS ~/.config/PMS
+	ln -fsn ${dotfiles}/PMS ~/.config/PMS
 
 transmission: FORCE
-	ln -fs ${dotfiles}/transmission ~/.config/transmission
+	ln -fsn ${dotfiles}/transmission ~/.config/transmission
 
 FORCE:
