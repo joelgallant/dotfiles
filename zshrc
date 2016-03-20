@@ -17,7 +17,6 @@ alias .....='cd ../../../..'
 alias syncBB='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
 alias tracerconsole='sudo minicom -l -D /dev/ttyUSB0'
 alias tracertelnet='telnet 192.168.0.118'
-alias externalmonitor='~/dotfiles/external_monitor.sh'
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/joel/.oh-my-zsh
