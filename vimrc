@@ -191,8 +191,6 @@
     iab erturn return
     iab retrun return
     iab seperate separate
-    iab iv I've
-    iab il I'll
     iab dont don't
     iab waht what
     iab tehn then
