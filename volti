@@ -5,7 +5,7 @@ mask_lock = 0
 [global]
 mixer_show_values = 1
 scale_increment = 5.0
-card_index = 1
+card_index = 0
 icon_theme = Faenza
 scale_show_value = 1
 mixer = pavucontrol

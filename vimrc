@@ -11,8 +11,6 @@
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
-    Plugin 'tpope/vim-obsession'
-    Plugin 'dhruvasagar/vim-prosession'
     Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
@@ -209,3 +207,12 @@
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     let g:startify_list_order = [['   Current directory:'], 'dir']
+    let g:startify_custom_header = [
+            \ '                               ',
+            \ '            __                 ',
+            \ '    __  __ /\_\    ___ ___     ',
+            \ '   /\ \/\ \\/\ \ /'' __` __`\  ',
+            \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \  ',
+            \ '    \ \___/  \ \_\ \_\ \_\ \_\ ',
+            \ '     \/__/    \/_/\/_/\/_/\/_/ ',
+            \ ]
