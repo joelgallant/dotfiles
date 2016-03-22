@@ -10,6 +10,7 @@
     Plugin 'terryma/vim-expand-region'
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'airblade/vim-gitgutter'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'mhinz/vim-startify'
