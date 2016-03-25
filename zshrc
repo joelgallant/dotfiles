@@ -7,6 +7,7 @@ export HISTCONTROL=ignoreboth:erasedups
 if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
 alias caps2esc='setxkbmap -option caps:escape'
 alias grep='grep --color=auto'
+alias tmux='tmux -2'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
