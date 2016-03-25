@@ -28,3 +28,5 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
+
+if [ "$TMUX" = "" ]; then (tmux a || tmux new); fi
