@@ -10,7 +10,6 @@ sudo apt-get install \
     libjpeg-dev mupdf xclip zsh curl
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s $(which bash)
 sudo pip install thefuck matplotlib
 sudo npm install plaidchat -g
 
