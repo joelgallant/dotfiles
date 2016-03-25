@@ -1,11 +1,23 @@
 [user]
-	name = Joel Gallant
-	email = joelgallant236@gmail.com
+    name = Joel Gallant
+    email = joelgallant236@gmail.com
 [push]
-	default = simple
-[alias]
-	changes = diff --submodule --color-words
+    default = simple
 [pager]
-	diff = true
+    diff = true
 [core]
-	pager = less -F -X -R
+    pager = less -F -X -R
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    df = diff
+    dc = diff --cached
+    lg = log -p
+    pr = pull --rebase
+    gr = log --all --graph --decorate --oneline
