@@ -1,56 +1,101 @@
-dotfiles := $(realpath .)
+dotfiles := $(shell pwd)
 
-all: bashrc zshrc tmux vim git conky user-dirs openbox volti tint2 terminator pms transmission
+all: \
+	zsh oh-my-zsh \
+	tmux tpm \
+	vim vundle \
+	git conky user-dirs openbox volti tint2 terminator pms transmission
 
-bashrc: FORCE
-	ln -fsn ${dotfiles}/bashrc ~/.bashrc
+update: oh-my-zsh-update tpm-update vundle-update
+	cd $(dotfiles) && git pull origin master
 
-zshrc: FORCE
-	ln -fsn ${dotfiles}/zshrc ~/.zshrc
+zsh: oh-my-zsh $(HOME)/.zshrc
+$(HOME)/.zshrc:
+	ln -fsn $(dotfiles)/zshrc $(HOME)/.zshrc
 
-tmux: FORCE
-	ln -fsn ${dotfiles}/tmux.conf ~/.tmux.conf
-	git submodule update --init --recursive tpm/
-	cd tpm && git checkout master
-	mkdir -p ~/.tmux/plugins
-	ln -fsn ${dotfiles}/tpm ~/.tmux/plugins/tpm
-	~/.tmux/plugins/tpm/bin/install_plugins all
+oh-my-zsh: $(HOME)/.oh-my-zsh
+$(HOME)/.oh-my-zsh:
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-vimrc: FORCE
-	ln -fsn ${dotfiles}/vimrc ~/.vimrc
+oh-my-zsh-update:
+	cd $(ZSH) && git pull --rebase origin master
 
-vim: vimrc FORCE
-	git submodule update --init --recursive vim/bundle/Vundle.vim/
-	cd vim/bundle/Vundle.vim && git checkout master && git pull
-	ln -fsn ${dotfiles}/vim ~/.vim
+tmux: tpm $(HOME)/.tmux.conf
+$(HOME)/.tmux.conf:
+	ln -fsn $(dotfiles)/tmux.conf $(HOME)/.tmux.conf
+
+tpm: $(HOME)/.tmux/plugins/tpm
+$(HOME)/.tmux/plugins/tpm:
+	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
+	$(HOME)/.tmux/plugins/tpm/bin/install_plugins all
+
+tpm-update: tpm
+	$(HOME)/.tmux/plugins/tpm/bin/update_plugins all
+
+vim: vundle $(HOME)/.vimrc
+$(HOME)/.vimrc:
+	ln -fsn $(dotfiles)/vimrc $(HOME)/.vimrc
+
+vundle: $(HOME)/.vim/bundle/Vundle.vim
+$(HOME)/.vim/bundle/Vundle.vim:
+	mkdir -p $(HOME)/.vim/bundle
+	git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
 
-git: FORCE
-	ln -fsn ${dotfiles}/gitconfig ~/.gitconfig
+vundle-update:
+	vim +PluginUpdate +qall
 
-conky: FORCE
-	ln -fsn ${dotfiles}/conkyrc ~/.conkyrc
+git: $(HOME)/.gitconfig
+$(HOME)/.gitconfig:
+	ln -fsn $(dotfiles)/gitconfig $(HOME)/.gitconfig
 
-user-dirs: FORCE
-	ln -fsn ${dotfiles}/user-dirs.dirs ~/.config/user-dirs.dirs
+conky: $(HOME)/.conkyrc
+$(HOME)/.conkyrc:
+	ln -fsn $(dotfiles)/conkyrc $(HOME)/.conkyrc
 
-openbox: FORCE
-	ln -fsn ${dotfiles}/openbox ~/.config/openbox
+user-dirs: $(HOME)/.config/user-dirs.dirs
+$(HOME)/.config/user-dirs.dirs:
+	mkdir -p ~/documents ~/downloads ~/dev ~/libs ~/music ~/pictures ~/videos
+	ln -fsn $(dotfiles)/user-dirs.dirs $(HOME)/.config/user-dirs.dirs
 
-volti: FORCE
-	mkdir -p ~/.config/volti
-	ln -fsn ${dotfiles}/volti ~/.config/volti/config
+openbox: $(HOME)/.config/openbox
+$(HOME)/.config/openbox:
+	ln -fsn $(dotfiles)/openbox $(HOME)/.config/openbox
 
-tint2: FORCE
-	ln -fsn ${dotfiles}/tint2rc ~/.config/tint2/tint2rc
+volti: $(HOME)/.config/volti/config
+$(HOME)/.config/volti/config:
+	mkdir -p $(HOME)/.config/volti
+	ln -fsn $(dotfiles)/volti $(HOME)/.config/volti/config
 
-terminator: FORCE
-	ln -fsn ${dotfiles}/terminator ~/.config/terminator
+tint2: $(HOME)/.config/tint2/tint2rc
+$(HOME)/.config/tint2/tint2rc:
+	ln -fsn $(dotfiles)/tint2rc $(HOME)/.config/tint2/tint2rc
 
-pms: FORCE
-	ln -fsn ${dotfiles}/PMS ~/.config/PMS
+terminator: $(HOME)/.config/terminator
+$(HOME)/.config/terminator:
+	mkdir -p $(HOME)/.config/terminator
+	ln -fsn $(dotfiles)/terminator $(HOME)/.config/terminator/config
 
-transmission: FORCE
-	ln -fsn ${dotfiles}/transmission ~/.config/transmission
+transmission: $(HOME)/.config/transmission/settings.json
+$(HOME)/.config/transmission/settings.json:
+	mkdir -p $(HOME)/.config/transmission
+	ln -fsn $(dotfiles)/transmission.json $(HOME)/.config/transmission/settings.json
 
-FORCE:
+install:
+	echo "exec openbox-session" > ~/.xsession
+	sudo apt-get install \
+		openbox x-window-system lightdm tint2 conky feh redshift xscreensaver \
+		git cmake make gdb vim vim-gtk tmux terminator dmenu tree gksu gparted numlockx \
+		network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
+		python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
+		chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
+		libjpeg-dev mupdf xclip zsh curl
+	sudo pip install thefuck matplotlib
+	sudo npm install plaidchat -g
+
+.PHONY: \
+	zsh oh-my-zsh oh-my-zsh-update \
+	tmux tpm tpm-update \
+	vim vundle vundle-update \
+	git conky user-dirs openbox volti tint2 terminator pms transmission \
+	install
