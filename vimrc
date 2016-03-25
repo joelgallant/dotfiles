@@ -11,7 +11,7 @@
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'tpope/vim-fugitive'
-    Plugin 'jeetsukumaran/vim-filebeagle'
+    Plugin 'tpope/vim-vinegar'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
@@ -126,8 +126,8 @@
     " Center cursor
     set so=50
 
-    " filebeagle with -, startify with _
     map _ :Startify<CR>
+    map - :e .<CR>
 
 " Searching
     " Case only matters when I ask
@@ -140,6 +140,8 @@
 
     " Turn off search with g-h
     map gh :silent noh<CR>
+
+    set wildmode=full
 
 " Backup and externals
     set hidden
@@ -209,6 +211,7 @@
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     let g:gitgutter_map_keys = 0
+    let g:startify_change_to_vcs_root = 1
     let g:startify_list_order = [['   Current directory:'], 'dir']
     let g:startify_custom_header = [
             \ '                               ',
@@ -218,4 +221,5 @@
             \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \  ',
             \ '    \ \___/  \ \_\ \_\ \_\ \_\ ',
             \ '     \/__/    \/_/\/_/\/_/\/_/ ',
+            \ '                               ',
             \ ]
