@@ -22,6 +22,7 @@ alias sync-blackberry='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/mu
 # Path to your oh-my-zsh installation.
 export ZSH=/home/joel/.oh-my-zsh
 ZSH_THEME="sunaku"
+CASE_SENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git tmux)
