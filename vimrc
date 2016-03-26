@@ -16,6 +16,7 @@
     Plugin 'mhinz/vim-startify'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'digitaltoad/vim-pug'
     Plugin 'the31k/vim-colors-tayra'
 
     call vundle#end()
