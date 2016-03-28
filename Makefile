@@ -15,7 +15,8 @@ $(HOME)/.zshrc:
 
 oh-my-zsh: $(HOME)/.oh-my-zsh
 $(HOME)/.oh-my-zsh:
-	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	rm ~/.zshrc
 
 oh-my-zsh-update:
 	cd $(ZSH) && git pull --rebase origin master
@@ -36,7 +37,7 @@ vim: vundle $(HOME)/.vimrc
 $(HOME)/.vimrc:
 	ln -fsn $(dotfiles)/vimrc $(HOME)/.vimrc
 
-vundle: $(HOME)/.vim/bundle/Vundle.vim
+vundle: $(HOME)/.vimrc $(HOME)/.vim/bundle/Vundle.vim
 $(HOME)/.vim/bundle/Vundle.vim:
 	mkdir -p $(HOME)/.vim/bundle
 	git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim
@@ -69,6 +70,7 @@ $(HOME)/.config/volti/config:
 
 tint2: $(HOME)/.config/tint2/tint2rc
 $(HOME)/.config/tint2/tint2rc:
+	mkdir -p $(HOME)/.config/tint2
 	ln -fsn $(dotfiles)/tint2rc $(HOME)/.config/tint2/tint2rc
 
 terminator: $(HOME)/.config/terminator
@@ -80,6 +82,13 @@ transmission: $(HOME)/.config/transmission/settings.json
 $(HOME)/.config/transmission/settings.json:
 	mkdir -p $(HOME)/.config/transmission
 	ln -fsn $(dotfiles)/transmission.json $(HOME)/.config/transmission/settings.json
+
+clean:
+	rm -rf $(HOME)/.zshrc $(HOME)/.oh-my-zsh $(ZSH) $(HOME)/.tmux.conf \
+		$(HOME)/.tmux/plugins $(HOME)/.vimrc $(HOME)/.vim/bundle \
+		$(HOME)/.gitconfig $(HOME)/.conkyrc $(HOME)/.config/user-dirs.dirs \
+		$(HOME)/.config/openbox $(HOME)/.config/volti $(HOME)/.config/tint2 \
+		$(HOME)/.config/terminator $(HOME)/.config/transmission
 
 install:
 	echo "exec openbox-session" > ~/.xsession
@@ -98,4 +107,4 @@ install:
 	tmux tpm tpm-update \
 	vim vundle vundle-update \
 	git conky user-dirs openbox volti tint2 terminator pms transmission \
-	install
+	clean install
