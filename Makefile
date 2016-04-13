@@ -101,6 +101,7 @@ install:
 		libjpeg-dev mupdf xclip zsh curl
 	sudo pip install thefuck matplotlib
 	sudo npm install plaidchat -g
+	sudo gem install tmuxinator
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
