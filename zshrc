@@ -8,6 +8,7 @@ if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
 alias caps2esc='setxkbmap -option caps:escape'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
+alias mux='tmuxinator'
 
 # device specific
 alias sync-blackberry='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
@@ -21,6 +22,7 @@ ZSH_THEME="sunaku"
 CASE_SENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_AUTO_TITLE="true"
 plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
