@@ -30,6 +30,7 @@
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#left_sep = ''
     let g:airline#extensions#tabline#right_sep = ''
+    let g:airline#extensions#tabline#fnamemod = ':t'
     let g:airline_left_sep=''
     let g:airline_right_sep=''
     set number
@@ -211,6 +212,7 @@
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    set autochdir
     let g:gitgutter_map_keys = 0
     let g:startify_change_to_vcs_root = 1
     let g:startify_list_order = [['   Current directory:'], 'dir']
