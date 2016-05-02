@@ -133,7 +133,6 @@
 
 " Searching
     " Case only matters when I ask
-    set ignorecase
     set smartcase
 
     " Highlight search results incrementally
