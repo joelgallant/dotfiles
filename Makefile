@@ -98,7 +98,7 @@ install:
 		network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
 		python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
 		chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
-		libjpeg-dev mupdf xclip zsh curl
+		libjpeg-dev mupdf xclip zsh curl ruby
 	sudo pip install thefuck matplotlib
 	sudo npm install plaidchat -g
 	sudo gem install tmuxinator
