@@ -8,6 +8,7 @@
     Plugin 'tpope/vim-endwise'
     Plugin 'vim-scripts/AutoClose'
     Plugin 'terryma/vim-expand-region'
+    Plugin 'tpope/vim-repeat'
     Plugin 'nelstrom/vim-visual-star-search'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'tpope/vim-fugitive'
