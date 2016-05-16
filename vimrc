@@ -172,7 +172,7 @@
     set tabstop=4
 
     " Wrap lines
-    set formatoptions=1
+    set formatoptions+=1
     set breakindent
     set nowrap
     highlight ColorColumn ctermbg=gray
