@@ -15,8 +15,6 @@ alias sync-blackberry='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/mu
 
 # 256 color mode
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
-setopt noincappendhistory
-setopt nosharehistory
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/joel/.oh-my-zsh
@@ -28,3 +26,5 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
+
+setopt nosharehistory
