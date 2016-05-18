@@ -135,6 +135,7 @@
 " Searching
     " Case only matters when I ask
     set smartcase
+    set ignorecase
 
     " Highlight search results incrementally
     set hlsearch
