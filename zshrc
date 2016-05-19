@@ -4,7 +4,6 @@ export BROWSER=chromium
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export HISTCONTROL=ignoreboth:erasedups
 
-if [ $(which thefuck) ]; then eval "$(thefuck --alias fuck)"; fi
 alias caps2esc='setxkbmap -option caps:escape'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
