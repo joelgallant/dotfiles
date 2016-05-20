@@ -122,7 +122,7 @@
 
     " Folding based on indents
     set foldmethod=indent
-    set foldlevelstart=4
+    set foldlevelstart=99
 
     " Enter switches fold
     map <silent> <Return> @=(foldlevel('.')?'za':"\<Return\>")<CR>
