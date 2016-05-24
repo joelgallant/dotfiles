@@ -9,9 +9,6 @@ alias grep='grep --color=auto'
 alias tmux='tmux -2'
 alias mux='tmuxinator'
 
-# device specific
-alias sync-blackberry='sudo rsync -rtzuv --no-p --no-o --delete /home/storage/music/ /run/media/joel/5502-3AFE/music'
-
 # 256 color mode
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
