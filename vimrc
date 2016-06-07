@@ -70,7 +70,7 @@
     map L $
 
     " K splits line, inverse of J
-    noremap K i<CR><esc>
+    noremap K i<CR><esc>k:s/\s\+$//e<CR>j
 
     " * finds current, don't skip ahead please
     nmap * *N<esc>
