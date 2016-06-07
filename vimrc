@@ -70,11 +70,7 @@
     map L $
 
     " K splits line, inverse of J
-    function! BreakHere()
-        s/^\(\s*\)\(.\{-}\)\(\s*\)\(\%#\)\(\s*\)\(.*\)/\1\2\r\1\4\6
-        call histdel("/", -1)
-    endfunction
-    noremap K :call BreakHere()<CR>
+    noremap K i<CR><esc>
 
     " * finds current, don't skip ahead please
     map * *N
