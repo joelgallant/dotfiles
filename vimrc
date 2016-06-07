@@ -73,7 +73,8 @@
     noremap K i<CR><esc>
 
     " * finds current, don't skip ahead please
-    map * *N
+    nmap * *N<esc>
+    vmap * y/<C-R>"<CR>N<esc>
 
     " clipboard buffer access
     map <leader>c "+
