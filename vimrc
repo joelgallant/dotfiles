@@ -151,6 +151,7 @@
     set directory=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
     set backup
     set backupdir=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
+    set viminfo+=n~/.vim/viminfo
 
     if has('persistent_undo')
         set undodir=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
