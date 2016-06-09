@@ -79,6 +79,9 @@
     " clipboard buffer access
     map <leader>c "+
 
+    let @r = 'n.'
+    nmap ! 100@r
+
 " Navigation
     " Switch buffers
     map <leader>J :bprev<CR>
