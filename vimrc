@@ -179,7 +179,7 @@
     set formatoptions+=1
     set breakindent
     set nowrap
-    highlight ColorColumn ctermbg=gray
+    highlight ColorColumn ctermbg=236
     set colorcolumn=80
 
 " Spell Check
