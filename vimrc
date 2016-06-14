@@ -80,7 +80,7 @@
     map <leader>c "+
 
     let @r = 'n.'
-    nmap ! 100@r
+    nmap ! mm100@r'm
 
 " Navigation
     " Switch buffers
