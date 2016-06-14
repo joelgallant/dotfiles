@@ -20,15 +20,15 @@
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'digitaltoad/vim-pug'
-    Plugin 'the31k/vim-colors-tayra'
+    Plugin 'joshdick/onedark.vim'
 
     call vundle#end()
     filetype plugin indent on
 
 " Looks
     syntax enable
-    colorscheme tayra
-    let g:airline_theme = 'wombat'
+    colorscheme onedark
+    let g:airline_theme = 'bubblegum'
 
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#left_sep = ''
