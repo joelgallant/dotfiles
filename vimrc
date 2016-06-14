@@ -74,7 +74,7 @@
 
     " * finds current, don't skip ahead please
     nmap * *N<esc>
-    vmap * y/<C-R>"<CR>N<esc>
+    vmap * y/<C-R>"<CR>N
 
     " clipboard buffer access
     map <leader>c "+
