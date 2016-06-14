@@ -82,6 +82,8 @@
     let @r = 'n.'
     nmap ! mm100@r'm
 
+    nmap \ zcD
+
 " Navigation
     " Switch buffers
     map <leader>J :bprev<CR>
