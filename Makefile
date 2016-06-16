@@ -101,6 +101,7 @@ install:
 		libjpeg-dev mupdf xclip zsh curl ruby
 	sudo pip install matplotlib
 	sudo npm install plaidchat -g
+	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
 
 .PHONY: \

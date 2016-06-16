@@ -6,7 +6,7 @@
 [pager]
     diff = true
 [core]
-    pager = less -F -X -R
+    pager = diff-so-fancy | less --tabs=4 -RFX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [color]
     ui = auto
