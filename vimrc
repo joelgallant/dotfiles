@@ -176,6 +176,7 @@
     " 1 tab == 4 spaces, the only correct way
     set shiftwidth=4
     set tabstop=4
+    au FileType javascript setl sw=2 ts=2 et
 
     " Wrap lines
     set formatoptions+=1
