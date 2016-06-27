@@ -9,6 +9,7 @@
     Plugin 'wellle/targets.vim'
     Plugin 'vim-scripts/AutoClose'
     Plugin 'terryma/vim-expand-region'
+    Plugin 'unblevable/quick-scope'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-commentary'
     Plugin 'nelstrom/vim-visual-star-search'
