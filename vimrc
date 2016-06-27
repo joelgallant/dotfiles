@@ -10,6 +10,7 @@
     Plugin 'vim-scripts/AutoClose'
     Plugin 'terryma/vim-expand-region'
     Plugin 'unblevable/quick-scope'
+    Plugin 'michaeljsmith/vim-indent-object'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-commentary'
     Plugin 'nelstrom/vim-visual-star-search'
@@ -82,8 +83,6 @@
 
     let @r = 'n.'
     nmap ! mm100@r'm
-
-    nmap \ zcD
 
 " Navigation
     " Switch buffers
