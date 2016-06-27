@@ -20,14 +20,14 @@
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'digitaltoad/vim-pug'
-    Plugin 'joshdick/onedark.vim'
+    Plugin 'juanedi/predawn.vim'
 
     call vundle#end()
     filetype plugin indent on
 
 " Looks
     syntax enable
-    colorscheme onedark
+    colorscheme predawn
     let g:airline_theme = 'bubblegum'
 
     let g:airline#extensions#tabline#enabled = 1
