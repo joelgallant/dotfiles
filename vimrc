@@ -22,14 +22,14 @@
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'digitaltoad/vim-pug'
-    Plugin 'juanedi/predawn.vim'
+    Plugin 'the31k/vim-colors-tayra'
 
     call vundle#end()
     filetype plugin indent on
 
 " Looks
     syntax enable
-    colorscheme predawn
+    colorscheme tayra
     let g:airline_theme = 'bubblegum'
 
     let g:airline#extensions#tabline#enabled = 1
