@@ -21,3 +21,5 @@
     lg = log -p
     pr = pull --rebase
     gr = log --all --graph --decorate --oneline
+[credential]
+    helper = cache
