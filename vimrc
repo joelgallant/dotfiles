@@ -72,8 +72,8 @@
     map L $
 
     " Wrap-independant movement
-    onoremap <silent> j gj
-    onoremap <silent> k gk
+    nmap <silent> j gj
+    nmap <silent> k gk
 
     " K splits line, inverse of J
     noremap K i<CR><esc>k:s/\s\+$//e<CR>j:noh<CR>
