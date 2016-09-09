@@ -137,6 +137,7 @@
 
     " Center cursor
     set so=5
+    set cursorline
 
     map _ :Startify<CR>
     map - :e .<CR>
