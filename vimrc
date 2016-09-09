@@ -136,7 +136,7 @@
     set foldtext=""
 
     " Center cursor
-    set so=50
+    set so=5
 
     map _ :Startify<CR>
     map - :e .<CR>
