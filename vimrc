@@ -3,6 +3,7 @@
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
 
+    " Vim stuff
     Plugin 'tpope/vim-sensible'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-endwise'
@@ -12,18 +13,27 @@
     Plugin 'unblevable/quick-scope'
     Plugin 'michaeljsmith/vim-indent-object'
     Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'nelstrom/vim-visual-star-search'
+    Plugin 'bronson/vim-visual-star-search'
+
+    " Git
     Plugin 'airblade/vim-gitgutter'
     Plugin 'tpope/vim-fugitive'
+
+    " Files & buffers
     Plugin 'tpope/vim-vinegar'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'mhinz/vim-startify'
+
+    " Theming
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'the31k/vim-colors-tayra'
+
+    " Language specific
     Plugin 'digitaltoad/vim-pug'
     Plugin 'rust-lang/rust.vim'
-    Plugin 'the31k/vim-colors-tayra'
+    Plugin 'vim-ruby/vim-ruby'
+    Plugin 'tpope/vim-rails'
 
     call vundle#end()
     filetype plugin indent on
