@@ -23,5 +23,6 @@ plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="$PATH:$HOME/.rvm/bin"
 setopt nosharehistory
 set -o vi 

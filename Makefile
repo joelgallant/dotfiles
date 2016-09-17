@@ -98,11 +98,14 @@ install:
 		network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
 		python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
 		chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
-		libjpeg-dev mupdf xclip zsh curl ruby
+		libjpeg-dev mupdf xclip zsh curl
 	sudo pip install matplotlib
 	sudo npm install plaidchat -g
 	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
+	curl -sSL https://get.rvm.io | bash
+	rvm install ruby-head
+	rvm use ruby-head
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
