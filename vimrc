@@ -236,7 +236,7 @@
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     nnoremap <C-LeftMouse> <nop>
-    set autochdir
+    set noautochdir
     let g:gitgutter_map_keys = 0
     let g:startify_change_to_vcs_root = 1
     let g:startify_list_order = [['   Current directory:'], 'dir']
