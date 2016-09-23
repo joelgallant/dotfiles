@@ -24,3 +24,4 @@ plugins=(git tmux)
 source $ZSH/oh-my-zsh.sh
 
 setopt nosharehistory
+set -o vi 
