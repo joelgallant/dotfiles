@@ -22,6 +22,7 @@
     " Files & buffers
     Plugin 'tpope/vim-vinegar'
     Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'mhinz/vim-startify'
 
     " Theming
