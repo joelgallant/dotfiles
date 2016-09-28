@@ -103,9 +103,7 @@ install:
 	sudo npm install plaidchat -g
 	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
-	curl -sSL https://get.rvm.io | bash
-	rvm install ruby-head
-	rvm use ruby-head
+	curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
