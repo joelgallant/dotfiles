@@ -104,6 +104,7 @@ install:
 	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
 	curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
+	curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
