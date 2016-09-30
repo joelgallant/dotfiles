@@ -21,5 +21,9 @@
     lg = log -p
     pr = pull --rebase
     gr = log --all --graph --decorate --oneline
+    please = push --force-with-lease
+    stsh = stash --keep-index
+    staash = stash --include-untracked
+    staaash = stash --all
 [credential]
     helper = cache
