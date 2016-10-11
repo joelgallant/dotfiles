@@ -152,6 +152,7 @@
 
     map _ :Startify<CR>
     map - :e .<CR>
+    let g:netrw_liststyle=3
 
 " Searching
     " Case only matters when I ask
