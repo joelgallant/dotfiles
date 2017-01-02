@@ -15,19 +15,21 @@ $(HOME)/.zshrc:
 
 oh-my-zsh: $(HOME)/.oh-my-zsh
 $(HOME)/.oh-my-zsh:
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
-	rm ~/.zshrc
+	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+	bash install.sh
+	rm install.sh ~/.zshrc
 
 oh-my-zsh-update:
 	cd $(ZSH) && git pull --rebase origin master
 
-tmux: tpm $(HOME)/.tmux.conf
+tmux: $(HOME)/.tmux.conf
 $(HOME)/.tmux.conf:
 	ln -fsn $(dotfiles)/tmux.conf $(HOME)/.tmux.conf
 
-tpm: $(HOME)/.tmux/plugins/tpm
+tpm: tmux $(HOME)/.tmux/plugins/tpm
 $(HOME)/.tmux/plugins/tpm:
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
+	tmux source $(HOME)/.tmux.conf
 	$(HOME)/.tmux/plugins/tpm/bin/install_plugins all
 
 tpm-update: tpm
@@ -56,7 +58,7 @@ $(HOME)/.conkyrc:
 
 user-dirs: $(HOME)/.config/user-dirs.dirs
 $(HOME)/.config/user-dirs.dirs:
-	mkdir -p ~/documents ~/downloads ~/dev ~/libs ~/music ~/pictures ~/videos
+	mkdir -p ~/documents ~/downloads ~/dev ~/libs ~/music ~/pictures ~/videos $(HOME)/.config
 	ln -fsn $(dotfiles)/user-dirs.dirs $(HOME)/.config/user-dirs.dirs
 
 openbox: $(HOME)/.config/openbox
@@ -104,7 +106,8 @@ install:
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 	sudo npm install plaidchat -g
 	sudo npm install diff-so-fancy -g
-	sudo gem install tmuxinator
+	echo "export rvmsudo_secure_path=1" >> ~/.bashrc
+	rvmsudo gem install tmuxinator
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
