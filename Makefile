@@ -15,7 +15,7 @@ $(HOME)/.zshrc:
 
 oh-my-zsh: $(HOME)/.oh-my-zsh
 $(HOME)/.oh-my-zsh:
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
 	rm ~/.zshrc
 
 oh-my-zsh-update:
@@ -94,17 +94,18 @@ install:
 	echo "exec openbox-session" > ~/.xsession
 	sudo apt-get install \
 		openbox x-window-system lightdm tint2 conky feh redshift xscreensaver \
-		git cmake make gdb vim vim-gtk tmux terminator dmenu tree gksu gparted numlockx \
+		cmake gdb vim vim-gtk tmux terminator dmenu tree gksu gparted numlockx \
 		network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
-		python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
-		chromium vlc xarchiver gpicview galculator transmission libreoffice-calc \
-		libjpeg-dev mupdf xclip zsh curl
+		zsh python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
+		chromium vlc xarchiver gpicview galculator transmission \
+		libreoffice-calc libreoffice-writer mupdf xclip curl
+	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+	curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
+	curl https://sh.rustup.rs -sSf | sh -s -- -y
 	sudo pip install matplotlib
 	sudo npm install plaidchat -g
 	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
-	curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
-	curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 .PHONY: \
 	zsh oh-my-zsh oh-my-zsh-update \
