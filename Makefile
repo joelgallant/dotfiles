@@ -102,7 +102,6 @@ install:
 	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 	curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
-	sudo pip install matplotlib
 	sudo npm install plaidchat -g
 	sudo npm install diff-so-fancy -g
 	sudo gem install tmuxinator
