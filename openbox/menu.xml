@@ -44,29 +44,41 @@
                 </command>
             </action>
         </item>
-        <item label="Slack">
-            <action name="Execute">
-                <command>
-                    plaidchat --minimize-to-tray --close-to-tray
-                </command>
-            </action>
-        </item>
         <separator/>
-        <menu id="accessories" label="Accessories">
-            <item label="Archive Manager">
+        <menu id="utilities" label="Utilities">
+            <item label="Slack">
+                <action name="Execute">
+                    <command>
+                        plaidchat --minimize-to-tray --close-to-tray
+                    </command>
+                </action>
+            </item>
+            <item label="Transmission">
+                <action name="Execute">
+                    <command>transmission-gtk</command>
+                </action>
+            </item>
+            <item label="Archive">
                 <action name="Execute">
                     <command>
                         xarchiver
                     </command>
                 </action>
             </item>
-            <item label="Task Manager (htop)">
+            <item label="Task Manager">
                 <action name="Execute">
                     <command>terminator --command=&quot;htop&quot;</command>
                 </action>
             </item>
         </menu>
-        <menu id="graphics" label="Graphics">
+        <menu id="media" label="Media">
+            <item label="GIMP">
+                <action name="Execute">
+                    <command>
+                        gimp
+                    </command>
+                </action>
+            </item>
             <item label="Image Viewer">
                 <action name="Execute">
                     <command>
@@ -74,15 +86,6 @@
                     </command>
                 </action>
             </item>
-      <item label="Screenshot">
-        <action name="Execute">
-          <command>
-            scrot -s '/home/joel/pictures/%Y-%m-%d-%H:%m-screenshot.png'
-          </command>
-        </action>
-      </item>
-        </menu>
-        <menu id="multimedia" label="Multimedia">
             <item label="VLC Media Player">
                 <action name="Execute">
                     <command>
@@ -90,18 +93,18 @@
                     </command>
                 </action>
             </item>
-            <item label="Volume Control">
+            <item label="Clementine">
                 <action name="Execute">
                     <command>
-                        pavucontrol
+                        clementine
                     </command>
                 </action>
             </item>
-        </menu>
-        <menu id="network" label="Network">
-            <item label="Transmission BitTorrent Client">
+            <item label="Screenshot">
                 <action name="Execute">
-                    <command>transmission-gtk</command>
+                    <command>
+                        scrot -s '/home/joel/pictures/%Y-%m-%d-%H:%m-screenshot.png'
+                    </command>
                 </action>
             </item>
         </menu>
@@ -110,6 +113,13 @@
                 <action name="Execute">
                     <command>
                         libreoffice --calc
+                    </command>
+                </action>
+            </item>
+            <item label="Libreoffice Writer">
+                <action name="Execute">
+                    <command>
+                        libreoffice --writer
                     </command>
                 </action>
             </item>
@@ -124,14 +134,6 @@
         <separator/>
         <menu id="settings" label="Settings">
             <menu id="obConfig" label="Openbox">
-                <item label="GUI Config Tool">
-                    <action name="Execute">
-                        <command>
-                            obconf
-                        </command>
-                    </action>
-                </item>
-                <separator/>
                 <item label="Reconfigure">
                     <action name="Reconfigure"/>
                 </item>
@@ -139,16 +141,45 @@
                     <action name="Restart"/>
                 </item>
             </menu>
-            <item label="Screensaver">
+            <separator/>
+            <item label="openbox">
                 <action name="Execute">
                     <command>
-                        xscreensaver-demo
+                        obconf
+                    </command>
+                </action>
+            </item>
+            <item label="tint2">
+                <action name="Execute">
+                    <command>
+                        tint2conf
+                    </command>
+                </action>
+            </item>
+            <item label="xscreensaver">
+                <action name="Execute">
+                    <command>
+                        xscreensaver-command -pref
                     </command>
                 </action>
             </item>
         </menu>
         <menu id="system" label="System">
-            <item label="GParted">
+            <item label="sound">
+                <action name="Execute">
+                    <command>
+                        pavucontrol
+                    </command>
+                </action>
+            </item>
+            <item label="network">
+                <action name="Execute">
+                    <command>
+                        nm-connection-editor
+                    </command>
+                </action>
+            </item>
+            <item label="gparted">
                 <action name="Execute">
                     <command>
                         gksu gparted
@@ -157,14 +188,14 @@
             </item>
         </menu>
         <separator/>
-        <item label="Lock Screen">
+        <item label="Lock">
             <action name="Execute">
                 <command>
                     xscreensaver-command --lock
                 </command>
             </action>
         </item>
-        <item label="Exit Openbox">
+        <item label="Log Off">
             <action name="Execute">
                 <execute>
                     openbox --exit
@@ -172,6 +203,18 @@
                 <prompt>Are you sure you want to exit openbox?</prompt>
                 <startupnotify>
                     <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Reboot">
+            <action name="Execute">
+                <command>
+                    systemctl reboot
+                </command>
+                <prompt>Are you sure you want to reboot?</prompt>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                    <name>Reboot system</name>
                 </startupnotify>
             </action>
         </item>
