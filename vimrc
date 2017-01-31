@@ -168,6 +168,8 @@
 
     set wildmode=full
 
+    let g:ctrlp_custom_ignore = 'build\|.git'
+
 " Backup and externals
     set hidden
     set swapfile
