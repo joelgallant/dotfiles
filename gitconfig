@@ -26,4 +26,4 @@
     staash = stash --include-untracked
     staaash = stash --all
 [credential]
-    helper = cache
+	helper = cache --timeout 86400
