@@ -14,6 +14,7 @@
     Plugin 'michaeljsmith/vim-indent-object'
     Plugin 'tpope/vim-repeat'
     Plugin 'bronson/vim-visual-star-search'
+    Plugin 'kana/vim-operator-user'
 
     " Git
     Plugin 'airblade/vim-gitgutter'
@@ -35,6 +36,7 @@
     Plugin 'rust-lang/rust.vim'
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-rails'
+    Plugin 'rhysd/vim-clang-format'
 
     call vundle#end()
     filetype plugin indent on
@@ -96,6 +98,32 @@
 
     " clipboard buffer access
     map <leader>c "+
+
+    autocmd FileType c,cpp,objc nnoremap <buffer><C-f> :<C-u>ClangFormat<CR>zz
+    autocmd FileType c,cpp,objc vnoremap <buffer><C-f> :ClangFormat<CR>zz
+
+    " Highlight all instances of word under cursor, when idle.
+    " Useful when studying strange source code.
+    " Type C-g to toggle highlighting on/off.
+    nnoremap <C-g> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+    function! AutoHighlightToggle()
+      let @/ = ''
+      if exists('#auto_highlight')
+        au! auto_highlight
+        augroup! auto_highlight
+        setl updatetime=4000
+        echo 'Highlight current word: off'
+        return 0
+      else
+        augroup auto_highlight
+          au!
+          au CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+        augroup end
+        setl updatetime=500
+        echo 'Highlight current word: ON'
+        return 1
+      endif
+    endfunction
 
     let @r = 'n.'
     nmap ! mm100@r'm
@@ -242,6 +270,7 @@
     nnoremap <C-LeftMouse> <nop>
     set noautochdir
     let g:gitgutter_map_keys = 0
+    let g:clang_format#command = 'clang-format-3.5'
     let g:startify_change_to_vcs_root = 1
     let g:startify_list_order = [['   Current directory:'], 'dir']
     let g:startify_custom_header = [
