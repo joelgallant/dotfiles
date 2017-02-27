@@ -7,7 +7,9 @@ export HISTCONTROL=ignoreboth:erasedups
 alias caps2esc='setxkbmap -option caps:escape'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
+alias t='tmux'
 alias mux='tmuxinator'
+alias vi='vi .'
 
 # 256 color mode
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
