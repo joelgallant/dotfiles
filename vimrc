@@ -37,6 +37,8 @@
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-rails'
     Plugin 'rhysd/vim-clang-format'
+    Plugin 'keith/swift.vim'
+    Plugin 'editorconfig/editorconfig-vim'
 
     call vundle#end()
     filetype plugin indent on
@@ -182,6 +184,27 @@
     map - :e .<CR>
     let g:netrw_liststyle=3
 
+    " Toggle Vexplore with Ctrl-E
+    function! ToggleVExplorer()
+      if exists("t:expl_buf_num")
+          let expl_win_num = bufwinnr(t:expl_buf_num)
+          if expl_win_num != -1
+              let cur_win_nr = winnr()
+              exec expl_win_num . 'wincmd w'
+              close
+              exec cur_win_nr . 'wincmd w'
+              unlet t:expl_buf_num
+          else
+              unlet t:expl_buf_num
+          endif
+      else
+          exec '1wincmd w'
+          Vexplore
+          let t:expl_buf_num = bufnr("%")
+      endif
+    endfunction
+    map <silent> <C-e> :call ToggleVExplorer()<CR>
+
 " Searching
     " Case only matters when I ask
     set smartcase
@@ -224,7 +247,6 @@
     " 1 tab == 4 spaces, the only correct way
     set shiftwidth=4
     set tabstop=4
-    au FileType javascript setl sw=2 ts=2 et
 
     " Wrap lines
     set formatoptions+=1
