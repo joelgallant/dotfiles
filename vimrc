@@ -33,6 +33,7 @@
 
     " Language specific
     Plugin 'digitaltoad/vim-pug'
+    Bundle 'yalesov/vim-emblem'
     Plugin 'rust-lang/rust.vim'
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-rails'
