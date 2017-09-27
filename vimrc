@@ -34,6 +34,7 @@
     " Language specific
     Plugin 'digitaltoad/vim-pug'
     Bundle 'yalesov/vim-emblem'
+    Plugin 'mustache/vim-mustache-handlebars'
     Plugin 'rust-lang/rust.vim'
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-rails'
@@ -287,6 +288,7 @@
     inoremap [B <nop>
     inoremap [C <nop>
     inoremap [D <nop>
+    let g:mustache_abbreviations = 1
     " json
     autocmd BufNewFile,BufRead *.json setf javascript
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
