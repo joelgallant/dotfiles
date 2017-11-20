@@ -41,6 +41,8 @@
     Plugin 'rhysd/vim-clang-format'
     Plugin 'keith/swift.vim'
     Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'posva/vim-vue'
 
     call vundle#end()
     filetype plugin indent on

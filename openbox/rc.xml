@@ -273,7 +273,7 @@ cases. -->
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>firefox</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Web Browser</name>
