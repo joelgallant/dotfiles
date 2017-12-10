@@ -32,7 +32,6 @@
     Plugin 'the31k/vim-colors-tayra'
 
     " Language specific
-    Plugin 'digitaltoad/vim-pug'
     Bundle 'yalesov/vim-emblem'
     Plugin 'mustache/vim-mustache-handlebars'
     Plugin 'rust-lang/rust.vim'
@@ -43,6 +42,9 @@
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'pangloss/vim-javascript'
     Plugin 'posva/vim-vue'
+    Plugin 'digitaltoad/vim-pug'
+    Plugin 'groenewege/vim-less'
+    Plugin 'leafgarland/typescript-vim'
 
     call vundle#end()
     filetype plugin indent on
@@ -223,7 +225,7 @@
 
     set wildmode=full
 
-    let g:ctrlp_custom_ignore = 'build\|.git'
+    let g:ctrlp_custom_ignore = 'build\|.git\|node_modules'
 
 " Backup and externals
     set hidden
