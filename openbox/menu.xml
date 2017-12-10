@@ -16,10 +16,17 @@
                 </command>
             </action>
         </item>
-        <item label="Web Browser">
+        <item label="Firefox">
             <action name="Execute">
                 <command>
-                    chromium
+                    firefox
+                </command>
+            </action>
+        </item>
+        <item label="Chrome">
+            <action name="Execute">
+                <command>
+                    google-chrome-beta
                 </command>
             </action>
         </item>
@@ -27,13 +34,6 @@
             <action name="Execute">
                 <command>
                     thunar
-                </command>
-            </action>
-        </item>
-        <item label="Text Editor">
-            <action name="Execute">
-                <command>
-                    terminator --command=vim
                 </command>
             </action>
         </item>
@@ -46,13 +46,6 @@
         </item>
         <separator/>
         <menu id="utilities" label="Utilities">
-            <item label="Slack">
-                <action name="Execute">
-                    <command>
-                        plaidchat --minimize-to-tray --close-to-tray
-                    </command>
-                </action>
-            </item>
             <item label="Transmission">
                 <action name="Execute">
                     <command>transmission-gtk</command>
