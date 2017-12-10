@@ -48,6 +48,14 @@ $(HOME)/.vim/bundle/Vundle.vim:
 vundle-update:
 	vim +PluginUpdate +qall
 
+nvim: $(HOME)/.config/nvim
+$(HOME)/.config/nvim:
+	ln -fsn $(dotfiles)/nvim $(HOME)/.config/nvim
+
+plug: nvim $(HOME)/.local/share/nvim/site/autoload/plug.vim
+$(HOME)/.local/share/nvim/site/autoload/plug.vim:
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 git: $(HOME)/.gitconfig
 $(HOME)/.gitconfig:
 	ln -fsn $(dotfiles)/gitconfig $(HOME)/.gitconfig
@@ -96,7 +104,7 @@ install:
 	echo "exec openbox-session" > ~/.xsession
 	sudo apt-get install \
 		openbox x-window-system lightdm tint2 conky feh redshift xscreensaver \
-		cmake gdb vim vim-gtk tmux terminator dmenu tree gksu gparted numlockx \
+		cmake gdb vim vim-gtk neovim tmux terminator dmenu tree gksu gparted numlockx \
 		network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
 		zsh python-pip python2.7-dev python3-dev nodejs nodejs-legacy npm \
 		chromium vlc xarchiver gpicview galculator transmission \
