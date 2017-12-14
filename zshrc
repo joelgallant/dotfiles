@@ -9,6 +9,7 @@ alias grep='grep --color=auto'
 alias tmux='tmux -2'
 alias t='tmux'
 alias mux='tmuxinator'
+alias vim='nvim'
 alias vi='nvim .'
 
 # 256 color mode
