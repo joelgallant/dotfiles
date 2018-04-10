@@ -42,6 +42,7 @@
 
   call plug#end()
 
+  set backupcopy=yes
 " Looks
   syntax enable
   colorscheme tayra
@@ -284,6 +285,7 @@
   let g:mustache_abbreviations = 1
   autocmd BufNewFile,BufRead *.json setf javascript
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  autocmd FileType vue syntax sync fromstart
   nnoremap <C-LeftMouse> <nop>
   set noautochdir
   let g:gitgutter_map_keys = 0
