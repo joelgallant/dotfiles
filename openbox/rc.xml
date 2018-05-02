@@ -370,7 +370,7 @@ cases. -->
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -s /home/joel/pictures/%Y-%m-%d-%H:%m-screenshot.png</command>
+        <command>scrot -s /home/joel/pictures/%Y-%m-%d-%s-screenshot.png</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Screenshot</name>
