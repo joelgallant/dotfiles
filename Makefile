@@ -7,7 +7,7 @@ install:
 		fish tmux tree gksu curl neovim \
 		python3-pip openjdk-10-jdk \
 		numlockx xclip \
-		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp \
+		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp
 	sudo usermod -s /usr/bin/fish joel
 
 all: fish fzf tpm plug git conky user-dirs openbox volti tint2 terminator transmission rust-tools yarn rvm go pipenv
