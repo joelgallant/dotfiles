@@ -1,14 +1,12 @@
-# adjust to computer's screen outputs
-xrandr --auto --output HDMI1 --left-of eDP1 &
-feh --bg-fill ~/dotfiles/wallpaper.png &&
+#!/bin/bash
+setxkbmap -option caps:escape &
+numlockx &
 
+feh --bg-fill /home/joel/dotfiles/wallpaper.png &
 tint2 &
 (sleep 2 && conky) &
 
 redshift -l 51.0486:-114.0708 &
 xscreensaver -no-splash &
 thunar --daemon &
-chromium --no-startup-window &
-setxkbmap -option caps:escape &&
-numlockx &&
 volti &

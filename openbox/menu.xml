@@ -86,13 +86,6 @@
                     </command>
                 </action>
             </item>
-            <item label="Clementine">
-                <action name="Execute">
-                    <command>
-                        clementine
-                    </command>
-                </action>
-            </item>
             <item label="Screenshot">
                 <action name="Execute">
                     <command>

@@ -228,6 +228,16 @@ cases. -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+    <keybind key="W-A-Left">
+      <action name="Execute">
+        <command>monitor on</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-Down">
+      <action name="Execute">
+        <command>monitor off</command>
+      </action>
+    </keybind>
     <keybind key="A-q">
       <action name="Close"/>
     </keybind>
@@ -277,6 +287,15 @@ cases. -->
         <startupnotify>
           <enabled>yes</enabled>
           <name>Web Browser</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-n">
+      <action name="Execute">
+        <command>google-chrome www.netflix.com</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Netflix</name>
         </startupnotify>
       </action>
     </keybind>
@@ -370,7 +389,7 @@ cases. -->
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -s /home/joel/pictures/%Y-%m-%d-%s-screenshot.png</command>
+        <command>scrot -s /home/joel/pictures/%Y-%m-%d-%H:%m-screenshot.png</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Screenshot</name>
@@ -379,17 +398,27 @@ cases. -->
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 0 -- +5%</command>
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 0 -- -5%</command>
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>pactl set-sink-mute 0 toggle</command>
+      </action>
+    </keybind>
+    <keybind key="F8">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+      </action>
+    </keybind>
+    <keybind key="F7">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
       </action>
     </keybind>
     <keybind key="XF86Sleep">

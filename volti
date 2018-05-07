@@ -11,7 +11,7 @@ scale_show_value = 1
 mixer = pavucontrol
 show_tooltip = 1
 notify_position = 0
-keys = 0
+keys = 1
 toggle = mixer
 mixer_internal = 0
 notify_body = <span font_desc="14" weight="bold">{volume}</span>

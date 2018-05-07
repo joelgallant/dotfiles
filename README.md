@@ -1,17 +1,10 @@
-# dotfiles
-My configuration files for various applications
+My configuration files, meant for installing on latest debian
 
-    # prep for a new install
-    su
-    apt-get install sudo
-    adduser joel sudo
-    exit
-    sudo apt-get install git make
-    git clone https://github.com/joelgallant/dotfiles.git
-    cd dotfiles
+    sudo apt install git make
+    git clone https://github.com/joelgallant/dotfiles && cd dotfiles
 
-    sudo make install # for new systems, installs packages
-    make all # sets up syslinks for configuration files
-    make update # updates system
+    # for new systems, installs packages
+    sudo make init
 
-See makefile for more targets
+    # sets up symlinks, installs plugins
+    make all
