@@ -1,4 +1,5 @@
 alias g="git"
+alias y="yarn"
 alias t="tmux"
 alias vi="nvim"
 alias vim="nvim"
