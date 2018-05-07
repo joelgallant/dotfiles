@@ -133,7 +133,7 @@ $(HOME)/.rvm:
 	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 	curl -sSL https://get.rvm.io | bash -s stable --ruby
 	curl -L --create-dirs -o $(HOME)/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
-	rvm use default
+	fish --command="rvm use default"
 
 .PHONY: go
 go: /opt/go
