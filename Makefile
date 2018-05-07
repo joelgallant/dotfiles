@@ -109,8 +109,8 @@ $(HOME)/.cargo:
 
 .PHONY: rust-tools
 rust-tools: rust
-	cargo install --force ripgrep
-	cargo install --force fd-find
+	fish --command="cargo install --force ripgrep"
+	find --command="cargo install --force fd-find"
 
 .PHONY: node
 node: /usr/bin/node
