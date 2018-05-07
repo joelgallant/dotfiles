@@ -108,13 +108,15 @@ $(HOME)/.cargo:
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 .PHONY: rust-tools
-rust-tools: $(HOME)/.cargo
-	fish --command="cargo install --force ripgrep"
-	find --command="cargo install --force fd-find"
+rust-tools: $(HOME)/.cargo $(HOME)/.cargo/bin/rg $(HOME)/.cargo/bin/fd
+$(HOME)/.cargo/bin/rg:
+	fish --command="cargo install ripgrep"
+$(HOME)/.cargo/bin/fd:
+	fish --command="cargo install fd-find"
 
 .PHONY: node
-node: /usr/bin/node
-/usr/bin/node:
+node: /usr/local/bin/node
+/usr/local/bin/node:
 	git clone https://github.com/tj/n.git $(HOME)/.n
 	cd $(HOME)/.n && sudo make install
 	sudo n latest
@@ -122,7 +124,7 @@ node: /usr/bin/node
 
 .PHONY: yarn
 yarn: $(HOME)/.npm-packages/bin/yarn
-$(HOME)/.npm-packages/bin/yarn: /usr/bin/node
+$(HOME)/.npm-packages/bin/yarn: /usr/local/bin/node
 	npm i -g yarn
 
 .PHONY: rvm
@@ -139,5 +141,6 @@ go: /opt/go
 	cd /opt && sudo curl https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz | sudo tar zxf -
 
 .PHONY: pipenv
-pipenv:
+pipenv: /usr/local/bin/pipenv
+/usr/local/bin/pipenv:
 	sudo pip3 install pipenv
