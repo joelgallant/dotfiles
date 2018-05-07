@@ -1,5 +1,7 @@
 alias g="git"
 alias t="tmux"
+alias vi="nvim"
+alias vim="nvim"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 

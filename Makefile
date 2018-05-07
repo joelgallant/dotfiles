@@ -5,7 +5,7 @@ install:
 	sudo apt install \
 		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot dirmngr \
 		fish tmux tree gksu curl neovim \
-		python3-pip openjdk-10-jdk \
+		python3-pip openjdk-8-jdk \
 		numlockx xclip \
 		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp
 	sudo usermod -s /usr/bin/fish joel
