@@ -1,3 +1,7 @@
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " Plugins
   call plug#begin('~/.local/share/nvim/plugged')
 
@@ -39,6 +43,7 @@
   Plug 'digitaltoad/vim-pug'
   Plug 'groenewege/vim-less'
   Plug 'leafgarland/typescript-vim'
+  Plug 'dag/vim-fish'
 
   call plug#end()
 

@@ -4,13 +4,13 @@ install:
 	echo "exec openbox-session" > $(HOME)/.xsession
 	sudo apt install \
 		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
-		fish tmux tree gksu curl \
+		fish tmux tree gksu curl neovim \
+		python3-pip openjdk-10-jdk \
 		numlockx xclip \
-		neovim \
 		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp \
 	sudo usermod -s /usr/bin/fish joel
 
-all: fish fzf tpm plug git conky user-dirs openbox volti tint2 terminator transmission
+all: fish fzf tpm plug git conky user-dirs openbox volti tint2 terminator transmission rust-tools yarn rvm go pipenv
 
 .PHONY: fisher
 fisher: $(HOME)/.config/fish/functions/fisher.fish
@@ -35,8 +35,8 @@ $(HOME)/.tmux.conf:
 	ln -fsn $(dotfiles)/tmux.conf $(HOME)/.tmux.conf
 
 .PHONY: tpm
-tpm: tmux $(HOME)/.tmux/plugins/tpm
-$(HOME)/.tmux/plugins/tpm:
+tpm: $(HOME)/.tmux/plugins/tpm
+$(HOME)/.tmux/plugins/tpm: tmux
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
 	tmux new -d # ensure tmux server is started
 	tmux source $(HOME)/.tmux.conf
@@ -53,8 +53,8 @@ $(HOME)/.config/nvim/init.vim:
 	ln -fsn $(dotfiles)/nvim $(HOME)/.config/nvim/init.vim
 
 .PHONY: plug
-plug: nvim $(HOME)/.local/share/nvim/site/autoload/plug.vim
-$(HOME)/.local/share/nvim/site/autoload/plug.vim:
+plug: $(HOME)/.local/share/nvim/site/autoload/plug.vim
+$(HOME)/.local/share/nvim/site/autoload/plug.vim: nvim
 	curl -fLo $(HOME)/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 .PHONY: git
@@ -70,7 +70,7 @@ $(HOME)/.conkyrc:
 .PHONY: user-dirs
 user-dirs: $(HOME)/.config/user-dirs.dirs
 $(HOME)/.config/user-dirs.dirs:
-	mkdir -p ~/documents ~/downloads ~/dev ~/libs ~/music ~/pictures ~/videos $(HOME)/.config
+	mkdir -p $(HOME)/documents $(HOME)/downloads $(HOME)/dev $(HOME)/libs $(HOME)/music $(HOME)/pictures $(HOME)/videos $(HOME)/.config
 	ln -fsn $(dotfiles)/user-dirs.dirs $(HOME)/.config/user-dirs.dirs
 
 .PHONY: openbox
@@ -107,7 +107,37 @@ rust: $(HOME)/.cargo
 $(HOME)/.cargo:
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-.PHONY: unix-tools
-unix-tools: rust
+.PHONY: rust-tools
+rust-tools: rust
 	cargo install --force ripgrep
 	cargo install --force fd-find
+
+.PHONY: node
+node: /usr/bin/node
+/usr/bin/node:
+	git clone https://github.com/tj/n.git $(HOME)/.n
+	cd $(HOME)/.n && sudo make install
+	sudo n latest
+	echo "prefix = $(HOME)/.npm-packages" >> $(HOME)/.npmrc
+
+.PHONY: yarn
+yarn: $(HOME)/.npm-packages/bin/yarn
+$(HOME)/.npm-packages/bin/yarn: node
+	npm i -g yarn
+
+.PHONY: rvm
+rvm: $(HOME)/.rvm
+$(HOME)/.rvm:
+	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+	curl -sSL https://get.rvm.io | bash -s stable --ruby
+	curl -L --create-dirs -o $(HOME)/.config/fish/functions/rvm.fish https://raw.github.com/lunks/fish-nuggets/master/functions/rvm.fish
+	rvm use default
+
+.PHONY: go
+go: /opt/go
+/opt/go:
+	cd /opt && sudo curl https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz | sudo tar zxf -
+
+.PHONY: pipenv
+pipenv:
+	sudo pip3 install pipenv
