@@ -19,7 +19,7 @@ $(HOME)/.config/fish/conf.d/omf.fish:
 
 .PHONY: fish
 fish: $(HOME)/.config/fish/config.fish
-$(HOME)/.config/fish/config.fish: oh-my-fish
+$(HOME)/.config/fish/config.fish: $(HOME)/.config/fish/conf.d/omf.fish
 	ln -fsn $(dotfiles)/config.fish $(HOME)/.config/fish/config.fish
 	fish --command="omf theme default"
 
@@ -36,7 +36,7 @@ $(HOME)/.tmux.conf:
 
 .PHONY: tpm
 tpm: $(HOME)/.tmux/plugins/tpm
-$(HOME)/.tmux/plugins/tpm: tmux
+$(HOME)/.tmux/plugins/tpm: $(HOME)/.tmux.conf
 	git clone https://github.com/tmux-plugins/tpm $(HOME)/.tmux/plugins/tpm
 	tmux new -d # ensure tmux server is started
 	tmux source $(HOME)/.tmux.conf
@@ -54,7 +54,7 @@ $(HOME)/.config/nvim/init.vim:
 
 .PHONY: plug
 plug: $(HOME)/.local/share/nvim/site/autoload/plug.vim
-$(HOME)/.local/share/nvim/site/autoload/plug.vim: nvim
+$(HOME)/.local/share/nvim/site/autoload/plug.vim: $(HOME)/.config/nvim/init.vim
 	curl -fLo $(HOME)/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 .PHONY: git
@@ -108,7 +108,7 @@ $(HOME)/.cargo:
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 .PHONY: rust-tools
-rust-tools: rust
+rust-tools: $(HOME)/.cargo
 	fish --command="cargo install --force ripgrep"
 	find --command="cargo install --force fd-find"
 
@@ -122,7 +122,7 @@ node: /usr/bin/node
 
 .PHONY: yarn
 yarn: $(HOME)/.npm-packages/bin/yarn
-$(HOME)/.npm-packages/bin/yarn: node
+$(HOME)/.npm-packages/bin/yarn: /usr/bin/node
 	npm i -g yarn
 
 .PHONY: rvm
