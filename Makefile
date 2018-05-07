@@ -3,7 +3,7 @@ dotfiles := $(shell pwd)
 install:
 	echo "exec openbox-session" > $(HOME)/.xsession
 	sudo apt install \
-		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
+		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot dirmngr \
 		fish tmux tree gksu curl neovim \
 		python3-pip openjdk-10-jdk \
 		numlockx xclip \
