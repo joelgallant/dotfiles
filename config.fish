@@ -12,9 +12,6 @@ set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 set -x GOROOT /opt/go
 set -x GOPATH $HOME/go
 
-# rvm (ruby)
-rvm default
-
 # PATH modifications
 set PATH $HOME/.cargo/bin $PATH
 set PATH $NPM_PACKAGES/bin $PATH
