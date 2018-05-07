@@ -101,3 +101,13 @@ transmission: $(HOME)/.config/transmission/settings.json
 $(HOME)/.config/transmission/settings.json:
 	mkdir -p $(HOME)/.config/transmission
 	ln -fsn $(dotfiles)/transmission.json $(HOME)/.config/transmission/settings.json
+
+.PHONY: rust
+rust: $(HOME)/.cargo
+$(HOME)/.cargo:
+	curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+.PHONY: unix-tools
+unix-tools: rust
+	cargo install --force ripgrep
+	cargo install --force fd-find
