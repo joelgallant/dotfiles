@@ -1,5 +1,7 @@
 alias g="git"
 alias t="tmux"
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # npm (node)
 set -x NPM_PACKAGES $HOME/.npm-packages

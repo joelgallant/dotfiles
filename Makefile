@@ -12,16 +12,16 @@ install:
 
 all: fish fzf tpm plug git conky user-dirs openbox volti tint2 terminator transmission rust-tools yarn rvm go pipenv
 
-.PHONY: fisher
-fisher: $(HOME)/.config/fish/functions/fisher.fish
-$(HOME)/.config/fish/functions/fisher.fish:
-	curl -Lo $(HOME)/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+.PHONY: oh-my-fish
+oh-my-fish: $(HOME)/.config/fish/conf.d/omf.fish
+$(HOME)/.config/fish/conf.d/omf.fish:
+	curl -L https://get.oh-my.fish | fish
 
 .PHONY: fish
 fish: $(HOME)/.config/fish/config.fish
-$(HOME)/.config/fish/config.fish: $(HOME)/.config/fish/functions/fisher.fish
+$(HOME)/.config/fish/config.fish: oh-my-fish
 	ln -fsn $(dotfiles)/config.fish $(HOME)/.config/fish/config.fish
-	fish --command="fisher rafaelrinaldi/pure"
+	fish --command="omf theme default"
 
 .PHONY: fzf
 fzf: $(HOME)/.fzf
