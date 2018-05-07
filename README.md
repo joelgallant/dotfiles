@@ -4,7 +4,7 @@ My configuration files, meant for installing on latest debian
     git clone https://github.com/joelgallant/dotfiles && cd dotfiles
 
     # for new systems, installs packages
-    sudo make init
+    sudo make install
 
     # sets up symlinks, installs plugins
     make all

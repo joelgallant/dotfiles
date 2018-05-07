@@ -1,13 +1,14 @@
 dotfiles := $(shell pwd)
 
-init:
+install:
 	echo "exec openbox-session" > $(HOME)/.xsession
 	sudo apt install \
 		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot \
 		fish tmux tree gksu curl \
 		numlockx xclip \
 		neovim \
-		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp
+		gparted vlc xarchiver gpicview galculator transmission libreoffice-calc libreoffice-writer mupdf terminator gimp \
+	sudo usermod -s /usr/bin/fish joel
 
 all: fish fzf tpm plug git conky user-dirs openbox volti tint2 terminator transmission
 
