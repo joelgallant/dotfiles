@@ -20,6 +20,9 @@ set PATH $HOME/.cargo/bin $PATH
 set PATH $NPM_PACKAGES/bin $PATH
 set PATH $GOROOT/bin $GOPATH/bin $PATH
 
+# xserver
+set -x DISPLAY :0.0
+
 # Fish setttings
 set -g fish_key_bindings fish_vi_key_bindings
 
