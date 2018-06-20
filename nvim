@@ -221,7 +221,7 @@ endif
 
   set wildmode=full
 
-  let g:ctrlp_custom_ignore = 'build\|.git\|node_modules'
+  let g:ctrlp_custom_ignore = 'dist\|.git\|node_modules'
 
 " Backup and externals
   set hidden
