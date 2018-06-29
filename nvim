@@ -134,8 +134,8 @@ endif
 
 " Navigation
   " Switch buffers
-  map <leader>J :bprev<CR>
-  map <leader>K :bnext<CR>
+  nnoremap <C-[> :bprev<CR>
+  nnoremap <C-]> :bnext<CR>
   " Switch tabs easily
   map <tab>j :tabprevious<CR>
   map <tab>k :tabnext<CR>
@@ -183,29 +183,9 @@ endif
   set so=5
   set cursorline
 
-  map - :e .<CR>
+  map - :Lex<CR>
   let g:netrw_liststyle=3
-
-  " Toggle Vexplore with Ctrl-E
-  function! ToggleVExplorer()
-    if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-        let cur_win_nr = winnr()
-        exec expl_win_num . 'wincmd w'
-        close
-        exec cur_win_nr . 'wincmd w'
-        unlet t:expl_buf_num
-      else
-        unlet t:expl_buf_num
-      endif
-    else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-    endif
-  endfunction
-  map <silent> <C-e> :call ToggleVExplorer()<CR>
+  let g:netrw_winsize=15
 
 " Searching
   " Case only matters when I ask
@@ -224,7 +204,6 @@ endif
   let g:ctrlp_custom_ignore = 'dist\|.git\|node_modules'
 
 " Backup and externals
-  set hidden
   set swapfile
   set directory=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
   set backup
