@@ -134,8 +134,8 @@ endif
 
 " Navigation
   " Switch buffers
-  nnoremap <C-[> :bprev<CR>
-  nnoremap <C-]> :bnext<CR>
+  noremap <Left> :bprev<CR>
+  noremap <Right> :bnext<CR>
   " Switch tabs easily
   map <tab>j :tabprevious<CR>
   map <tab>k :tabnext<CR>
