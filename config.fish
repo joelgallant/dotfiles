@@ -3,6 +3,7 @@ alias y="yarn"
 alias t="tmux"
 alias vi="nvim"
 alias vim="nvim"
+alias mux="tmuxinator"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
