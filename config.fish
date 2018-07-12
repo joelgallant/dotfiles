@@ -23,6 +23,9 @@ set PATH $GOROOT/bin $GOPATH/bin $PATH
 # xserver
 set -x DISPLAY :0.0
 
+# sudoedit
+set -x EDITOR nvim
+
 # Fish setttings
 set -g fish_key_bindings fish_vi_key_bindings
 
