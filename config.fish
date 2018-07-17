@@ -1,6 +1,7 @@
 alias g="git"
 alias y="yarn"
 alias t="tmux"
+alias m="make"
 alias vi="nvim"
 alias vim="nvim"
 alias mux="tmuxinator"
