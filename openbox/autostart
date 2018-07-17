@@ -4,7 +4,7 @@ numlockx &
 
 feh --bg-fill /home/joel/dotfiles/wallpaper.png &
 tint2 &
-(sleep 2 && conky) &
+(sleep 3 && conky) &
 
 redshift -l 51.0486:-114.0708 &
 xscreensaver -no-splash &
