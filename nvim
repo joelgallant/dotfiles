@@ -201,7 +201,7 @@ endif
 
   set wildmode=full
 
-  let g:ctrlp_custom_ignore = 'dist\|.git\|node_modules'
+  let g:ctrlp_custom_ignore = 'dist\|.git\|node_modules\|\/build\/'
 
 " Backup and externals
   set swapfile
@@ -226,6 +226,7 @@ endif
 
   set shiftwidth=2
   set tabstop=2
+  autocmd FileType rust setlocal shiftwidth=4 tabstop=4
 
   " Wrap lines
   set formatoptions+=1
