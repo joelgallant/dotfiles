@@ -692,5 +692,8 @@
       <focus>yes</focus>
       <maximized>no</maximized>
     </application>
+    <application class="Firefox">
+      <maximized>yes</maximized>
+    </application>
   </applications>
 </openbox_config>
