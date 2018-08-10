@@ -36,10 +36,9 @@ ${hr}
 Host:$alignr$nodename
 Kernel:${alignr}${kernel}
 Uptime:$alignr$uptime_short
-Swap usage:$alignr$swap/ $swapmax
+RAM: $alignr$mem/ $memmax
+Swap: $alignr$swap/ $swapmax
 
-RAM: $memperc% ${alignr}${membar 8,130}
-CPU: ${cpu cpu0}% ${alignr}${cpubar 8,130 cpu0}
 CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,80}
 CPU2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,80}
 CPU3: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,80}
@@ -64,6 +63,8 @@ ${hr}
 ${top name 1}${alignr}${top cpu 1}%
 ${top name 2}${alignr}${top cpu 2}%
 ${top name 3}${alignr}${top cpu 3}%
+${top name 4}${alignr}${top cpu 4}%
+${top name 5}${alignr}${top cpu 5}%
 
 TOP RAM TASKS
 ${hr}
