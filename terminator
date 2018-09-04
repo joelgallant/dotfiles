@@ -13,7 +13,6 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#000c0f"
     background_darkness = 0.93
     background_type = transparent
     cursor_color = "#b9b9b9"
