@@ -23,6 +23,7 @@ set -x GOPATH $HOME/go
 set PATH $HOME/.cargo/bin $PATH
 set PATH $NPM_PACKAGES/bin $PATH
 set PATH $GOROOT/bin $GOPATH/bin $PATH
+set PATH /opt/bin $PATH
 
 # xserver
 set -x DISPLAY :0.0
