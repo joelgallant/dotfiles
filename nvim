@@ -227,7 +227,6 @@ endif
 
   set shiftwidth=2
   set tabstop=2
-  autocmd FileType rust setlocal shiftwidth=4 tabstop=4
 
   " Wrap lines
   set formatoptions+=1
@@ -268,6 +267,7 @@ endif
   inoremap [C <nop>
   inoremap [D <nop>
   let g:mustache_abbreviations = 1
+  autocmd BufNewFile,BufRead nvim setf vim
   autocmd BufNewFile,BufRead *.json setf javascript
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
   nnoremap <C-LeftMouse> <nop>
