@@ -1,7 +1,7 @@
 dotfiles := $(shell pwd)
 
 install:
-	echo "exec openbox-session" > $(HOME)/.xsession
+	echo "exec i3" > $(HOME)/.xsession
 	sudo apt install \
 		x-window-system openbox lightdm tint2 conky feh redshift xscreensaver dmenu network-manager-gnome thunar volti pm-utils pavucontrol pulseaudio scrot dirmngr \
 		fish tmux tree gksu curl neovim \
