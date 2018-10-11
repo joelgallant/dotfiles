@@ -208,7 +208,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>terminator</command>
+        <command>alacritty</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>terminal</name>
@@ -242,7 +242,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>terminator --command=vim</command>
+        <command>alacritty --command=vim</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -252,7 +252,7 @@
     </keybind>
     <keybind key="W-h">
       <action name="Execute">
-        <command>terminator --command=top</command>
+        <command>alacritty --command=top</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Task Manager</name>

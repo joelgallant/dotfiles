@@ -59,7 +59,9 @@ $(HOME)/.local/share/nvim/site/autoload/plug.vim: $(HOME)/.config/nvim/init.vim
 
 .PHONY: alacritty
 alacritty:
-	ln -fsn $(dotfiles)/alacritty.yml $(HOME)/alacritty.yml
+	cargo install --git https://github.com/jwilm/alacritty
+	ln -fsn $(dotfiles)/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml
+	sudo apt install libfreetype6-dev libfontconfig1-dev xclip
 
 .PHONY: git
 git: $(HOME)/.gitconfig
