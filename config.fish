@@ -1,3 +1,5 @@
+alias ll="exa -la"
+alias la="exa -a"
 alias g="git"
 alias y="yarn"
 alias t="tmux"
@@ -16,9 +18,6 @@ set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 # golang
 set -x GOROOT /opt/go
 set -x GOPATH $HOME/go
-
-# ruby
-rvm default
 
 # PATH modifications
 set PATH $HOME/.cargo/bin $PATH

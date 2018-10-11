@@ -2,7 +2,7 @@
 setxkbmap -option caps:escape &
 numlockx &
 
-feh --bg-fill /home/joel/dotfiles/wallpaper.png &
+feh --bg-fill /home/joel/dotfiles/wallpaper.jpg &
 tint2 &
 (sleep 3 && conky) &
 
