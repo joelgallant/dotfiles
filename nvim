@@ -18,7 +18,6 @@ endif
   Plug 'kana/vim-operator-user'
 
   " Git
-  Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
   " Files & buffers
@@ -30,7 +29,7 @@ endif
   " Theming
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'chriskempson/vim-tomorrow-theme'
+  Plug 'the31k/vim-colors-tayra'
 
   " Language specific
   Plug 'editorconfig/editorconfig-vim'
@@ -50,7 +49,9 @@ endif
 
 " Looks
   syntax enable
-  colorscheme Tomorrow-Night
+  colorscheme tayra
+  set nonumber
+
   let g:airline_theme = 'wombat'
 
   let g:airline#extensions#tabline#enabled = 1
@@ -59,7 +60,6 @@ endif
   let g:airline#extensions#tabline#fnamemod = ':p:s?/home/joel/dev/??:~'
   let g:airline_left_sep=''
   let g:airline_right_sep=''
-  set number
   set list " Show invisible characters
   set listchars=tab:>-,trail:~,extends:>,precedes:<
 
@@ -182,6 +182,7 @@ endif
 
   " Center cursor
   set so=5
+  set cursorline
 
   set lazyredraw
   map - :Lex<CR>
@@ -200,8 +201,8 @@ endif
   " Turn off search with g-h
   map gh :silent noh<CR>
 
-  map <C-p> :Files<CR>
-
+  " Search files with zfz
+  map <C-p> :FZF<CR>
   set wildmode=full
 
 " Backup and externals
@@ -272,4 +273,3 @@ endif
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
   nnoremap <C-LeftMouse> <nop>
   set noautochdir
-  let g:gitgutter_map_keys = 0

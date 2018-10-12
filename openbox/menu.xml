@@ -9,7 +9,7 @@
     <separator />
     <item label="Terminal">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>/home/joel/.cargo/bin/alacritty</command>
       </action>
     </item>
     <item label="Firefox">
@@ -46,7 +46,7 @@
       </item>
       <item label="Task Manager">
         <action name="Execute">
-          <command>alacritty --command="htop"</command>
+          <command>/home/joel/.cargo/bin/alacritty --command="htop"</command>
         </action>
       </item>
     </menu>

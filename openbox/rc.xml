@@ -208,7 +208,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>/home/joel/.cargo/bin/alacritty</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>terminal</name>
@@ -242,7 +242,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>alacritty --command=vim</command>
+        <command>/home/joel/.cargo/bin/alacritty --command=vim</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -252,7 +252,7 @@
     </keybind>
     <keybind key="W-h">
       <action name="Execute">
-        <command>alacritty --command=top</command>
+        <command>/home/joel/.cargo/bin/alacritty --command=top</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Task Manager</name>
@@ -691,6 +691,10 @@
       </position>
       <focus>yes</focus>
       <maximized>no</maximized>
+    </application>
+    <application class="Alacritty">
+      <maximized>yes</maximized>
+      <decor>no</decor>
     </application>
     <application class="Firefox">
       <maximized>yes</maximized>
