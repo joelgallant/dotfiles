@@ -85,26 +85,15 @@ tabspaces: 4
 #   - https://wiki.archlinux.org/index.php/font_configuration#Fontconfig_configuration
 #   - file:///usr/share/doc/fontconfig/fontconfig-user.html
 font:
-  # Normal (roman) font face
   normal:
-    family: DejaVu Sans Mono
-    # The `style` can be specified to pick a specific face.
-    # style: Regular
-
-  # Bold font face
+    family: Inconsolata
   bold:
-    family: DejaVu Sans Mono
-    # The `style` can be specified to pick a specific face.
-    # style: Bold
-
-  # Italic font face
+    family: Inconsolata
   italic:
-    family: DejaVu Sans Mono
-    # The `style` can be specified to pick a specific face.
-    # style: Italic
+    family: Inconsolata
 
   # Point size
-  size: 12.0
+  size: 13.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
