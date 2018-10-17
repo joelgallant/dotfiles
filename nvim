@@ -18,7 +18,6 @@ endif
   Plug 'kana/vim-operator-user'
 
   " Git
-  Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
   " Files & buffers
@@ -30,7 +29,8 @@ endif
   " Theming
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'chriskempson/vim-tomorrow-theme'
+  Plug 'edkolev/tmuxline.vim'
+  Plug 'the31k/vim-colors-tayra'
 
   " Language specific
   Plug 'editorconfig/editorconfig-vim'
@@ -50,16 +50,16 @@ endif
 
 " Looks
   syntax enable
-  colorscheme Tomorrow-Night
+  colorscheme tayra
+  set number
+
   let g:airline_theme = 'wombat'
 
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#right_sep = ''
   let g:airline#extensions#tabline#fnamemod = ':p:s?/home/joel/dev/??:~'
-  let g:airline_left_sep=''
-  let g:airline_right_sep=''
-  set number
+  let g:airline_powerline_fonts = 0
+  let g:tmuxline_powerline_separators = 0
+  let g:tmuxline_preset = 'nightly_fox'
   set list " Show invisible characters
   set listchars=tab:>-,trail:~,extends:>,precedes:<
 
@@ -182,6 +182,7 @@ endif
 
   " Center cursor
   set so=5
+  set cursorline
 
   set lazyredraw
   map - :Lex<CR>
@@ -200,8 +201,8 @@ endif
   " Turn off search with g-h
   map gh :silent noh<CR>
 
-  map <C-p> :Files<CR>
-
+  " Search files with zfz
+  map <C-p> :FZF<CR>
   set wildmode=full
 
 " Backup and externals
@@ -227,7 +228,6 @@ endif
 
   set shiftwidth=2
   set tabstop=2
-  autocmd FileType rust setlocal shiftwidth=4 tabstop=4
 
   " Wrap lines
   set formatoptions+=1
@@ -268,8 +268,8 @@ endif
   inoremap [C <nop>
   inoremap [D <nop>
   let g:mustache_abbreviations = 1
+  autocmd BufNewFile,BufRead nvim setf vim
   autocmd BufNewFile,BufRead *.json setf javascript
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
   nnoremap <C-LeftMouse> <nop>
   set noautochdir
-  let g:gitgutter_map_keys = 0
