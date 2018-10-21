@@ -52,8 +52,8 @@ endif
 " Looks
   syntax enable
   let g:alduin_Shout_Become_Ethereal = 1
+  let g:alduin_Shout_Aura_Whisper = 1
   colorscheme alduin
-  set number
 
   let g:airline_theme = 'wombat'
 
