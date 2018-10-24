@@ -30,7 +30,7 @@ endif
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'edkolev/tmuxline.vim'
-  Plug 'the31k/vim-colors-tayra'
+  Plug 'AlessandroYorba/Alduin'
 
   " Language specific
   Plug 'editorconfig/editorconfig-vim'
@@ -45,13 +45,15 @@ endif
   Plug 'groenewege/vim-less'
   Plug 'leafgarland/typescript-vim'
   Plug 'dag/vim-fish'
+  Plug 'cespare/vim-toml'
 
   call plug#end()
 
 " Looks
   syntax enable
-  colorscheme tayra
-  set number
+  let g:alduin_Shout_Become_Ethereal = 1
+  let g:alduin_Shout_Aura_Whisper = 1
+  colorscheme alduin
 
   let g:airline_theme = 'wombat'
 
@@ -233,8 +235,6 @@ endif
   set formatoptions+=1
   set breakindent
   set nowrap
-  highlight ColorColumn ctermbg=236
-  set colorcolumn=100
 
 " Spell Check
   " Spell check toggle ,ss
