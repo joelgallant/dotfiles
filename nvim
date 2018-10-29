@@ -46,6 +46,7 @@ endif
   Plug 'leafgarland/typescript-vim'
   Plug 'dag/vim-fish'
   Plug 'cespare/vim-toml'
+  Plug 'kylef/apiblueprint.vim'
 
   call plug#end()
 
