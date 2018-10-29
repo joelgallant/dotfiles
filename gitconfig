@@ -12,13 +12,13 @@
 [credential]
     helper = cache --timeout 86400
 [status]
-    submoduleSummary = true
 [color]
     ui = auto
 [alias]
     st = status
     ci = commit -v
     cin = commit -v --no-verify
+    cie = commit -v --file=.git/COMMIT_EDITMSG --edit
     co = checkout
     br = branch
     df = diff
