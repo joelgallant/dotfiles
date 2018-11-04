@@ -1,0 +1,41 @@
+icons = "awesome"
+
+[theme]
+name = "modern"
+
+[theme.overrides]
+idle_bg = "#000000"
+info_bg = "#000000"
+info_fg = "#FFFFFF"
+warning_bg = "#000000"
+warning_fg = "#FFFFFF"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+frequency = true
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+format = "{average}°"
+
+[[block]]
+block = "sound"
+on_click = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %I:%M %p"
+

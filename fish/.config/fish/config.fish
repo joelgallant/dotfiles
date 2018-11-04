@@ -6,7 +6,6 @@ alias t="tmux"
 alias m="make"
 alias vi="nvim"
 alias vim="nvim"
-alias mux="tmuxinator"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
@@ -25,16 +24,13 @@ set PATH $NPM_PACKAGES/bin $PATH
 set PATH $GOROOT/bin $GOPATH/bin $PATH
 set PATH /opt/bin $PATH
 
-# xserver
-set -x DISPLAY :0.0
-
 # sudoedit
 set -x EDITOR nvim
 
 # respect gitignore
 set -x FZF_DEFAULT_COMMAND 'fd --type f'
 
-# Fish setttings
+# Fish settings
 set -g fish_key_bindings fish_vi_key_bindings
 
 function fish_greeting
