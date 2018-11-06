@@ -1,11 +1,8 @@
-# TODO: install pulseaudio, start pulseaudio -D?, pavucontrol
-# acpi, neofetch, unzip
-
 MAKE := $(MAKE) --no-print-directory
 cwd := $(shell pwd)
 
 .PHONY: install
-install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn fzf alacritty
+install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn fzf alacritty misc
 
 .PHONY: user-dirs
 user-dirs: $(HOME)/.config/user-dirs.dirs
@@ -23,8 +20,9 @@ i3: \
 	x11-xkb-utils.pkg \
 	numlockx.pkg \
 	xbanish \
-	feh.pkg
-	@$(MAKE) libdbus-1-dev.pkg fonts-font-awesome.pkg
+	feh.pkg  \
+	libdbus-1-dev.pkg \
+	fonts-font-awesome.pkg
 	fish --command="which i3status-rs; or cargo install --git https://github.com/greshake/i3status-rust --force"
 	stow i3
 
@@ -115,7 +113,7 @@ node: /usr/local/bin/node
 
 .PHONY: yarn
 yarn: $(HOME)/.npm-packages/bin/yarn
-$(HOME)/.npm-packages/bin/yarn: /usr/local/bin/node
+$(HOME)/.npm-packages/bin/yarn:
 	npm i -g yarn
 
 .PHONY: fzf
@@ -133,7 +131,7 @@ $(HOME)/.cargo/bin/alacritty: $(HOME)/.cargo
 
 .PHONY: %.pkg
 %.pkg:
-	@[ -z "$(shell dpkg -l | grep $*)" ] && sudo apt-get install -y $* || true
+	@[ -z "$(shell dpkg -l | grep '$* ')" ] && sudo apt-get install -y $* || true
 
 i3.pkg: x.pkg
 	@which i3 > /dev/null || sudo apt-get install -y i3 suckless-tools
@@ -147,3 +145,7 @@ xbanish: /usr/local/bin/xbanish
 	@$(MAKE) gcc.pkg libxext-dev.pkg libxt-dev.pkg libxfixes-dev.pkg libxi-dev.pkg
 	[ -d /opt/xbanish ] || sudo git clone https://github.com/jcs/xbanish.git /opt/xbanish
 	cd /opt/xbanish && sudo make install
+
+.PHONY: misc
+misc:
+	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg

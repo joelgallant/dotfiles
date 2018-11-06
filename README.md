@@ -5,3 +5,4 @@ Making a new system:
 1. `git clone https://github.com/joelgallant/dotfiles`
 1. `make`
 1. login to firefox
+1. grub

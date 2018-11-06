@@ -1,31 +1,14 @@
-i3status
-ssh-agent
-grub
 plymouth
-omf
 go
-node
-yarn
-git
-ripgrep, fd, exa, bat, htop, diff-so-fancy, ncdu, jq
+diff-so-fancy
 typescript
 fonts
-xbanish
 login manager
-xrandr
+xrandr switch
 chrome
 opencv
 vlc
 music
-tree
-dmenu equivalent
-scrot
-evince
-wifi
-power management
-volume
-network
-capslock
 ynab
 pia
 tmux better theming
@@ -35,3 +18,6 @@ llvm, gcc
 lldb
 python, ruby
 dropbox
+power management
+wifi
+network

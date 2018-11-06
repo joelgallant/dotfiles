@@ -123,6 +123,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym F10 exec pactl set-sink-mute 0 toggle
 bindsym F11 exec pactl set-sink-volume 0 -5%
 bindsym F12 exec pactl set-sink-volume 0 +5%
+bindsym --release Print exec scrot -s '/home/joel/pictures/%m-%d-%s.png'
 
 # Status Bar
 bar {
