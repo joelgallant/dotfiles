@@ -7,6 +7,8 @@ name = "modern"
 idle_bg = "#000000"
 info_bg = "#000000"
 info_fg = "#FFFFFF"
+good_bg = "#000000"
+good_fg = "#FFFFFF"
 warning_bg = "#000000"
 warning_fg = "#FFFFFF"
 
