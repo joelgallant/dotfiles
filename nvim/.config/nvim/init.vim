@@ -29,7 +29,6 @@ endif
   " Theming
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'edkolev/tmuxline.vim'
   Plug 'AlessandroYorba/Alduin'
 
   " Language specific
@@ -60,8 +59,6 @@ endif
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#fnamemod = ':p:s?/home/joel/dev/??:~'
   let g:airline_powerline_fonts = 0
-  let g:tmuxline_powerline_separators = 0
-  let g:tmuxline_preset = 'nightly_fox'
   set list " Show invisible characters
   set listchars=tab:>-,trail:~,extends:>,precedes:<
 

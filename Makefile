@@ -2,7 +2,7 @@ MAKE := $(MAKE) --no-print-directory
 cwd := $(shell pwd)
 
 .PHONY: install
-install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn fzf alacritty misc
+install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn diff-so-fancy fzf alacritty misc
 
 .PHONY: user-dirs
 user-dirs: $(HOME)/.config/user-dirs.dirs
@@ -76,7 +76,7 @@ $(HOME)/.tmux/plugins/tpm: $(HOME)/.tmux.conf
 .PHONY: nvim
 nvim: $(HOME)/.config/nvim/init.vim
 $(HOME)/.config/nvim/init.vim:
-	@$(MAKE) neovim.pkg
+	@$(MAKE) neovim.pkg fonts-powerline.pkg
 	stow nvim
 
 .PHONY: plug
@@ -116,6 +116,11 @@ yarn: $(HOME)/.npm-packages/bin/yarn
 $(HOME)/.npm-packages/bin/yarn:
 	npm i -g yarn
 
+.PHONY: diff-so-fancy
+diff-so-fancy: $(HOME)/.npm-packages/bin/diff-so-fancy
+$(HOME)/.npm-packages/bin/diff-so-fancy:
+	npm i -g diff-so-fancy
+
 .PHONY: fzf
 fzf: $(HOME)/.fzf
 $(HOME)/.fzf:
@@ -148,4 +153,4 @@ xbanish: /usr/local/bin/xbanish
 
 .PHONY: misc
 misc:
-	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg
+	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg vlc.pkg

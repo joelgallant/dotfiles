@@ -1,23 +1,14 @@
-plymouth
-go
-diff-so-fancy
-typescript
-fonts
-login manager
-xrandr switch
-chrome
-opencv
-vlc
+cleaner grub
 music
 ynab
 pia
-tmux better theming
 ssh
 ale
+go, python, ruby
 llvm, gcc
 lldb
-python, ruby
 dropbox
 power management
 wifi
-network
+network manager
+xrandr switch

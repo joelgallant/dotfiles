@@ -6,3 +6,4 @@ Making a new system:
 1. `make`
 1. login to firefox
 1. grub
+1. `sudo plymouth-set-default-theme -R tribar`

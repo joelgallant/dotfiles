@@ -14,14 +14,9 @@ set -x NPM_PACKAGES $HOME/.npm-packages
 set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
-# golang
-set -x GOROOT /opt/go
-set -x GOPATH $HOME/go
-
 # PATH modifications
 set PATH $HOME/.cargo/bin $PATH
 set PATH $NPM_PACKAGES/bin $PATH
-set PATH $GOROOT/bin $GOPATH/bin $PATH
 set PATH /opt/bin $PATH
 
 # sudoedit
