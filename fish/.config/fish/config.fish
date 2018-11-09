@@ -19,6 +19,9 @@ set PATH $HOME/.cargo/bin $PATH
 set PATH $NPM_PACKAGES/bin $PATH
 set PATH /opt/bin $PATH
 
+# for gpg
+set -x GPG_TTY (tty)
+
 # sudoedit
 set -x EDITOR nvim
 
