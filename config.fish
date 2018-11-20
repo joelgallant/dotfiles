@@ -31,8 +31,8 @@ set -x DISPLAY :0.0
 # sudoedit
 set -x EDITOR nvim
 
-# respect gitignore
-set -x FZF_DEFAULT_COMMAND 'fd --type f'
+# respect gitignore, include dotfiles
+set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
 
 # Fish setttings
 set -g fish_key_bindings fish_vi_key_bindings
