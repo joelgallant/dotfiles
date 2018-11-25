@@ -15,9 +15,9 @@ set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
 # PATH modifications
-set PATH $HOME/.cargo/bin $PATH
-set PATH $NPM_PACKAGES/bin $PATH
-set PATH /opt/bin $PATH
+set PATH $PATH $HOME/.cargo/bin
+set PATH $PATH $NPM_PACKAGES/bin
+set PATH $PATH /opt/bin
 
 # for gpg
 set -x GPG_TTY (tty)
