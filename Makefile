@@ -153,4 +153,4 @@ xbanish: /usr/local/bin/xbanish
 
 .PHONY: misc
 misc:
-	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg vlc.pkg pm-utils.pkg inxi.pkg
+	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg vlc.pkg pm-utils.pkg inxi.pkg thunar.pkg gvfs.pkg
