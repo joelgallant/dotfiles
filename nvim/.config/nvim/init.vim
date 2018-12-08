@@ -249,6 +249,7 @@ endif
   iab teh the
   iab erturn return
   iab retrun return
+  iab cosnt const
   iab unwarp unwrap
   iab seperate separate
   iab dont don't
