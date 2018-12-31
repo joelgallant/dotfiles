@@ -1,10 +1,9 @@
-My configuration files, meant for installing on latest debian
+Making a new system:
 
-    sudo apt install git make
-    git clone https://github.com/joelgallant/dotfiles && cd dotfiles
-
-    # for new systems, installs packages
-    sudo make install
-
-    # sets up symlinks, installs plugins
-    make all
+1. install debian testing with encrypted lvm, no DE
+1. install git & make on first login
+1. `git clone https://github.com/joelgallant/dotfiles`
+1. `make`
+1. login to firefox
+1. grub
+1. `sudo plymouth-set-default-theme -R tribar`

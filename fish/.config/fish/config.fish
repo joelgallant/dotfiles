@@ -6,7 +6,6 @@ alias t="tmux"
 alias m="make"
 alias vi="nvim"
 alias vim="nvim"
-alias mux="tmuxinator"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
@@ -15,18 +14,13 @@ set -x NPM_PACKAGES $HOME/.npm-packages
 set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
-# golang
-set -x GOROOT /opt/go
-set -x GOPATH $HOME/go
-
 # PATH modifications
-set PATH $HOME/.cargo/bin $PATH
-set PATH $NPM_PACKAGES/bin $PATH
-set PATH $GOROOT/bin $GOPATH/bin $PATH
-set PATH /opt/bin $PATH
+set PATH $PATH $HOME/.cargo/bin
+set PATH $PATH $NPM_PACKAGES/bin
+set PATH $PATH /opt/bin
 
-# xserver
-set -x DISPLAY :0.0
+# for gpg
+set -x GPG_TTY (tty)
 
 # sudoedit
 set -x EDITOR nvim
@@ -34,7 +28,7 @@ set -x EDITOR nvim
 # respect gitignore, include dotfiles
 set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
 
-# Fish setttings
+# Fish settings
 set -g fish_key_bindings fish_vi_key_bindings
 
 function fish_greeting
