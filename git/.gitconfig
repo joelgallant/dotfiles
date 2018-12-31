@@ -14,8 +14,6 @@
     diff = true
 [credential]
     helper = cache --timeout 86400
-[status]
-    submoduleSummary = true
 [color]
     ui = auto
 [alias]

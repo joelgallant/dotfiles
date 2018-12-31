@@ -25,8 +25,8 @@ set -x GPG_TTY (tty)
 # sudoedit
 set -x EDITOR nvim
 
-# respect gitignore
-set -x FZF_DEFAULT_COMMAND 'fd --type f'
+# respect gitignore, include dotfiles
+set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
 
 # Fish settings
 set -g fish_key_bindings fish_vi_key_bindings

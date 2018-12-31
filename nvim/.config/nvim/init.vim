@@ -45,6 +45,7 @@ endif
   Plug 'leafgarland/typescript-vim'
   Plug 'dag/vim-fish'
   Plug 'cespare/vim-toml'
+  Plug 'kylef/apiblueprint.vim'
 
   call plug#end()
 
@@ -209,6 +210,7 @@ endif
   set directory=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
   set backup
   set backupdir=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
+  set backupcopy=yes
 
   if has('persistent_undo')
     set undodir=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
