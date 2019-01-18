@@ -33,6 +33,8 @@
     stsh = stash --keep-index
     staash = stash --include-untracked
     staaash = stash --all
+    upull = pull
+    fd = df
 [filter "lfs"]
     process = git-lfs filter-process
     required = true

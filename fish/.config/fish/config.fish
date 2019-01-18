@@ -9,6 +9,10 @@ alias vim="nvim"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias gpull="git pull"
+alias gpush="git push"
+alias gup="git up"
+
 # npm (node)
 set -x NPM_PACKAGES $HOME/.npm-packages
 set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
