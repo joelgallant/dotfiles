@@ -15,13 +15,15 @@ alias gup="git up"
 
 # npm (node)
 set -x NPM_PACKAGES $HOME/.npm-packages
-set -x MANPATH $NPM_PACKAGES/share/man $MANPATH
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
+# python global installs
+set -x PYTHONPATH '/usr/local/python' $PYTHONPATH
+
 # PATH modifications
-set PATH $PATH $HOME/.cargo/bin
-set PATH $PATH $NPM_PACKAGES/bin
-set PATH $PATH /opt/bin
+set -x PATH $PATH $HOME/.cargo/bin
+set -x PATH $PATH $NPM_PACKAGES/bin
+set -x PATH $PATH /opt/bin
 
 # for gpg
 set -x GPG_TTY (tty)
