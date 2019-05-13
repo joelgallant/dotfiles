@@ -18,6 +18,7 @@
     ui = auto
 [alias]
     st = status
+    comit = commit
     ci = commit -v
     cin = commit -v --no-verify
     cie = commit -v --file=.git/COMMIT_EDITMSG --edit

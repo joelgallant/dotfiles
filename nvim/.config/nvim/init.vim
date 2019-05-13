@@ -46,6 +46,7 @@ endif
   Plug 'dag/vim-fish'
   Plug 'cespare/vim-toml'
   Plug 'kylef/apiblueprint.vim'
+  Plug 'amadeus/vim-mjml'
 
   call plug#end()
 
