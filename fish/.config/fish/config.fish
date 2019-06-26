@@ -13,6 +13,9 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gup="git up"
 
+alias k=kubectl
+alias kctx=kubectx
+
 # npm (node)
 set -x NPM_PACKAGES $HOME/.npm-packages
 set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
@@ -24,6 +27,7 @@ set -x PYTHONPATH '/usr/local/python' $PYTHONPATH
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $NPM_PACKAGES/bin
 set -x PATH $PATH /opt/bin
+set -x PATH $PATH /opt/anaconda3/bin
 
 # for gpg
 set -x GPG_TTY (tty)

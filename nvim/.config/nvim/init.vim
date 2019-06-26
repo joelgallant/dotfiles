@@ -30,6 +30,7 @@ endif
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'AlessandroYorba/Alduin'
+  Plug 'junegunn/seoul256.vim'
 
   " Language specific
   Plug 'editorconfig/editorconfig-vim'
@@ -52,9 +53,9 @@ endif
 
 " Looks
   syntax enable
-  let g:alduin_Shout_Become_Ethereal = 1
-  let g:alduin_Shout_Aura_Whisper = 1
-  colorscheme alduin
+  let g:seoul256_background = 233
+  colorscheme seoul256
+  set background=dark
 
   let g:airline_theme = 'wombat'
 
