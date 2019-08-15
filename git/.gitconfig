@@ -36,6 +36,7 @@
     staaash = stash --all
     upull = pull
     fd = df
+    prune = fetch -p
 [filter "lfs"]
     process = git-lfs filter-process
     required = true

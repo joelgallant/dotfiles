@@ -15,6 +15,7 @@ alias gup="git up"
 
 alias k=kubectl
 alias kctx=kubectx
+alias kns=kubens
 
 # npm (node)
 set -x NPM_PACKAGES $HOME/.npm-packages
@@ -22,6 +23,9 @@ set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 
 # python global installs
 set -x PYTHONPATH '/usr/local/python' $PYTHONPATH
+
+# android dev setup
+set -x ANDROID_HOME /opt/android-sdk
 
 # PATH modifications
 set -x PATH $PATH $HOME/.cargo/bin
