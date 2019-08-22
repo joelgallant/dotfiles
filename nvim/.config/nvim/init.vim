@@ -49,7 +49,20 @@ endif
   Plug 'kylef/apiblueprint.vim'
   Plug 'amadeus/vim-mjml'
 
-  call plug#end()
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'branch': 'release/1.x',
+    \ 'for': [
+      \ 'javascript',
+      \ 'typescript',
+      \ 'css',
+      \ 'less',
+      \ 'scss',
+      \ 'json',
+      \ 'markdown'
+    \ ] }
+
+    call plug#end()
 
 " Looks
   syntax enable
@@ -107,6 +120,8 @@ endif
 
   " clipboard buffer access
   map <leader>c "+
+
+  nmap <Leader>ff <Plug>(PrettierAsync)
 
   " Highlight all instances of word under cursor, when idle.
   " Useful when studying strange source code.
