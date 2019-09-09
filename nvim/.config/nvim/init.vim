@@ -69,6 +69,7 @@ endif
   let g:seoul256_background = 233
   colorscheme seoul256
   set background=dark
+  hi VertSplit cterm=none
 
   let g:airline_theme = 'wombat'
 

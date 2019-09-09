@@ -24,6 +24,8 @@ window:
   #     - none: Neither borders nor title bar
   decorations: full
 
+  startup_mode: Maximized
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -94,9 +96,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-# Display the time it takes to redraw each frame.
-render_timer: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
