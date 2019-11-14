@@ -45,6 +45,9 @@ set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
 # Fish settings
 set -g fish_key_bindings fish_vi_key_bindings
 
-function fish_greeting
-  printf (set_color brcyan)(date)(set_color white)' ('(set_color blue)(pwd)(set_color white)')\n'
+function fish_greeting; end
+function fish_right_prompt; end
+
+if which starship > /dev/null
+  starship init fish | source
 end

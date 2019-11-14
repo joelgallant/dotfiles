@@ -2,7 +2,7 @@ MAKE := $(MAKE) --no-print-directory
 cwd := $(shell pwd)
 
 .PHONY: install
-install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn diff-so-fancy fzf alacritty misc
+install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn delta fzf alacritty misc
 
 .PHONY: user-dirs
 user-dirs: $(HOME)/.config/user-dirs.dirs
@@ -116,10 +116,10 @@ yarn: $(HOME)/.npm-packages/bin/yarn
 $(HOME)/.npm-packages/bin/yarn:
 	npm i -g yarn
 
-.PHONY: diff-so-fancy
-diff-so-fancy: $(HOME)/.npm-packages/bin/diff-so-fancy
-$(HOME)/.npm-packages/bin/diff-so-fancy:
-	npm i -g diff-so-fancy
+.PHONY: delta
+delta: $(HOME)/.cargo/bin/delta
+$(HOME)/.cargo/bin/delta: $(HOME)/.cargo
+	cargo install --git https://github.com/dandavison/delta
 
 .PHONY: fzf
 fzf: $(HOME)/.fzf
@@ -133,6 +133,11 @@ $(HOME)/.cargo/bin/alacritty: $(HOME)/.cargo
 	@$(MAKE) g++.pkg libfreetype6-dev.pkg libfontconfig1-dev.pkg xclip.pkg
 	fish --command="cargo install --git https://github.com/jwilm/alacritty --force"
 	stow alacritty
+
+.PHONY: starship
+starship: $(HOME)/.config/starship.toml
+$(HOME)/.config/starship.toml:
+	stow starship
 
 .PHONY: %.pkg
 %.pkg:
