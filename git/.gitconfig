@@ -1,9 +1,6 @@
 [user]
     name = Joel Gallant
     email = joel@joelgallant.me
-    signingkey = A6C3E3BEE0CFDE2B
-[commit]
-    gpgsign = true
 [core]
     pager = delta --dark
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
