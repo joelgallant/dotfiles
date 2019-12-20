@@ -122,7 +122,11 @@ endif
   " clipboard buffer access
   map <leader>c "+
 
-  nmap <Leader>ff <Plug>(PrettierAsync)
+  if (&ft=='rust')
+    nmap <Leader>ff :RustFmt<CR>
+  else
+    nmap <Leader>ff <Plug>(PrettierAsync)
+  endif
 
   " Highlight all instances of word under cursor, when idle.
   " Useful when studying strange source code.

@@ -33,6 +33,9 @@ set -x PATH $PATH $NPM_PACKAGES/bin
 set -x PATH $PATH /opt/bin
 set -x PATH $PATH /opt/anaconda3/bin
 
+# look in local for installed shared libs
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
+
 # for gpg
 set -x GPG_TTY (tty)
 
@@ -41,6 +44,11 @@ set -x EDITOR nvim
 
 # respect gitignore, include dotfiles
 set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
+
+# volta
+set -gx VOLTA_HOME "$HOME/.volta"
+test -s "$VOLTA_HOME/load.fish"; and source "$VOLTA_HOME/load.fish"
+string match -r ".volta" "$PATH" > /dev/null; or set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 # Fish settings
 set -g fish_key_bindings fish_vi_key_bindings

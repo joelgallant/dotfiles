@@ -104,11 +104,11 @@ $(HOME)/.cargo/bin/bat: $(HOME)/.cargo
 	fish --command="cargo install bat --force"
 
 .PHONY: node
-node: /usr/local/bin/node
-/usr/local/bin/node:
-	[ -d $(HOME)/.n ] || git clone https://github.com/tj/n.git $(HOME)/.n
-	cd $(HOME)/.n && sudo make install
-	sudo n latest
+node: $(HOME)/.volta/bin/node
+$(HOME)/.volta/bin/volta:
+	curl https://get.volta.sh | bash
+	$(HOME)/.volta/volta install node
+	$(HOME)/.volta/volta install yarn
 	echo "prefix = $(HOME)/.npm-packages" >> $(HOME)/.npmrc
 
 .PHONY: yarn
