@@ -104,7 +104,7 @@ $(HOME)/.cargo/bin/bat: $(HOME)/.cargo
 	fish --command="cargo install bat --force"
 
 .PHONY: node
-node: $(HOME)/.volta/bin/node
+node: $(HOME)/.volta/bin/volta
 $(HOME)/.volta/bin/volta:
 	curl https://get.volta.sh | bash
 	$(HOME)/.volta/volta install node
