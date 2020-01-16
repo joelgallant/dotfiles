@@ -128,6 +128,8 @@ endif
     nmap <Leader>ff <Plug>(PrettierAsync)
   endif
 
+  let g:rustfmt_autosave = 1
+
   " Highlight all instances of word under cursor, when idle.
   " Useful when studying strange source code.
   " Type C-g to toggle highlighting on/off.
@@ -279,6 +281,7 @@ endif
   iab dont don't
   iab waht what
   iab tehn then
+  iab unto into
 
 " Misc
   " God damn Ex mode
