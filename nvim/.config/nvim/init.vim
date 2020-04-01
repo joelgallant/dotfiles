@@ -130,6 +130,9 @@ endif
 
   let g:rustfmt_autosave = 1
 
+  " rustfmt is the only thing I trust
+  let g:rustfmt_autosave = 1
+
   " Highlight all instances of word under cursor, when idle.
   " Useful when studying strange source code.
   " Type C-g to toggle highlighting on/off.
