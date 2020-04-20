@@ -1,8 +1,47 @@
 MAKE := $(MAKE) --no-print-directory
 cwd := $(shell pwd)
 
+.PHONY: packages
+packages: \
+	stow.pkg \
+	pulseaudio.pkg \
+	pavucontrol.pkg \
+	neofetch.pkg \
+	unzip.pkg \
+	jq.pkg \
+	htop.pkg \
+	ncdu.pkg \
+	tree.pkg \
+	evince.pkg \
+	scrot.pkg \
+	vlc.pkg \
+	pm-utils.pkg \
+	inxi.pkg \
+	thunar.pkg \
+	gvfs.pkg \
+	gvfs-backends.pkg
+
 .PHONY: install
-install: stow.pkg user-dirs i3 firefox fish oh-my-fish fisher git tmux tpm nvim plug rust rust-tools node yarn delta fzf alacritty misc
+install: \
+	packages \
+	user-dirs \
+	i3 \
+	firefox \
+	fish \
+	oh-my-fish \
+	fisher \
+	git \
+	tmux \
+	tpm \
+	nvim \
+	plug \
+	rust \
+	rust-tools \
+	node \
+	yarn \
+	delta \
+	fzf \
+	alacritty
 
 .PHONY: user-dirs
 user-dirs: $(HOME)/.config/user-dirs.dirs
@@ -11,19 +50,11 @@ $(HOME)/.config/user-dirs.dirs:
 	ln -fsn $(cwd)/user-dirs.dirs $(HOME)/.config/user-dirs.dirs
 
 .PHONY: i3
-i3: \
-	i3.pkg \
-	pulseaudio-utils.pkg \
-	lm-sensors.pkg \
-	fonts-inconsolata.pkg \
-	xbacklight.pkg \
-	x11-xkb-utils.pkg \
-	numlockx.pkg \
-	xbanish \
-	feh.pkg  \
-	libdbus-1-dev.pkg \
-	fonts-font-awesome.pkg
-	fish --command="which i3status-rs; or cargo install --git https://github.com/greshake/i3status-rust --force"
+i3: $(HOME)/.config/i3 \
+		pulseaudio-utils.pkg lm-sensors.pkg fonts-inconsolata.pkg xbacklight.pkg x11-xkb-utils.pkg numlockx.pkg xbanish feh.pkg libdbus-1-dev.pkg fonts-font-awesome.pkg xorg.pkg x-window-system.pkg i3.pkg suckless-tools.pkg
+	fish --command="which i3status-rs; or cargo install --git https://github.com/greshake/i3status-rust"
+
+$(HOME)/.config/i3:
 	stow i3
 
 .PHONY: firefox
@@ -37,27 +68,22 @@ firefox: /opt/firefox/firefox
 	sudo ln -s /opt/firefox/firefox /opt/bin/firefox
 
 .PHONY: fish
-fish:
-	@$(MAKE) fish.pkg
+fish: fish.pkg $(HOME)/.config/fish
 	sudo usermod -s /usr/bin/fish joel
+
+$(HOME)/.config/fish:
 	stow fish
 
-.PHONY: oh-my-fish
-oh-my-fish: $(HOME)/.config/fish/conf.d/omf.fish
-$(HOME)/.config/fish/conf.d/omf.fish:
-	@$(MAKE) curl.pkg
-	curl -L https://get.oh-my.fish | fish
-	fish --command="omf theme default"
-
 .PHONY: fisher
-fisher: ~/.config/fish/functions/fisher.fish
-~/.config/fish/functions/fisher.fish:
-	@$(MAKE) curl.pkg
-	curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fisher: $(HOME)/.config/fish/functions/fisher.fish curl.pkg
 	fisher add tuvistavie/fish-ssh-agent
 
+$(HOME)/.config/fish/functions/fisher.fish:
+	curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
 .PHONY: git
-git:
+git: $(HOME)/.gitconfig git.pkg
+$(HOME)/.gitconfig:
 	stow git
 
 .PHONY: tmux
@@ -94,14 +120,13 @@ $(HOME)/.cargo:
 .PHONY: rust-tools
 rust-tools: $(HOME)/.cargo/bin/rg $(HOME)/.cargo/bin/fd $(HOME)/.cargo/bin/exa $(HOME)/.cargo/bin/bat
 $(HOME)/.cargo/bin/rg: $(HOME)/.cargo
-	fish --command="cargo install ripgrep --force"
+	fish --command="cargo install ripgrep"
 $(HOME)/.cargo/bin/fd: $(HOME)/.cargo
-	fish --command="cargo install fd-find --force"
+	fish --command="cargo install fd-find"
 $(HOME)/.cargo/bin/exa: $(HOME)/.cargo
-	@$(MAKE) cmake.pkg
-	fish --command="cargo install exa --force"
+	fish --command="cargo install exa"
 $(HOME)/.cargo/bin/bat: $(HOME)/.cargo
-	fish --command="cargo install bat --force"
+	fish --command="cargo install bat"
 
 .PHONY: node
 node: $(HOME)/.volta/bin/volta
@@ -128,14 +153,16 @@ $(HOME)/.fzf:
 	$(HOME)/.fzf/install --key-bindings --no-completion --no-update-rc
 
 .PHONY: alacritty
-alacritty: $(HOME)/.cargo/bin/alacritty
-$(HOME)/.cargo/bin/alacritty: $(HOME)/.cargo
-	@$(MAKE) g++.pkg libfreetype6-dev.pkg libfontconfig1-dev.pkg xclip.pkg
-	fish --command="cargo install --git https://github.com/jwilm/alacritty --force"
+alacritty: $(HOME)/.cargo/bin/alacritty $(HOME)/.cargo g++.pkg libfreetype6-dev.pkg libfontconfig1-dev.pkg xclip.pkg
+	fish --command="cargo install --git https://github.com/jwilm/alacritty"
+
+$(HOME)/.cargo/bin/alacritty:
 	stow alacritty
 
 .PHONY: starship
-starship: $(HOME)/.config/starship.toml
+starship: $(HOME)/.config/starship.toml $(HOME)/.cargo
+	fish --command="cargo install starship"
+
 $(HOME)/.config/starship.toml:
 	stow starship
 
@@ -143,19 +170,9 @@ $(HOME)/.config/starship.toml:
 %.pkg:
 	@[ -z "$(shell dpkg -l | grep '$* ')" ] && sudo apt-get install -y $* || true
 
-i3.pkg: x.pkg
-	@which i3 > /dev/null || sudo apt-get install -y i3 suckless-tools
-
-x.pkg:
-	@which startx > /dev/null || sudo apt-get install -y xorg x-window-system
-
 .PHONY: xbanish
 xbanish: /usr/local/bin/xbanish
 /usr/local/bin/xbanish:
 	@$(MAKE) gcc.pkg libxext-dev.pkg libxt-dev.pkg libxfixes-dev.pkg libxi-dev.pkg
 	[ -d /opt/xbanish ] || sudo git clone https://github.com/jcs/xbanish.git /opt/xbanish
 	cd /opt/xbanish && sudo make install
-
-.PHONY: misc
-misc:
-	@$(MAKE) pulseaudio.pkg pavucontrol.pkg neofetch.pkg unzip.pkg jq.pkg htop.pkg ncdu.pkg tree.pkg evince.pkg scrot.pkg vlc.pkg pm-utils.pkg inxi.pkg thunar.pkg gvfs.pkg
