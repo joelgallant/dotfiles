@@ -3,6 +3,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the status bar.
 font Inconsolata 11
 for_window [class="Firefox"] border pixel 2
+for_window [class="Alacritty"] border pixel 2
 for_window [class="st"] border pixel 2
 
 # start a terminal
