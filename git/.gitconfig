@@ -34,6 +34,7 @@
     upull = pull
     fd = df
     prune = fetch -p
+    t = tag --sort=v:refname
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
