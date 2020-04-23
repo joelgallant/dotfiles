@@ -28,7 +28,6 @@ install: \
 	i3 \
 	firefox \
 	fish \
-	oh-my-fish \
 	fisher \
 	git \
 	tmux \
@@ -38,7 +37,6 @@ install: \
 	rust \
 	rust-tools \
 	node \
-	yarn \
 	delta \
 	fzf \
 	alacritty
@@ -136,11 +134,6 @@ $(HOME)/.volta/bin/volta:
 	$(HOME)/.volta/volta install yarn
 	echo "prefix = $(HOME)/.npm-packages" >> $(HOME)/.npmrc
 
-.PHONY: yarn
-yarn: $(HOME)/.npm-packages/bin/yarn
-$(HOME)/.npm-packages/bin/yarn:
-	npm i -g yarn
-
 .PHONY: delta
 delta: $(HOME)/.cargo/bin/delta
 $(HOME)/.cargo/bin/delta: $(HOME)/.cargo
@@ -158,6 +151,15 @@ alacritty: $(HOME)/.cargo/bin/alacritty $(HOME)/.cargo g++.pkg libfreetype6-dev.
 
 $(HOME)/.cargo/bin/alacritty:
 	stow alacritty
+
+.PHONY: insomnia
+insomnia:
+	echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+			| sudo tee -a /etc/apt/sources.list.d/insomnia.list
+	wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+			| sudo apt-key add -
+	sudo apt-get update
+	sudo apt-get install insomnia
 
 .PHONY: starship
 starship: $(HOME)/.config/starship.toml $(HOME)/.cargo
