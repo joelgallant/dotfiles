@@ -23,11 +23,8 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
 **Browser**: [firefox](https://firefox.com)
 
 - Programs installed
-  - dmenu
-  - i3-status
-  - tpm
+  - xrandr, quickrandr
   - dlna, media access
-  - xrandr, presets
   - programming toolchains
   - lldb, gdb, rr
   - docker, kube
@@ -38,7 +35,6 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - dropbox
   - wine
   - spotify
-  - cli utils
   - microcode updates
   - starship
   - pgadmin
@@ -53,8 +49,9 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
     plymouth
 
 - Configurations
-  - vim
   - i3
   - zsh
   - tmux
+  - vim
   - git
+  - ssh
