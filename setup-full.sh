@@ -31,15 +31,26 @@ if binary_or_override fish; then
   sudo usermod -s $(which fish) $USER
 fi
 
+# Fisher package manager
+if [ ! -e $HOME/.config/fish/functions/fisher.fish ]; then
+  curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
+fi
+
+# plugin for shared ssh-agent across fish sessions
+if [ ! -e ~/.config/fisher/github.com/tuvistavie/fish-ssh-agent ]; then
+  fisher add tuvistavie/fish-ssh-agent
+fi
+
+# Configuration (files only), all using gnu stow
+stow fish
+stow tmux
+stow i3
+
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
   mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
   ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
 fi
-
-# Configuration (files only), all using gnu stow
-stow tmux
-stow i3
 
 # NodeJS & Toolchain Install
 if binary_or_override volta; then
