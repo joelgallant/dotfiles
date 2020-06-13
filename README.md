@@ -43,7 +43,6 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - azure data studio
   - rust tools, targets, cargo plugins
 
-    user-dirs
     locking and sleep
     grub
     plymouth
@@ -55,3 +54,4 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - vim
   - git
   - ssh
+  - starship

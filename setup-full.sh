@@ -60,7 +60,18 @@ fi
 # tmux setup
 include_pkg tmux
 
-# TODO: tpm
+if [ ! -e $HOME/.tmux.conf ]; then
+  install_msg "tmux configuration"
+  stow tmux
+fi
+
+if [ ! -e $HOME/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+  tmux new -d # ensure tmux server is started
+  tmux source $HOME/.tmux.conf
+  $HOME/.tmux/plugins/tpm/bin/install_plugins all
+fi
 
 # CLI one-offs that I use often enough
 include_pkg zip unzip tar jq
@@ -130,6 +141,7 @@ fi
 
 # i3 status bar
 if binary_or_override i3status-rs INSTALL_I3_STATUS; then
+  include_pkg libdbus-1-dev && install_packages # links against dbus library
   cargo install --git https://github.com/greshake/i3status-rust
 fi
 
@@ -138,8 +150,7 @@ include_pkg dmenu
 
 # XBanish hides mouse automatically when typing
 if binary_or_override xbanish; then
-  include_pkg gcc libxext-dev libxt-dev libxfixes-dev libxi-dev
-  install_packages
+  include_pkg gcc libxext-dev libxt-dev libxfixes-dev libxi-dev && install_packages
   setup_opt
 
   install_msg xbanish

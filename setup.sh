@@ -6,7 +6,7 @@ if ! which git > /dev/null; then
 fi
 
 if [ ! -e $HOME/dotfiles ]; then
-  (cd $HOME && git clone https://github.com/joelgallant/dotfiles.git)
+  (cd $HOME && git clone https://github.com/joelgallant/dotfiles.git --branch main)
 else
   (cd $HOME/dotfiles && git pull)
 fi
