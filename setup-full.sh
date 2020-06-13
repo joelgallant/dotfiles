@@ -200,4 +200,4 @@ fi
 
 final_steps # finish up any work that was queued up
 
-echo -e "\e[1m--- We're done! $1 ---\e[0m"
+echo -e "\e[1m--- We're done! ---\e[0m"
