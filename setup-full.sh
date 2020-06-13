@@ -21,6 +21,7 @@ binary_or_override wget && include_pkg wget
 binary_or_override git && include_pkg git
 binary_or_override stow && include_pkg stow
 binary_or_override cmake && include_pkg gcc g++ make cmake
+binary_or_override gpg && include_pkg gnupg
 
 install_packages
 
