@@ -7,8 +7,13 @@ fi
 
 if [ ! -e $HOME/dotfiles ]; then
   (cd $HOME && git clone https://github.com/joelgallant/dotfiles.git)
+else
+  (cd $HOME/dotfiles && git pull)
 fi
 
-cd $HOME/dotfiles
+if [ ! -e $HOME/dotfiles/setup-full.sh ]; then
+  echo "setup-full.sh not in dotfiles, you're probably in an old setup"
+  exit 1
+fi
 
-./setup-full.sh
+(cd $HOME/dotfiles && ./setup-full.sh)
