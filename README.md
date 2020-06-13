@@ -1,9 +1,60 @@
-Making a new system:
+# My Dotfiles
+I use [debian testing](https://www.debian.org/devel/debian-installer/).
 
-1. install debian testing with encrypted lvm, no DE
-1. install git & make on first login
-1. `git clone https://github.com/joelgallant/dotfiles`
-1. `make`
-1. login to firefox
-1. grub
-1. `sudo plymouth-set-default-theme -R tribar`
+Use TUI installer, chose normal options. Partitioning is of course, up to the computer.
+I use ext4 still, and normally use encryption.
+
+De-select any desktop environment, and include "SSH Server" for remoting in.
+
+After rebooting, install should be as simple as a curl -> sh.
+
+```
+```
+
+### Main Programs
+**Window Manager**: [i3](https://i3wm.org)
+**Terminal**: [st](https://st.suckless.org)
+**Multiplexer**: [tmux](https://github.com/tmux/tmux)
+**Shell**: [zsh](http://zsh.sourceforge.net)
+**Editor**: [neovim](https://neovim.io)
+**Browser**: [firefox](https://firefox.com)
+
+- Programs installed
+  - dmenu
+  - i3-status
+  - tpm
+  - dlna, media access
+  - xrandr, presets
+  - programming toolchains
+  - lldb, gdb, rr
+  - docker, kube
+  - insomnia
+  - vlc, smplayer
+  - virt-manager
+  - vs code
+  - gpg
+  - ssh keys
+  - dropbox
+  - wine
+  - spotify
+  - cli utils
+  - microcode updates
+  - starship
+  - pgadmin
+  - pia
+  - chrome
+  - azure data studio
+  - rust tools, targets, cargo plugins
+  - 
+
+    user-dirs
+    locking and sleep
+    grub
+    plymouth
+
+- Configurations
+  - vim
+  - i3
+  - zsh
+  - tmux
+  - git
