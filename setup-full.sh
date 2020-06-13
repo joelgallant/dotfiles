@@ -192,7 +192,7 @@ include_pkg fonts-inconsolata fonts-font-awesome fonts-powerline libfreetype6-de
 if binary_or_override insomnia; then
   echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-  wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+  curl https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 
   sudo apt-get update
   include_pkg insomnia
@@ -200,3 +200,4 @@ fi
 
 final_steps # finish up any work that was queued up
 
+echo -e "\e[1m--- We're done! $1 ---\e[0m"
