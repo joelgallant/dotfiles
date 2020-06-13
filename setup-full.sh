@@ -38,7 +38,7 @@ fi
 
 # plugin for shared ssh-agent across fish sessions
 if [ ! -e ~/.config/fisher/github.com/tuvistavie/fish-ssh-agent ]; then
-  fisher add tuvistavie/fish-ssh-agent
+  fish --command="fisher add tuvistavie/fish-ssh-agent"
 fi
 
 # Configuration (files only), all using gnu stow
