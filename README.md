@@ -42,6 +42,7 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - chrome
   - azure data studio
   - rust tools, targets, cargo plugins
+  - android
 
     locking and sleep
     grub

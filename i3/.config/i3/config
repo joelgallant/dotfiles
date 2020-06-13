@@ -1,9 +1,8 @@
 set $mod Mod4
 
-# Font for window titles. Will also be used by the status bar.
 font Inconsolata 11
+
 for_window [class="Firefox"] border pixel 2
-for_window [class="Alacritty"] border pixel 2
 for_window [class="st"] border pixel 2
 
 # start a terminal
@@ -88,16 +87,13 @@ bindsym $mod+Shift+r restart
 
 # lock screen
 bindsym $mod+Ctrl+l exec i3lock
-# suspend
 bindsym $mod+Ctrl+s exec "sudo pm-suspend | i3lock"
-# exit
 bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m '' -b 'Exit i3' 'i3-msg exit'"
-# shutdown
 bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m '' -b 'Shutdown' 'sudo shutdown -h now'"
 
 client.focused          #3F8AC2 #999999 #000000 #00DA8E
 client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e 
+client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
 # resize window (you can also use the mouse for that)
