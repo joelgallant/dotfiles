@@ -31,8 +31,6 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - programming toolchains
   - lldb, gdb, rr
   - docker, kube
-  - insomnia
-  - vlc, smplayer
   - virt-manager
   - vs code
   - gpg
@@ -48,7 +46,6 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - chrome
   - azure data studio
   - rust tools, targets, cargo plugins
-  - 
 
     user-dirs
     locking and sleep

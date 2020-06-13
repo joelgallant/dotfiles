@@ -63,7 +63,7 @@ binary_or_override curl && include_pkg curl
 binary_or_override wget && include_pkg wget
 binary_or_override git && include_pkg git
 binary_or_override stow && include_pkg stow
-binary_or_override cmake && include_pkg gcc g++ cmake
+binary_or_override cmake && include_pkg gcc g++ make cmake
 
 install_packages
 
@@ -185,7 +185,7 @@ include_pkg lm-sensors pm-utils
 include_pkg pulseaudio pulseaudio-utils pavucontrol
 
 # GUI applications that I use often enough
-include_pkg thunar evince transmission-gtk vlc
+include_pkg thunar evince transmission-gtk vlc smplayer
 
 # GVfs for thunar mounting
 include_pkg gvfs gvfs-backends
