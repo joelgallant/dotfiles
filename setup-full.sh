@@ -42,9 +42,9 @@ if [ ! -e ~/.config/fisher/github.com/tuvistavie/fish-ssh-agent ]; then
 fi
 
 # Configuration (files only), all using gnu stow
-stow fish
-stow tmux
-stow i3
+stow -t $HOME fish
+stow -t $HOME tmux
+stow -t $HOME i3
 
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
