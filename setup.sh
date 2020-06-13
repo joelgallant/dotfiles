@@ -74,6 +74,7 @@ XBANISH_VERSION="v1.7"
 if binary_or_override volta; then
   install_msg volta
   curl https://get.volta.sh | bash
+  source ~/.bashrc
 fi
 
 if binary_or_override node; then
@@ -93,6 +94,7 @@ if binary_or_override rustc INSTALL_RUST; then
   install_msg rust
 
   curl https://sh.rustup.rs -sSf | sh -s -- -y
+  source $HOME/.cargo/env
 fi
 
 # CLI one-offs that I use often enough
@@ -190,5 +192,13 @@ include_pkg gvfs gvfs-backends
 
 # Fonts and other theming
 include_pkg fonts-inconsolata fonts-font-awesome fonts-powerline libfreetype6-dev
+
+if binary_or_override insomnia; then
+  echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+  wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+
+  include_pkg insomnia
+fi
 
 final_steps # finish up any work that was queued up
