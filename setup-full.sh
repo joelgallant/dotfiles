@@ -194,6 +194,7 @@ if binary_or_override insomnia; then
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
   wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 
+  sudo apt-get update
   include_pkg insomnia
 fi
 
