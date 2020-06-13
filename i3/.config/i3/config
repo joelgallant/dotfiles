@@ -148,6 +148,3 @@ exec_always --no-startup-id feh --bg-fill ~/pictures/wallpaper.png
 exec --no-startup-id while true; do setxkbmap -option caps:escape && sleep 5 || sleep 30; done
 exec --no-startup-id numlockx
 exec --no-startup-id (xbanish &)
-
-# monitor
-exec_always --no-startup-id xrandr --output HDMI-0 --right-of DVI-D-0

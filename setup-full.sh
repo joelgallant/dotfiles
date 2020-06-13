@@ -9,12 +9,6 @@ if [[ "${DISABLE_SYSTEM_UPDATE:-}" != "1" ]]; then
   sudo apt-get update
 fi
 
-if binary_or_override zsh; then
-  install_msg zsh
-  sudo apt-get install -y zsh
-  sudo usermod -s $(which zsh) $USER
-fi
-
 # Core Utilities For Install
 binary_or_override curl && include_pkg curl
 binary_or_override wget && include_pkg wget
@@ -24,6 +18,18 @@ binary_or_override cmake && include_pkg gcc g++ make cmake
 binary_or_override gpg && include_pkg gnupg
 
 install_packages
+
+# shell(s) - I use fish primarily but like having zsh available
+if binary_or_override zsh; then
+  install_msg zsh
+  sudo apt-get install -y zsh
+fi
+
+if binary_or_override fish; then
+  install_msg fish
+  sudo apt-get install -y fish
+  sudo usermod -s $(which fish) $USER
+fi
 
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
@@ -148,6 +154,9 @@ fi
 
 # dmenu to find and run programs
 include_pkg dmenu
+
+# st as a terminal
+include_pkg stterm
 
 # XBanish hides mouse automatically when typing
 if binary_or_override xbanish; then
