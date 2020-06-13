@@ -9,6 +9,8 @@ De-select any desktop environment, and include "SSH Server" for remoting in.
 After rebooting, install should be as simple as a curl -> sh.
 
 ```
+sudo apt-get update && sudo apt-get install -y curl
+curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh -sSf | bash
 ```
 
 ### Main Programs
@@ -33,7 +35,7 @@ After rebooting, install should be as simple as a curl -> sh.
   - virt-manager
   - vs code
   - gpg
-  - ssh keys
+  - ssh keys, agent
   - dropbox
   - wine
   - spotify
