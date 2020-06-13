@@ -1,6 +1,8 @@
 #!/bin/env bash
 set -euo pipefail
 
+DOTFILES_DIR=$(realpath $(dirname "$0"))
+
 PACKAGES=()
 
 function include_pkg() {

@@ -27,7 +27,7 @@ install_packages
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
   mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
-  ln -fsn $(cwd)/user-dirs.dirs $HOME/.config/user-dirs.dirs
+  ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
 fi
 
 # NodeJS & Toolchain Install
