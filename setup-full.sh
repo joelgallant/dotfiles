@@ -31,6 +31,10 @@ if [ ! -e $HOME/.config/user-dirs.dir ]; then
   ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
 fi
 
+# Configuration (files only), all using gnu stow
+stow tmux
+stow i3
+
 # NodeJS & Toolchain Install
 if binary_or_override volta; then
   install_msg volta
@@ -60,11 +64,6 @@ fi
 
 # tmux setup
 include_pkg tmux
-
-if [ ! -e $HOME/.tmux.conf ]; then
-  install_msg "tmux configuration"
-  stow tmux
-fi
 
 if [ ! -e $HOME/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
