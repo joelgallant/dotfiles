@@ -8,9 +8,10 @@ De-select any desktop environment, and include "SSH Server" for remoting in.
 
 After rebooting, install should be as simple as a curl -> sh.
 
-```
+```bash
 sudo apt-get update && sudo apt-get install -y curl
-curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh -sSf | bash
+
+curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date +%s) -sSf | bash
 ```
 
 ### Main Programs
