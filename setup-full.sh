@@ -74,14 +74,14 @@ if binary_or_override volta; then
   source ~/.bashrc
 fi
 
-if binary_or_override node; then
+if ! node -v; then
   install_msg node
   volta install node@lts
 fi
 
-if binary_or_override yarn; then
+if ! yarn -v; then
   install_msg yarn
-  volta install yarn
+  volta install yarn@1
 
   echo "prefix = $HOME/.npm-packages" >> $HOME/.npmrc
 fi
