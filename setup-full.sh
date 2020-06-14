@@ -145,6 +145,7 @@ if binary_or_override bandwhich; then
 fi
 
 if binary_or_override starship; then
+  include_pkg libssl-dev && install_packages
   install_msg starship
   cargo install starship
 fi
@@ -173,6 +174,7 @@ fi
 # i3 status bar
 if binary_or_override i3status-rs INSTALL_I3_STATUS; then
   include_pkg libdbus-1-dev libpulse0 && install_packages # links against libraries
+  install_msg i3status-rs
   cargo install --git https://github.com/greshake/i3status-rust
 fi
 
