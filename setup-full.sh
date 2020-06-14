@@ -58,7 +58,7 @@ if [ ! -e $HOME/.config/user-dirs.dir ]; then
 fi
 
 # SSH keys
-touch $HOME/.ssh/config
+mkdir -p $HOME/.ssh && touch $HOME/.ssh/config
 
 if [ ! -e $HOME/.ssh/github ]; then
   bold_msg "--- Creating github ssh key ---"
