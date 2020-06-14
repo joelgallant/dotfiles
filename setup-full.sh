@@ -10,12 +10,12 @@ if [[ "${DISABLE_SYSTEM_UPDATE:-}" != "1" ]]; then
 fi
 
 # Core Utilities For Install
-binary_or_override curl && include_pkg curl
-binary_or_override wget && include_pkg wget
-binary_or_override git && include_pkg git
-binary_or_override stow && include_pkg stow
-binary_or_override cmake && include_pkg gcc g++ make cmake
-binary_or_override gpg && include_pkg gnupg ca-certificates
+include_pkg curl wget
+include_pkg git
+include_pkg stow
+include_pkg gcc g++ make cmake pkg-config
+include_pkg gnupg ca-certificates
+include_pkg libssl-dev
 
 install_packages
 
@@ -113,7 +113,6 @@ if binary_or_override cargo-watch; then
 fi
 
 if binary_or_override cargo-outdated; then
-  include_pkg libssl-dev && install_packages
   install_msg cargo-outdated
   cargo install cargo-outdated
 fi
@@ -205,7 +204,6 @@ if binary_or_override bandwhich; then
 fi
 
 if binary_or_override starship; then
-  include_pkg libssl-dev && install_packages
   install_msg starship
   cargo install starship
 fi
