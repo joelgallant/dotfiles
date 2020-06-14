@@ -280,7 +280,7 @@ include_pkg network-manager
 include_pkg lm-sensors pm-utils
 
 # Sound management
-include_pkg pulseaudio pulseaudio-utils pavucontrol
+include_pkg pulseaudio pulseaudio-utils pavucontrol alsa-utils
 
 # Virtual machines
 include_pkg virt-manager
@@ -298,6 +298,7 @@ include_pkg fonts-inconsolata fonts-font-awesome fonts-powerline libfreetype6-de
 if binary_or_override firefox; then
   install_msg firefox
   setup_opt
+  include_pkg libdbus-glib-1-2 # linked against, looks like it's loaded dynamically
 
   wget -O firefox.tar.gz "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US"
   tar -xf firefox.tar.gz -C /opt
