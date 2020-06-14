@@ -15,7 +15,7 @@ binary_or_override wget && include_pkg wget
 binary_or_override git && include_pkg git
 binary_or_override stow && include_pkg stow
 binary_or_override cmake && include_pkg gcc g++ make cmake
-binary_or_override gpg && include_pkg gnupg
+binary_or_override gpg && include_pkg gnupg ca-certificates
 
 install_packages
 
@@ -150,7 +150,7 @@ if [ ! -e $HOME/.tmux/plugins/tpm ]; then
 fi
 
 # CLI one-offs that I use often enough
-include_pkg zip unzip tar jq
+include_pkg wget zip unzip tar jq
 include_pkg htop glances
 include_pkg tree ncdu
 include_pkg neofetch inxi
@@ -290,14 +290,37 @@ include_pkg gvfs gvfs-backends
 # Fonts and other theming
 include_pkg fonts-inconsolata fonts-font-awesome fonts-powerline libfreetype6-dev
 
+# Web browsers
+if binary_or_override firefox; then
+  install_msg firefox
+  setup_opt
+
+  wget -O firefox.tar.gz "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US"
+  tar -xf firefox.tar.gz -C /opt
+  rm firefox.tar.gz
+
+  sudo ln -s /opt/firefox/firefox /opt/bin/firefox
+fi
+
+include_pkg chromium
+
 # Insomnia GUI for hitting APIs
 if binary_or_override insomnia; then
+  curl https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
   echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-  curl https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 
   sudo apt-get update
   include_pkg insomnia
+fi
+
+if binary_or_override pgadmin4; then
+  curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+  echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" \
+    | sudo tee -a /etc/apt/sources.list.d/postgres.list
+
+  sudo apt-get update
+  include_pkg pgadmin4
 fi
 
 final_steps # finish up any work that was queued up

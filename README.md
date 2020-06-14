@@ -27,7 +27,7 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
 
 **Browser**: [firefox](https://firefox.com)
 
-- Programs installed
+- stuff to do
   - gpg
   - xrandr setup, quickrandr
   - kube
@@ -36,15 +36,10 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - wine
   - spotify
   - microcode updates
-  - pgadmin
   - pia
-  - firefox
-  - chrome
   - azure data studio
   - android
   - make sure ssh-agent is installed
-
-- Stuff to do
   - locking and sleep
   - grub
   - plymouth
