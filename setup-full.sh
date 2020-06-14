@@ -137,7 +137,7 @@ if binary_or_override docker; then
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
   sudo apt-get update
-  include_pkg docker-ce docker-ce-cli containerd.io
+  include_pkg docker-ce docker-ce-cli containerd.io && install_packages
   sudo usermod -aG docker $USER
 fi
 
