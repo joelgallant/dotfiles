@@ -135,10 +135,10 @@ if binary_or_override docker; then
   echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
     | sudo tee -a /etc/apt/sources.list.d/docker.list
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-  sudo usermod -aG docker $USER
 
   sudo apt-get update
   include_pkg docker-ce docker-ce-cli containerd.io
+  sudo usermod -aG docker $USER
 fi
 
 # tmux setup
