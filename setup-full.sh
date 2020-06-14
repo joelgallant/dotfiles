@@ -319,7 +319,7 @@ if binary_or_override insomnia; then
 fi
 
 if binary_or_override pgadmin4; then
-  curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+  curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
   echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" \
     | sudo tee -a /etc/apt/sources.list.d/postgres.list
 
