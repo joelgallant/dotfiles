@@ -98,6 +98,31 @@ if binary_or_override rustc INSTALL_RUST; then
   rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy
 fi
 
+if binary_or_override cargo-deny; then
+  install_msg cargo-deny
+  cargo install cargo-deny
+fi
+
+if binary_or_override cargo-watch; then
+  install_msg cargo-watch
+  cargo install cargo-watch
+fi
+
+if binary_or_override cargo-outdated; then
+  install_msg cargo-outdated
+  cargo install cargo-outdated
+fi
+
+if binary_or_override cargo-release; then
+  install_msg cargo-release
+  cargo install cargo-release
+fi
+
+if binary_or_override cargo-deb; then
+  install_msg cargo-deb
+  cargo install cargo-deb
+fi
+
 # Toolchains and debuggers
 include_pkg lldb gdb rr
 
@@ -189,6 +214,16 @@ fi
 # Text editors
 include_pkg neovim
 
+if binary_or_override code; then
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+  sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" \
+    | sudo tee -a /etc/apt/sources.list.d/vscode.list
+  rm packages.microsoft.gpg
+  sudo apt-get update
+  include_pkg code
+fi
+
 # Plug for neovim plugins
 if [ ! -e $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
   install_msg vim-plug
@@ -242,6 +277,9 @@ include_pkg lm-sensors pm-utils
 
 # Sound management
 include_pkg pulseaudio pulseaudio-utils pavucontrol
+
+# Virtual machines
+include_pkg virt-manager
 
 # GUI applications that I use often enough
 include_pkg thunar evince transmission-gtk vlc smplayer

@@ -29,7 +29,7 @@ function install_packages() {
 
 function binary_or_override() {
   binary_name=$1
-  override_var_name=${2:-INSTALL_${binary_name^^}}
+  override_var_name=`echo ${2:-INSTALL_${binary_name^^}} | tr '-' '_'`
 
   if ! which $binary_name > /dev/null || [[ "${!override_var_name:-}" == "1" ]]; then
     return 0
