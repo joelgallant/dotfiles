@@ -282,7 +282,7 @@ include_pkg pulseaudio pulseaudio-utils pavucontrol
 include_pkg virt-manager
 
 # GUI applications that I use often enough
-include_pkg thunar evince transmission-gtk vlc smplayer gimp
+include_pkg thunar evince transmission-gtk vlc smplayer gimp libreoffice-calc
 
 # GVfs for thunar mounting
 include_pkg gvfs gvfs-backends
