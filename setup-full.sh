@@ -44,7 +44,10 @@ fi
 # Configuration (files only), all using gnu stow
 stow -t $HOME fish
 stow -t $HOME tmux
+stow -t $HOME nvim
+stow -t $HOME git
 stow -t $HOME i3
+stow -t $HOME starship
 
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
@@ -141,6 +144,11 @@ if binary_or_override bandwhich; then
   cargo install bandwhich
 fi
 
+if binary_or_override starship; then
+  install_msg starship
+  cargo install starship
+fi
+
 # Fuzzy finder for terminal and vim
 if [ ! -d $HOME/.fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
@@ -150,7 +158,12 @@ fi
 # Text editors
 include_pkg neovim
 
-# TODO: plug and friends
+# Plug for neovim plugins
+if [ ! -e $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
+  install_msg vim-plug
+  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  nvim -es -u ~/.config/nvim/init.vim  -i NONE -c "PlugInstall" -c "qa"
+fi
 
 # X Server & i3wm
 if binary_or_override i3; then
@@ -159,7 +172,7 @@ fi
 
 # i3 status bar
 if binary_or_override i3status-rs INSTALL_I3_STATUS; then
-  include_pkg libdbus-1-dev && install_packages # links against dbus library
+  include_pkg libdbus-1-dev libpulse0 && install_packages # links against libraries
   cargo install --git https://github.com/greshake/i3status-rust
 fi
 

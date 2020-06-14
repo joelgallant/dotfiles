@@ -16,10 +16,15 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
 
 ### Main Programs
 **Window Manager**: [i3](https://i3wm.org)
+
 **Terminal**: [st](https://st.suckless.org)
+
 **Multiplexer**: [tmux](https://github.com/tmux/tmux)
+
 **Shell**: [zsh](http://zsh.sourceforge.net)
+
 **Editor**: [neovim](https://neovim.io)
+
 **Browser**: [firefox](https://firefox.com)
 
 - Programs installed
@@ -44,14 +49,12 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - rust tools, targets, cargo plugins
   - android
 
-    locking and sleep
-    grub
-    plymouth
+- Stuff to do
+  - locking and sleep
+  - grub
+  - plymouth
 
 - Configurations
-  - i3
-  - zsh
-  - tmux
   - vim
   - git
   - ssh
