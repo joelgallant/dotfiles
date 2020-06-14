@@ -92,6 +92,24 @@ if binary_or_override rustc INSTALL_RUST; then
 
   curl https://sh.rustup.rs -sSf | sh -s -- -y
   source $HOME/.cargo/env
+
+  rustup component add clippy
+  rustup component add rustfmt
+  rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy
+fi
+
+# Toolchains and debuggers
+include_pkg lldb gdb rr
+
+# Docker
+if binary_or_override docker; then
+  echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
+    | sudo tee -a /etc/apt/sources.list.d/docker.list
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+  sudo usermod -aG docker $USER
+
+  sudo apt-get update
+  include_pkg docker-ce docker-ce-cli containerd.io
 fi
 
 # tmux setup

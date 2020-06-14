@@ -31,8 +31,7 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - gpg
   - xrandr setup, quickrandr
   - programming toolchains
-  - lldb, gdb, rr
-  - docker, kube
+  - kube
   - dlna, media access
   - vs code
   - virt-manager
@@ -43,6 +42,7 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - starship
   - pgadmin
   - pia
+  - firefox
   - chrome
   - azure data studio
   - rust tools, targets, cargo plugins
