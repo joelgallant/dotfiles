@@ -58,7 +58,9 @@ if [ ! -e $HOME/.config/user-dirs.dir ]; then
 fi
 
 # SSH keys
-mkdir -p $HOME/.ssh && touch $HOME/.ssh/config
+if [ ! -e $HOME/.ssh/config ]; then
+  mkdir -p $HOME/.ssh && touch $HOME/.ssh/config
+fi
 
 if [ ! -e $HOME/.ssh/github ]; then
   bold_msg "--- Creating github ssh key ---"
@@ -111,6 +113,7 @@ if binary_or_override cargo-watch; then
 fi
 
 if binary_or_override cargo-outdated; then
+  include_pkg libssl-dev && install_packages
   install_msg cargo-outdated
   cargo install cargo-outdated
 fi
