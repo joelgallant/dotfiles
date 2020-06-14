@@ -76,12 +76,12 @@ if binary_or_override volta; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-if ! node | grep -i "error"; then
+if node -v | grep -qi "error"; then
   install_msg node
   volta install node@lts
 fi
 
-if ! yarn | grep -i "error"; then
+if yarn -v | grep -qi "error"; then
   install_msg yarn
   volta install yarn@1
 
