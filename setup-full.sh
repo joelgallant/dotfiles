@@ -133,7 +133,7 @@ include_pkg lldb gdb rr
 # Docker
 if binary_or_override docker; then
   echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
-    | sudo tee -a /etc/apt/sources.list.d/docker.list
+    | sudo tee /etc/apt/sources.list.d/docker.list
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
   sudo apt-get update
@@ -221,7 +221,7 @@ if binary_or_override code; then
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
   sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" \
-    | sudo tee -a /etc/apt/sources.list.d/vscode.list
+    | sudo tee /etc/apt/sources.list.d/vscode.list
   rm packages.microsoft.gpg
   sudo apt-get update
   include_pkg code
@@ -312,7 +312,7 @@ include_pkg chromium
 if binary_or_override insomnia; then
   curl https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
   echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+    | sudo tee /etc/apt/sources.list.d/insomnia.list
 
   sudo apt-get update
   include_pkg insomnia
@@ -321,7 +321,7 @@ fi
 if binary_or_override pgadmin4; then
   curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
   echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" \
-    | sudo tee -a /etc/apt/sources.list.d/postgres.list
+    | sudo tee /etc/apt/sources.list.d/postgres.list
 
   sudo apt-get update
   include_pkg pgadmin4
