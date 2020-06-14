@@ -71,7 +71,9 @@ fi
 if binary_or_override volta; then
   install_msg volta
   curl https://get.volta.sh | bash
-  source ~/.bashrc
+
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
 if ! node -v; then
