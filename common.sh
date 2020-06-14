@@ -9,8 +9,12 @@ function include_pkg() {
   PACKAGES+=( $@ )
 }
 
+function bold_msg() {
+  echo -e "\e[1m$1\e[0m"
+}
+
 function install_msg() {
-  echo -e "\e[1m--- Installing $1 ---\e[0m"
+  bold_msg "--- Installing $1 ---"
 }
 
 function install_packages() {

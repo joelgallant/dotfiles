@@ -28,15 +28,14 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
 **Browser**: [firefox](https://firefox.com)
 
 - Programs installed
-  - xrandr, quickrandr
-  - dlna, media access
+  - gpg
+  - xrandr setup, quickrandr
   - programming toolchains
   - lldb, gdb, rr
   - docker, kube
-  - virt-manager
+  - dlna, media access
   - vs code
-  - gpg
-  - ssh keys, agent
+  - virt-manager
   - dropbox
   - wine
   - spotify
@@ -48,6 +47,7 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
   - azure data studio
   - rust tools, targets, cargo plugins
   - android
+  - make sure ssh-agent is installed
 
 - Stuff to do
   - locking and sleep

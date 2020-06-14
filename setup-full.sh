@@ -33,12 +33,14 @@ fi
 
 # Fisher package manager
 if [ ! -e $HOME/.config/fish/functions/fisher.fish ]; then
+  install_msg fisher plugin manager
   curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
 fi
 
 # plugin for shared ssh-agent across fish sessions
-if [ ! -e ~/.config/fisher/github.com/tuvistavie/fish-ssh-agent ]; then
-  fish --command="fisher add tuvistavie/fish-ssh-agent"
+if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
+  install_msg fish-ssh-agent
+  fish --command="fisher add danhper/fish-ssh-agent"
 fi
 
 # Configuration (files only), all using gnu stow
@@ -53,6 +55,16 @@ stow -t $HOME starship
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
   mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
   ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
+fi
+
+# SSH keys
+touch $HOME/.ssh/config
+
+if [ ! -e $HOME/.ssh/github ]; then
+  bold_msg "--- Creating github ssh key ---"
+  ssh-keygen -t rsa -b 4096 -C "joel@joelgallant.me" -f $HOME/.ssh/github
+  printf "\nHOST github.com\n  HostName github.com\n  IdentityFile $HOME/.ssh/github\n" >> $HOME/.ssh/config
+  bold_msg "Remember to add ~/.ssh/github.pub key to the github GUI"
 fi
 
 # NodeJS & Toolchain Install
