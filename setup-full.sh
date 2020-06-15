@@ -43,6 +43,12 @@ if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
   fish --command="fisher add danhper/fish-ssh-agent"
 fi
 
+# User directories
+if [ ! -e $HOME/.config/user-dirs.dir ]; then
+  mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
+  ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
+fi
+
 # Configuration (files only), all using gnu stow
 stow -t $HOME fish
 stow -t $HOME tmux
@@ -50,12 +56,6 @@ stow -t $HOME nvim
 stow -t $HOME git
 stow -t $HOME i3
 stow -t $HOME starship
-
-# User directories
-if [ ! -e $HOME/.config/user-dirs.dir ]; then
-  mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
-  ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
-fi
 
 # SSH keys
 if [ ! -e $HOME/.ssh/config ]; then
