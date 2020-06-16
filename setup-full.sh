@@ -230,9 +230,9 @@ fi
 # Plug for neovim plugins
 if [ ! -e $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
   install_msg vim-plug
-  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   install_packages # nvim
-  nvim -es -u ~/.config/nvim/init.vim  -i NONE -c "PlugInstall" -c "qa"
+  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  nvim -es -u $HOME/.config/nvim/init.vim  -i NONE -c "PlugInstall" -c "qa"
 fi
 
 # X Server & i3wm
