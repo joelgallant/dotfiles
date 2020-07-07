@@ -30,6 +30,7 @@ set -x ANDROID_HOME /opt/android-sdk
 # PATH modifications
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $NPM_PACKAGES/bin
+set -x PATH $PATH /snap/bin
 set -x PATH $PATH /opt/bin
 set -x PATH $PATH /opt/anaconda3/bin
 
