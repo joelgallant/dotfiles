@@ -232,9 +232,9 @@ endif
 
 " Backup and externals
   set swapfile
-  set directory=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
+  set directory=/tmp,/var/tmp
   set backup
-  set backupdir=$TMPDIR,~/.tmp,~/.vim/tmp,/tmp,/var/tmp
+  set backupdir=/tmp,/var/tmp
   set backupcopy=yes
 
   if has('persistent_undo')
