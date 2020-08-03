@@ -32,6 +32,7 @@ set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $NPM_PACKAGES/bin
 set -x PATH $PATH /snap/bin
 set -x PATH $PATH /opt/bin
+set -x PATH $PATH $HOME/.pulumi/bin
 set -x PATH $PATH /opt/anaconda3/bin
 
 # look in local for installed shared libs
