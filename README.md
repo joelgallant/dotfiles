@@ -26,19 +26,3 @@ curl https://raw.githubusercontent.com/joelgallant/dotfiles/main/setup.sh?$(date
 **Editor**: [neovim](https://neovim.io)
 
 **Browser**: [firefox](https://firefox.com)
-
-- stuff to do
-  - xrandr setup, quickrandr
-  - kube
-  - gpg
-  - dlna, media access
-  - dropbox
-  - wine
-  - spotify
-  - microcode updates
-  - pia
-  - azure data studio
-  - android
-  - locking and sleep
-  - grub
-  - plymouth
