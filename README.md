@@ -1,8 +1,7 @@
 # My Dotfiles
-I use [debian testing](https://www.debian.org/devel/debian-installer/).
+I use [debian testing](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/debian-testing-amd64-netinst.iso).
 
-Use TUI installer, chose normal options. Partitioning is of course, up to the computer.
-I use ext4 still, and normally use encryption.
+Use TUI installer, chose normal options. Partitioning is of course, up to the needs of the computer.
 
 De-select any desktop environment, and include "SSH Server" for remoting in.
 

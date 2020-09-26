@@ -57,38 +57,26 @@ stow -t $HOME git
 stow -t $HOME i3
 stow -t $HOME starship
 
-# SSH keys
-if [ ! -e $HOME/.ssh/config ]; then
-  mkdir -p $HOME/.ssh && touch $HOME/.ssh/config
-fi
-
-if [ ! -e $HOME/.ssh/github ]; then
-  bold_msg "--- Creating github ssh key ---"
-  ssh-keygen -t rsa -b 4096 -C "joel@joelgallant.me" -f $HOME/.ssh/github
-  printf "\nHOST github.com\n  HostName github.com\n  IdentityFile $HOME/.ssh/github\n" >> $HOME/.ssh/config
-  bold_msg "Remember to add ~/.ssh/github.pub key to the github GUI"
-fi
-
 # NodeJS & Toolchain Install
-# if binary_or_override volta; then
-#   install_msg volta
-#   curl https://get.volta.sh | bash
-# 
-#   export VOLTA_HOME="$HOME/.volta"
-#   export PATH="$VOLTA_HOME/bin:$PATH"
-# fi
-# 
-# if node -v | grep -qi "error"; then
-#   install_msg node
-#   volta install node@lts
-# fi
-# 
-# if yarn -v | grep -qi "error"; then
-#   install_msg yarn
-#   volta install yarn@1
-# 
-#   echo "prefix = $HOME/.npm-packages" >> $HOME/.npmrc
-# fi
+if binary_or_override volta; then
+  install_msg volta
+  curl https://get.volta.sh | bash
+
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
+if [[ ! -e $HOME/.volta/bin/node ]]; then
+  install_msg node
+  volta install node@lts
+fi
+
+if [[ ! -e $HOME/.volta/bin/yarn ]]; then
+  install_msg yarn
+  volta install yarn@1
+
+  echo "prefix = $HOME/.npm-packages" >> $HOME/.npmrc
+fi
 
 # Rust & Toolchain Install
 if binary_or_override rustc INSTALL_RUST; then
@@ -326,6 +314,18 @@ if binary_or_override pgadmin4; then
 
   sudo apt-get update
   include_pkg pgadmin4
+fi
+
+# SSH keys
+if [ ! -e $HOME/.ssh/config ]; then
+  mkdir -p $HOME/.ssh && touch $HOME/.ssh/config
+fi
+
+if [ ! -e $HOME/.ssh/github ]; then
+  bold_msg "--- Creating github ssh key ---"
+  ssh-keygen -t rsa -b 4096 -C "joel@joelgallant.me" -f $HOME/.ssh/github
+  printf "\nHOST github.com\n  HostName github.com\n  IdentityFile $HOME/.ssh/github\n" >> $HOME/.ssh/config
+  bold_msg "Remember to add ~/.ssh/github.pub key to the github GUI"
 fi
 
 final_steps # finish up any work that was queued up
