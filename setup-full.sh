@@ -70,25 +70,25 @@ if [ ! -e $HOME/.ssh/github ]; then
 fi
 
 # NodeJS & Toolchain Install
-if binary_or_override volta; then
-  install_msg volta
-  curl https://get.volta.sh | bash
-
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
-
-if node -v | grep -qi "error"; then
-  install_msg node
-  volta install node@lts
-fi
-
-if yarn -v | grep -qi "error"; then
-  install_msg yarn
-  volta install yarn@1
-
-  echo "prefix = $HOME/.npm-packages" >> $HOME/.npmrc
-fi
+# if binary_or_override volta; then
+#   install_msg volta
+#   curl https://get.volta.sh | bash
+# 
+#   export VOLTA_HOME="$HOME/.volta"
+#   export PATH="$VOLTA_HOME/bin:$PATH"
+# fi
+# 
+# if node -v | grep -qi "error"; then
+#   install_msg node
+#   volta install node@lts
+# fi
+# 
+# if yarn -v | grep -qi "error"; then
+#   install_msg yarn
+#   volta install yarn@1
+# 
+#   echo "prefix = $HOME/.npm-packages" >> $HOME/.npmrc
+# fi
 
 # Rust & Toolchain Install
 if binary_or_override rustc INSTALL_RUST; then
