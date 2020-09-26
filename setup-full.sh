@@ -116,7 +116,7 @@ if binary_or_override cargo-deb; then
 fi
 
 # Toolchains and debuggers
-include_pkg lldb gdb rr
+include_pkg lldb gdb
 
 # Docker
 if binary_or_override docker; then
