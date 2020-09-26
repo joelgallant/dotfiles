@@ -19,30 +19,6 @@ include_pkg libssl-dev
 
 install_packages
 
-# shell(s) - I use fish primarily but like having zsh available
-if binary_or_override zsh; then
-  install_msg zsh
-  sudo apt-get install -y zsh
-fi
-
-if binary_or_override fish; then
-  install_msg fish
-  sudo apt-get install -y fish
-  sudo usermod -s $(which fish) $USER
-fi
-
-# Fisher package manager
-if [ ! -e $HOME/.config/fish/functions/fisher.fish ]; then
-  install_msg fisher plugin manager
-  curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
-fi
-
-# plugin for shared ssh-agent across fish sessions
-if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
-  install_msg fish-ssh-agent
-  fish --command="fisher add danhper/fish-ssh-agent"
-fi
-
 # User directories
 if [ ! -e $HOME/.config/user-dirs.dir ]; then
   mkdir -p $HOME/documents $HOME/downloads $HOME/dev $HOME/libs $HOME/music $HOME/pictures $HOME/videos $HOME/.config
@@ -50,7 +26,6 @@ if [ ! -e $HOME/.config/user-dirs.dir ]; then
 fi
 
 # Configuration (files only), all using gnu stow
-stow -t $HOME fish
 stow -t $HOME tmux
 stow -t $HOME nvim
 stow -t $HOME git
@@ -314,6 +289,32 @@ if binary_or_override pgadmin4; then
 
   sudo apt-get update
   include_pkg pgadmin4
+fi
+
+# shell(s) - I use fish primarily but like having zsh available
+if binary_or_override zsh; then
+  install_msg zsh
+  sudo apt-get install -y zsh
+fi
+
+if binary_or_override fish; then
+  install_msg fish
+  sudo apt-get install -y fish
+  sudo usermod -s $(which fish) $USER
+fi
+
+stow -t $HOME fish
+
+# Fisher package manager
+if [ ! -e $HOME/.config/fish/functions/fisher.fish ]; then
+  install_msg fisher plugin manager
+  curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
+fi
+
+# plugin for shared ssh-agent across fish sessions
+if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
+  install_msg fish-ssh-agent
+  fish --command="fisher add danhper/fish-ssh-agent"
 fi
 
 # SSH keys
