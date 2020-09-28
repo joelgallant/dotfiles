@@ -1,6 +1,7 @@
 #!/bin/env bash
 set -euo pipefail
 source ./common.sh
+source ~/.bashrc
 
 # Versions of stuff, if applicable
 XBANISH_VERSION="v1.7"
