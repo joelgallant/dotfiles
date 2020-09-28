@@ -38,6 +38,16 @@ function binary_or_override() {
   fi
 }
 
+function volta_component() {
+  binary_name=$1
+
+  if ! test -e $VOLTA_HOME/bin/$binary_name || ! $VOLTA_HOME/bin/$binary_name -v 2> /dev/null; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 function final_steps() {
   install_packages # install any packages that were remaining
   sudo apt-get clean

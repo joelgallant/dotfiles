@@ -41,12 +41,12 @@ if binary_or_override volta; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-if [[ ! -e $HOME/.volta/bin/node ]]; then
+if volta_component node; then
   install_msg node
   volta install node@lts
 fi
 
-if [[ ! -e $HOME/.volta/bin/yarn ]]; then
+if volta_component yarn; then
   install_msg yarn
   volta install yarn@1
 
