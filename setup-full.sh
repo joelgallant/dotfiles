@@ -252,6 +252,9 @@ if binary_or_override i3status-rs INSTALL_I3_STATUS; then
   cargo install --git https://github.com/greshake/i3status-rust
 fi
 
+# xrandr and gui for monitor resolutions and layout
+include_pkg xrandr arandr
+
 # dmenu to find and run programs
 include_pkg dmenu
 
