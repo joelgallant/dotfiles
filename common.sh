@@ -76,7 +76,7 @@ function setup_opt() {
     sudo chown -R $USER:$USER /opt
   fi
 
-  if ! grep "/opt/bin" $HOME/.profile; then
+  if ! grep -q "/opt/bin" $HOME/.profile; then
     echo 'export PATH="/opt/bin:$PATH"' | tee -a $HOME/.profile
   fi
 }
