@@ -253,7 +253,7 @@ if binary_or_override i3status-rs INSTALL_I3_STATUS; then
 fi
 
 # xrandr and gui for monitor resolutions and layout
-include_pkg xrandr arandr
+include_pkg x11-xserver-utils arandr
 
 # dmenu to find and run programs
 include_pkg dmenu
