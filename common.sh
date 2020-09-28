@@ -37,7 +37,7 @@ function install_snap() {
     sudo snap install core
   fi
 
-  sudo snap install $pkgs --classic
+  sudo snap install $pkgs
 }
 
 function binary_or_override() {

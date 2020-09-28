@@ -35,7 +35,7 @@ stow -t $HOME starship
 # NodeJS & Toolchain Install
 if binary_or_override volta; then
   install_msg volta
-  curl https://get.volta.sh | bash
+  curl -fL https://get.volta.sh | bash
 
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
@@ -57,7 +57,7 @@ fi
 if binary_or_override rustc INSTALL_RUST; then
   install_msg rust
 
-  curl https://sh.rustup.rs -sSf | sh -s -- -y
+  curl -fL https://sh.rustup.rs | sh -s -- -y
   source $HOME/.cargo/env
 
   rustup component add clippy
@@ -95,7 +95,8 @@ include_pkg lldb gdb
 
 # OpenJDK
 if binary_or_override javac; then
-  curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \
+  install_msg openjdk
+  curl -fL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \
     | sudo apt-key add -
   echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main" \
     | sudo tee /etc/apt/sources.list.d/openjdk.list
@@ -106,12 +107,26 @@ fi
 
 # Kotlin
 if binary_or_override kotlinc; then
-  install_snap kotlin
+  install_msg kotlin
+  install_snap kotlin --classic
+fi
+
+# Swift
+if binary_or_override swift; then
+  install_msg swift
+  include_pkg libz3-4 libtinfo5 libncurses5
+  swift_release=swift-5.3-release/ubuntu1804/swift-5.3-RELEASE/swift-5.3-RELEASE-ubuntu18.04
+  curl -fL --progress-bar https://swift.org/builds/$swift_release.tar.gz -o /tmp/swift.tar.gz
+  mkdir -p /opt/swift && tar xf /tmp/swift.tar.gz  --strip 1 -C /opt/swift
+  rm /tmp/swift.tar.gz
+
+  sudo ln -s /opt/swift/usr/bin/swift /opt/bin/swift
 fi
 
 # Docker
 if binary_or_override docker; then
-  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+  install_msg docker
+  curl -fL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
   echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
     | sudo tee /etc/apt/sources.list.d/docker.list
 
@@ -197,7 +212,8 @@ fi
 include_pkg neovim
 
 if binary_or_override code; then
-  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+  install_msg vscode
+  curl -fL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
   sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" \
     | sudo tee /etc/apt/sources.list.d/vscode.list
@@ -210,7 +226,7 @@ fi
 if [ ! -e $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
   install_msg vim-plug
   install_packages # nvim
-  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fL -o $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   nvim -es -u $HOME/.config/nvim/init.vim  -i NONE -c "PlugInstall" -c "qa"
 fi
 
@@ -288,9 +304,9 @@ fi
 
 include_pkg chromium
 
-# Insomnia GUI for hitting APIs
 if binary_or_override insomnia; then
-  curl https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+  install_msg insomnia
+  curl -fL https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
   echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee /etc/apt/sources.list.d/insomnia.list
 
@@ -299,7 +315,8 @@ if binary_or_override insomnia; then
 fi
 
 if binary_or_override pgadmin4; then
-  curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  install_msg pgadmin
+  curl -fL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
   echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" \
     | sudo tee /etc/apt/sources.list.d/postgres.list
 
@@ -308,8 +325,9 @@ if binary_or_override pgadmin4; then
 fi
 
 if binary_or_override spotify; then
-  curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-  curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+  install_msg spotify
+  curl -fL https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+  curl -fL https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
   echo "deb http://repository.spotify.com stable non-free" \
     | sudo tee /etc/apt/sources.list.d/spotify.list
 
@@ -334,7 +352,7 @@ stow -t $HOME fish
 # Fisher package manager
 if [ ! -e $HOME/.config/fish/functions/fisher.fish ]; then
   install_msg fisher plugin manager
-  curl https://git.io/fisher --create-dirs -sLo $HOME/.config/fish/functions/fisher.fish
+  curl -fL https://git.io/fisher --create-dirs -o $HOME/.config/fish/functions/fisher.fish
 fi
 
 # plugin for shared ssh-agent across fish sessions
