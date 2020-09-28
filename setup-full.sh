@@ -114,9 +114,12 @@ fi
 # Swift
 if binary_or_override swift; then
   install_msg swift
+  setup_opt
+
   include_pkg libz3-4 libtinfo5 libncurses5 libpython2.7
   swift_version=swift-5.3-release/ubuntu1804/swift-5.3-RELEASE/swift-5.3-RELEASE-ubuntu18.04
   curl -fL --progress-bar https://swift.org/builds/$swift_version.tar.gz -o /tmp/swift.tar.gz
+
   mkdir -p /opt/swift && tar xf /tmp/swift.tar.gz  --strip 1 -C /opt/swift
   rm /tmp/swift.tar.gz
 
@@ -128,6 +131,7 @@ if binary_or_override go; then
 fi
 
 if binary_or_override elm; then
+  setup_opt
   elm_version=0.19.1
   curl -fL https://github.com/elm/compiler/releases/download/$elm_version/binary-for-linux-64-bit.gz | gunzip - > /opt/bin/elm
   chmod +x /opt/bin/elm
