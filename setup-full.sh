@@ -93,11 +93,22 @@ fi
 # Toolchains and debuggers
 include_pkg lldb gdb
 
+# OpenJDK
+if binary_or_override javac; then
+  curl -fsSL https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \
+    | sudo apt-key add -
+  echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main" \
+    | sudo tee /etc/apt/sources.list.d/openjdk.list
+
+  sudo apt-get update
+  include_pkg adoptopenjdk-15-openj9
+fi
+
 # Docker
 if binary_or_override docker; then
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
   echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
     | sudo tee /etc/apt/sources.list.d/docker.list
-  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
   sudo apt-get update
   include_pkg docker-ce docker-ce-cli containerd.io && install_packages
