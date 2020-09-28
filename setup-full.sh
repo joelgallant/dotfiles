@@ -154,11 +154,9 @@ fi
 include_pkg tmux
 
 if [ ! -e $HOME/.tmux/plugins/tpm ]; then
-  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+  install_packages # tmux needs to be installed first
 
-  install_packages # install tmux first
-  tmux new -d # ensure tmux server is started
-  tmux source $HOME/.tmux.conf
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
   $HOME/.tmux/plugins/tpm/bin/install_plugins all
 fi
 
