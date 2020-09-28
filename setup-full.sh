@@ -104,6 +104,11 @@ if binary_or_override javac; then
   include_pkg adoptopenjdk-15-openj9
 fi
 
+# Kotlin
+if binary_or_override kotlinc; then
+  install_snap kotlin
+fi
+
 # Docker
 if binary_or_override docker; then
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -

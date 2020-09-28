@@ -27,6 +27,19 @@ function install_packages() {
   fi
 }
 
+function install_snap() {
+  pkgs=$@
+
+  if binary_or_override snap; then
+    include_pkg snapd
+    install_packages
+
+    sudo snap install core
+  fi
+
+  sudo snap install $pkgs --classic
+}
+
 function binary_or_override() {
   binary_name=$1
   override_var_name=`echo ${2:-INSTALL_${binary_name^^}} | tr '-' '_'`
@@ -41,7 +54,7 @@ function binary_or_override() {
 function volta_component() {
   binary_name=$1
 
-  if ! test -e $VOLTA_HOME/bin/$binary_name || ! $VOLTA_HOME/bin/$binary_name -v 2> /dev/null; then
+  if ! test -e $VOLTA_HOME/bin/$binary_name || ! $VOLTA_HOME/bin/$binary_name -v 2>&1 > /dev/null; then
     return 0
   else
     return 1
