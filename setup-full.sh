@@ -237,7 +237,7 @@ include_pkg scrot feh xclip xbacklight
 include_pkg x11-xkb-utils numlockx
 
 # Network management
-include_pkg network-manager
+include_pkg network-manager network-manager-gnome
 
 # System sensors and power
 include_pkg lm-sensors pm-utils
