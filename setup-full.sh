@@ -291,6 +291,16 @@ if binary_or_override pgadmin4; then
   include_pkg pgadmin4
 fi
 
+if binary_or_override spotify; then
+  curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+  curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+  echo "deb http://repository.spotify.com stable non-free" \
+    | sudo tee /etc/apt/sources.list.d/spotify.list
+
+  sudo apt-get update
+  include_pkg spotify-client
+fi
+
 # shell(s) - I use fish primarily but like having zsh available
 if binary_or_override zsh; then
   install_msg zsh
