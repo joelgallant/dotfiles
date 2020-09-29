@@ -27,13 +27,18 @@ set -x PYTHONPATH '/usr/local/python' $PYTHONPATH
 # android dev setup
 set -x ANDROID_HOME /opt/android-sdk
 
+# volta
+set -gx VOLTA_HOME "$HOME/.volta"
+
 # PATH modifications
-set -x PATH $PATH $HOME/.cargo/bin
-set -x PATH $PATH $NPM_PACKAGES/bin
-set -x PATH $PATH /snap/bin
-set -x PATH $PATH /opt/bin
-set -x PATH $PATH $HOME/.pulumi/bin
-set -x PATH $PATH /opt/anaconda3/bin
+set -xa PATH $HOME/.cargo/bin
+set -xa PATH $VOLTA_HOME/bin
+set -xa PATH $NPM_PACKAGES/bin
+set -xa PATH /opt/anaconda3/bin
+set -xa PATH $HOME/.pulumi/bin
+set -xa PATH /snap/bin
+set -xp PATH /opt/bin
+set -x PATH (printf '%s\n' $PATH | awk '!visited[$0]++' )
 
 # look in local for installed shared libs
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
@@ -46,11 +51,6 @@ set -x EDITOR nvim
 
 # respect gitignore, include dotfiles
 set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
-
-# volta
-set -gx VOLTA_HOME "$HOME/.volta"
-test -s "$VOLTA_HOME/load.fish"; and source "$VOLTA_HOME/load.fish"
-string match -r ".volta" "$PATH" > /dev/null; or set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 # Fish settings
 set -g fish_key_bindings fish_vi_key_bindings
