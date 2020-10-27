@@ -1,11 +1,8 @@
+format = "$time$directory$git_branch$git_state$git_status$character"
 add_newline = false
-prompt_order=["time", "directory", "git_branch", "git_state", "git_status", "character"]
 
 [directory]
 style = "blue"
-
-[line_break]
-disabled = true
 
 [character]
 symbol = ">"
@@ -13,12 +10,7 @@ symbol = ">"
 [git_branch]
 symbol = ""
 
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
-
 [time]
 disabled = false
-format = "[%H:%M]"
+format = "[\\[$time\\]]($style) "
+time_format = "%H:%M"
