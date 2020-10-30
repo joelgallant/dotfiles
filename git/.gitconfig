@@ -1,7 +1,7 @@
 [user]
     name = Joel Gallant
     email = joel@joelgallant.me
-    signingkey = FE835E30B82739EC
+    signingkey = 1802B7A5E9C83E9D
 [core]
     pager = delta --dark
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -12,6 +12,8 @@
     diff = true
 [credential]
     helper = cache --timeout 86400
+[commit]
+    gpgsign = true
 [color]
     ui = auto
 [alias]
