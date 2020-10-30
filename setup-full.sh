@@ -26,6 +26,9 @@ if [ ! -e $HOME/.config/user-dirs.dir ]; then
   ln -fsn $DOTFILES_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
 fi
 
+include_pkg plymouth plymouth-themes
+sudo plymouth-set-default-theme spinner
+
 # Configuration (files only), all using gnu stow
 stow -t $HOME tmux
 stow -t $HOME nvim
