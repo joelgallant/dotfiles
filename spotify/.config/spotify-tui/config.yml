@@ -1,0 +1,43 @@
+theme:
+  active: Cyan
+  banner: LightCyan
+  error_border: Red
+  error_text: LightRed
+  hint: Yellow
+  hovered: Magenta
+  inactive: Gray
+  playbar_background: Black
+  playbar_progress: LightCyan
+  playbar_text: White
+  selected: LightCyan
+  text: "255, 255, 255"
+  header: White
+
+behavior:
+  volume_increment: 10
+  tick_rate_milliseconds: 250
+  enable_text_emphasis: false
+  show_loading_indicator: true
+
+keybindings:
+  back: "ctrl-q"
+  help: "?"
+
+  # Pause: Space
+  toggle_playback: " "
+  # Skip: n
+  next_track: "n"
+  # Previous: p
+  previous_track: "p"
+
+  shuffle: "s"
+  repeat: "r"
+  search: "/"
+  basic_view: "B"
+
+  jump_to_album: "a"
+  jump_to_artist_album: "A"
+
+  manage_devices: "d"
+  decrease_volume: "-"
+  increase_volume: "+"

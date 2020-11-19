@@ -140,7 +140,7 @@ bar {
 }
 
 # Auto Start
-exec --no-startup-id while true; do feh --bg-fill ~/pictures/wallpaper.* && sleep 5 || sleep 30; done
+exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.*
 exec --no-startup-id while true; do setxkbmap -option caps:escape && sleep 5 || sleep 30; done
 exec --no-startup-id numlockx
 exec --no-startup-id (xbanish &)

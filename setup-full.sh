@@ -35,6 +35,7 @@ stow -t $HOME nvim
 stow -t $HOME git
 stow -t $HOME i3
 stow -t $HOME starship
+stow -t $HOME spotify
 
 # NodeJS & Toolchain Install
 if binary_or_override volta; then
@@ -378,6 +379,11 @@ fi
 if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
   install_msg fish-ssh-agent
   fish --command="fisher add danhper/fish-ssh-agent"
+fi
+
+if [ ! -e ~/.config/fisher/github.com/evanlucas/fish-kubectl-completions ]; then
+  install_msg fish-kubectl-completions
+  fish --command="fisher add evanlucas/fish-kubectl-completions"
 fi
 
 # SSH keys

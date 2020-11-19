@@ -31,6 +31,7 @@ set -x ANDROID_HOME /opt/android-sdk
 set -gx VOLTA_HOME "$HOME/.volta"
 
 # PATH modifications
+set -xp PATH $ANDROID_HOME/platform-tools
 set -xa PATH $HOME/.cargo/bin
 set -xa PATH $VOLTA_HOME/bin
 set -xa PATH $NPM_PACKAGES/bin
@@ -54,6 +55,11 @@ set -x FZF_DEFAULT_COMMAND 'fd -t f -H -E .git'
 
 # Fish settings
 set -g fish_key_bindings fish_vi_key_bindings
+
+# digital ocean completions
+if which doctl > /dev/null
+  source (doctl completion fish | psub)
+end
 
 function fish_greeting; end
 function fish_right_prompt; end

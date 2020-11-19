@@ -48,6 +48,7 @@ endif
   Plug 'cespare/vim-toml'
   Plug 'kylef/apiblueprint.vim'
   Plug 'amadeus/vim-mjml'
+  Plug 'jxnblk/vim-mdx-js'
 
   Plug 'prettier/vim-prettier', {
     \ 'for': [
