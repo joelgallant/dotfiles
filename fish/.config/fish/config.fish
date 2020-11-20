@@ -24,6 +24,9 @@ set -x NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
 # python global installs
 set -x PYTHONPATH '/usr/local/python' $PYTHONPATH
 
+set -x GOROOT /opt/go
+set -x GOPATH $HOME/go
+
 # android dev setup
 set -x ANDROID_HOME /opt/android-sdk
 
@@ -32,6 +35,7 @@ set -gx VOLTA_HOME "$HOME/.volta"
 
 # PATH modifications
 set -xp PATH $ANDROID_HOME/platform-tools
+set -xa PATH $GOPATH/bin
 set -xa PATH $HOME/.cargo/bin
 set -xa PATH $VOLTA_HOME/bin
 set -xa PATH $NPM_PACKAGES/bin

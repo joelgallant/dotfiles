@@ -381,6 +381,7 @@ if [ ! -e ~/.config/fisher/github.com/danhper/fish-ssh-agent ]; then
   fish --command="fisher add danhper/fish-ssh-agent"
 fi
 
+# Kubernetes
 if [ ! -e ~/.config/fisher/github.com/evanlucas/fish-kubectl-completions ]; then
   install_msg fish-kubectl-completions
   fish --command="fisher add evanlucas/fish-kubectl-completions"
