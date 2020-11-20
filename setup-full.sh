@@ -132,7 +132,10 @@ if binary_or_override swift; then
 fi
 
 if binary_or_override go; then
-  include_pkg golang
+  go_version=1.15.5
+  curl -fL https://dl.google.com/go/go$go_version.linux-amd64.tar.gz | tar xz -C /opt
+  ln -s /opt/go/bin/go /opt/bin
+  ln -s /opt/go/bin/gofmt /opt/bin
 fi
 
 if binary_or_override elm; then
