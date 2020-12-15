@@ -36,6 +36,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+semicolon move right
 bindsym $mod+Shift+Right move right
 
+# floating windows
+floating_modifier $mod
+bindcode $mod+Shift+65 floating toggle
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
