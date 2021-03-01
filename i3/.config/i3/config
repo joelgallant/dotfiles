@@ -118,12 +118,12 @@ bindsym $mod+r mode "resize"
 # Special key bindings
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym F10 exec pactl set-sink-mute 0 toggle
-bindsym F11 exec pactl set-sink-volume 0 -5%
-bindsym F12 exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioMute exec pactl set-sink-mute $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') +5%
+bindsym F10 exec pactl set-sink-mute $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') toggle
+bindsym F11 exec pactl set-sink-volume $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') -5%
+bindsym F12 exec pactl set-sink-volume $(pactl list sinks | rg 'Sink #(\d+)' -r '$1') +5%
 bindsym --release Print exec scrot -s '/home/joel/pictures/%m-%d-%s.png'
 
 # Status Bar

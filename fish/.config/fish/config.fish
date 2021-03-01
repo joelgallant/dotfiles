@@ -13,6 +13,9 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gup="git up"
 
+# always ssh in xterm-256color
+alias ssh='TERM=xterm-256color /usr/bin/ssh'
+
 alias k=kubectl
 alias kctx=kubectx
 alias kns=kubens
