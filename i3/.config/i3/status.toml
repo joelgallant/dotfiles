@@ -14,7 +14,7 @@ warning_fg = "#FFFFFF"
 
 [[block]]
 block = "weather"
-format = "{humidity}% {temp}°"
+format = "{temp}°"
 service = { name = "openweathermap", api_key = "7883639eb7ab884010098e17458a2aec", city_id = "5913490", units = "metric" }
 
 [[block]]
